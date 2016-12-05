@@ -6,6 +6,7 @@
 //  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
+import UIKit
 
 enum ImoTableViewSectionError : Error {
     case unknown
@@ -14,12 +15,15 @@ enum ImoTableViewSectionError : Error {
 
 open class ImoTableViewSection {
     
-   public init() {
-    
-    
-    }
+    var headerHeight : CGFloat = 0
+    var footerHeight : CGFloat = 0
     
     var sources = Array<ImoTableViewSource>()
+    
+    public init() {
+        
+        
+    }
     
     public func add(_ source:ImoTableViewSource) {
         

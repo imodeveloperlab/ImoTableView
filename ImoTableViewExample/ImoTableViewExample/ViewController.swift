@@ -16,20 +16,14 @@ class ViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-        var section = ImoTableViewSection()
-        
-        var source = ExampleCellSource()
+        let section = ImoTableViewSection()
+        let source = DemoCellSource()
         section.add(source)
-        
         tableView.addSection(section: section)
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }

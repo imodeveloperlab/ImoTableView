@@ -12,7 +12,7 @@ import UIKit
 open class ImoTableViewSource : NSObject {
 
     public var staticCell : ImoTableViewCell?
-    public var height : Int = 0
+    public var height : CGFloat? 
     public var cellClass : String
     open var nib : UINib?
     

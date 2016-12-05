@@ -18,7 +18,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -47,14 +46,64 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
             
             self.registerCellClassForSource(source: source)
-            let cell : ImoTableViewCell = tableView.dequeueReusableCell(withIdentifier: source.cellClass, for: indexPath) as! ImoTableViewCell
-            cell.setUpWithSource(source: source)
             
-            return cell as UITableViewCell
+            if let cell = source.staticCell
+            {
+                cell.setUpWithSource(source: source)
+                return cell as UITableViewCell
+            }
+            else
+            {
+                let cell : ImoTableViewCell = tableView.dequeueReusableCell(withIdentifier: source.cellClass, for: indexPath) as! ImoTableViewCell
+                cell.setUpWithSource(source: source)
+                return cell as UITableViewCell
+            }
         }
         
         return UITableViewCell()
     }
+    
+    
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
+            
+            if let height = source.height {
+                return height
+            }
+            
+        }
+        
+        return UITableViewAutomaticDimension
+    }
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 40
+        
+    }
+    
+    
+
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if let section = sectionForIndex(index: section) {
+           return section.headerHeight
+        }
+        
+        return 0
+        
+    }
+    
+    public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.footerHeight
+        }
+        
+        return 0
+    }
+    
     
     public func numberOfSections(in tableView: UITableView) -> Int  {
         
@@ -67,6 +116,17 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
         sections.append(section)
     }
+    
+    
+    public func sectionForIndex(index:Int) -> ImoTableViewSection? {
+        
+        if self.sections.indices.contains(index) {
+            return self.sections[index]
+        }
+        
+        return nil
+    }
+    
     
     
     public func cellSourceForIndexPath(indexPath:IndexPath) -> ImoTableViewSource? {
@@ -83,17 +143,24 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     
     public func registerCellClassForSource(source:ImoTableViewSource) {
         
-        if !registeredCells.contains(source.cellClass) {
+        registerCellClass(cellClass: source.cellClass,nib: source.nib)
+    }
+    
+    public func registerCellClass(cellClass:String,nib:UINib?) {
+        
+        if !registeredCells.contains(cellClass) {
             
-            if let _ = source.nib {
-
-                self.register(source.nib, forCellReuseIdentifier:source.cellClass)
-                registeredCells.append(source.cellClass)
+            if let _ = nib {
+                
+                self.register(nib, forCellReuseIdentifier:cellClass)
+                registeredCells.append(cellClass)
             }
             else {
-                self.register(NSClassFromString(source.cellClass), forCellReuseIdentifier:source.cellClass)
-                registeredCells.append(source.cellClass)
+                self.register(NSClassFromString(cellClass), forCellReuseIdentifier:cellClass)
+                registeredCells.append(cellClass)
             }
         }
+        
     }
+    
 }
