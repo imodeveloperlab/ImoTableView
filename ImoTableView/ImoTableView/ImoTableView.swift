@@ -83,25 +83,37 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.headerView
+        }
+        
+        return nil
+    }
 
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         if let section = sectionForIndex(index: section) {
-           return section.headerHeight
+            
+            if let height = section.headerHeight {
+                return height
+            }
         }
         
-        return 0
+        return UITableViewAutomaticDimension
         
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         if let section = sectionForIndex(index: section) {
-            return section.footerHeight
+            if let height = section.footerHeight {
+                return height
+            }
         }
         
-        return 0
+        return UITableViewAutomaticDimension
     }
     
     
