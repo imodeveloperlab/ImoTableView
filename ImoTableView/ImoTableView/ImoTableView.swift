@@ -83,6 +83,16 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
     }
     
+    
+    public func numberOfSections(in tableView: UITableView) -> Int  {
+        
+        return sections.count
+    }
+    
+    
+    // MARK: - UITableView HeaderView
+    
+    
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         if let section = sectionForIndex(index: section) {
@@ -91,8 +101,16 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
         return nil
     }
-
+    
+    
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        if let section = sectionForIndex(index: section) {
+            
+            if (section.headerView == nil) {
+                return 0
+            }
+        }
         
         if let section = sectionForIndex(index: section) {
             
@@ -105,7 +123,26 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
     }
     
+    
+    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.estimatedHeaderHeight
+        }
+        return 0
+    }
+    
+    
+    // MARK: - UITableView FooterView
+    
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        if let section = sectionForIndex(index: section) {
+            
+            if (section.footerView == nil) {
+                return 0
+            }
+        }
         
         if let section = sectionForIndex(index: section) {
             if let height = section.footerHeight {
@@ -117,9 +154,22 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    public func numberOfSections(in tableView: UITableView) -> Int  {
+    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
-        return sections.count
+        if let section = sectionForIndex(index: section) {
+            return section.estimatedFooterHeight
+        }
+        
+        return 0
+    }
+    
+    public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.footerView
+        }
+        
+        return nil
     }
     
     // MARK: - Sources
@@ -129,7 +179,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         sections.append(section)
     }
     
-    
     public func sectionForIndex(index:Int) -> ImoTableViewSection? {
         
         if self.sections.indices.contains(index) {
@@ -138,8 +187,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
         return nil
     }
-    
-    
     
     public func cellSourceForIndexPath(indexPath:IndexPath) -> ImoTableViewSource? {
         
@@ -151,7 +198,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
         return nil
     }
-    
     
     public func registerCellClassForSource(source:ImoTableViewSource) {
         

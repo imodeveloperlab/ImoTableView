@@ -15,9 +15,13 @@ enum ImoTableViewSectionError : Error {
 
 open class ImoTableViewSection {
     
+    public var estimatedHeaderHeight : CGFloat = 40
+    public var estimatedFooterHeight : CGFloat = 40
+    
     public var headerHeight : CGFloat?
     public var footerHeight : CGFloat?
     public var headerView : UIView?
+    public var footerView : UIView?
     
     var sources = Array<ImoTableViewSource>()
     
