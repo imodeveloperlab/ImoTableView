@@ -14,6 +14,10 @@ open class ImoTableViewSource : NSObject {
     public var staticCell : ImoTableViewCell?
     public var height : CGFloat? 
     public var cellClass : String
+    
+    public var target : AnyObject?
+    public var selector : Selector?
+    
     open var nib : UINib?
     
     public init(cellClass:String) {

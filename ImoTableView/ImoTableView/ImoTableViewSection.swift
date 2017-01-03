@@ -27,7 +27,6 @@ open class ImoTableViewSection {
     
     public init() {
         
-        
     }
     
     public func add(_ source:ImoTableViewSource) {

@@ -13,6 +13,8 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     var sections = Array<ImoTableViewSection>()
     var registeredCells = Array<String>()
     
+    public var didSelectSource : ((ImoTableViewSource?) -> (Void))?
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         
         super.init(frame: frame, style: style)
@@ -218,7 +220,15 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
                 registeredCells.append(cellClass)
             }
         }
+    }
+    
+    //MARK : - Actions
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if let action = self.didSelectSource {
+            action(self.cellSourceForIndexPath(indexPath: indexPath))
+        }
     }
     
 }
