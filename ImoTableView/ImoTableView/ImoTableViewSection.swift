@@ -66,6 +66,11 @@ open class ImoTableViewSection {
         sources.remove(at:try indexOfSource(source:source))
     }
     
+    public func deleteAll() {
+        
+        sources.removeAll()
+    }
+    
     public func indexOfSource(source:ImoTableViewSource) throws -> Int {
         
         if let index = sources.index(of:source) {

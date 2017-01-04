@@ -176,7 +176,7 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     
     // MARK: - Sources
     
-    public func addSection(section:ImoTableViewSection) {
+    public func addSection(_ section:ImoTableViewSection) {
         
         sections.append(section)
     }
