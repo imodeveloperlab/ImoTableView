@@ -181,6 +181,18 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         sections.append(section)
     }
     
+    public func addSections(_ addSections:Array<ImoTableViewSection>) {
+        
+        for section in addSections {
+            sections.append(section)
+        }
+    }
+    
+    public func deleteAllSections() {
+
+        sections.removeAll()
+    }
+    
     public func sectionForIndex(index:Int) -> ImoTableViewSection? {
         
         if self.sections.indices.contains(index) {
