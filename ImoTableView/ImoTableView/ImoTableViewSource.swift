@@ -17,6 +17,7 @@ open class ImoTableViewSource : NSObject {
     
     public var target : AnyObject?
     public var selector : Selector?
+    public var object : AnyObject?
     
     open var nib : UINib?
     
