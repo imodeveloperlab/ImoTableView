@@ -15,7 +15,8 @@ open class ImoTableViewSource : NSObject {
     public var height : CGFloat? 
     public var cellClass : String
     
-    public var target : AnyObject?
+    weak public var target : AnyObject?
+    
     public var selector : Selector?
     public var object : AnyObject?
     
