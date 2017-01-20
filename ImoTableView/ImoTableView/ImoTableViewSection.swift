@@ -23,6 +23,7 @@ open class ImoTableViewSection {
     public var headerView : UIView?
     public var footerView : UIView?
     
+    
     var sources = Array<ImoTableViewSource>()
     
     public init() {
