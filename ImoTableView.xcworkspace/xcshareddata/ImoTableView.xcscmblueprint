@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "12F60DEDA031FA52FDED685028CA658D865F650D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "12F60DEDA031FA52FDED685028CA658D865F650D" : 9223372036854775807,
+    "A51F942F0BD4BCDCD4FEB82B652D1CB09C642931" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "330922E3-DD02-4B61-8C5B-C81687BE8AC2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "12F60DEDA031FA52FDED685028CA658D865F650D" : "ImoTableView\/",
+    "A51F942F0BD4BCDCD4FEB82B652D1CB09C642931" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ImoTableView",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ImoTableView.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/imodeveloperlab\/ImoTableView",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "12F60DEDA031FA52FDED685028CA658D865F650D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git-internal.md.winify.com:muume-2\/muume.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A51F942F0BD4BCDCD4FEB82B652D1CB09C642931"
+    }
+  ]
+}
