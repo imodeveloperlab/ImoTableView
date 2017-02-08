@@ -1,5 +1,9 @@
 # ImoTableView
 
+ImotableView is an wrapper around UITableView which aims to facilitate working with tables
+
+## Example  ##
+
 Description
 
 # Use Example
