@@ -14,31 +14,28 @@ tableView.addSection(section)
 ## Cell Template ##
 
 ```swift
-open class TemplateCellSource : ImoTableViewSource {
-    
+import ImoTableView
+import UIKit
+
+open class ExampleCellSource : ImoTableViewSource {
     public init() {
-        
         //TODO: Do your work here
-        super.init(cellClass: "TemplateCell")
-        
+        super.init(cellClass: "ExampleCell")
         //Load the nib file
         self.nib = UINib(nibName: self.cellClass, bundle: Bundle.init(for: self.classForCoder))
-        
         //Height and width have default value but you can change it here or dynamically from extern
         self.height = 100
     }
 }
 
-open class TemplateCell : ImoTableViewCell {
-    
+open class ExampleCell : ImoTableViewCell {
     open override func setUpWithSource(source:AnyObject) {
-        
-        if source is TemplateCellSource {
-            let source = source as? TemplateCellSource
+        if source is ExampleCellSource {
             //TODO: Do your work here
         }
     }
 }
+
 ```
 
 # Use Example
