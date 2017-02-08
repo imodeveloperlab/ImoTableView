@@ -1,6 +1,6 @@
 # ImoTableView
 
-ImoTableView is an wrapper around UITableView which aims to facilitate working with tables and reusable cells, make it simple and quick to implement.
+ImoTableView is an wrapper around UITableView which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
 
 ## Example  ##
 
@@ -10,6 +10,10 @@ let source = DemoCellSource()
 section.add(source)
 tableView.addSection(section)
 ```
+
+## Cell Template ##
+
+
 
 # Use Example
 
