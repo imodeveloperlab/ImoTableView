@@ -1,6 +1,6 @@
 # ImoTableView
 
-Is an wrapper around UITableView which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
+Is an wrapper around **UITableView** which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
 
 ## Example  ##
 
@@ -10,8 +10,15 @@ let source = DemoCellSource()
 section.add(source)
 tableView.addSection(section)
 ```
+## ImoCell.xctemplate ##
 
-## ExampleCell ##
+The quick onboarding for use **ImoTableView** is to add **ImoCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
+
+To add **ImoCell.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
+
+After create an folder ImoTableView and copy in this folder **ImoCell.xctemplate** from root folder of this repo
+
+### ExampleCell ###
 
 ```swift
 import ImoTableView
