@@ -11,7 +11,7 @@ section.add(source)
 tableView.addSection(section)
 ```
 
-## Cell Template ##
+## ExampleCell ##
 
 ```swift
 import ImoTableView
