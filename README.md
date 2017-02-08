@@ -1,10 +1,13 @@
 # ImoTableView
 
-ImotableView is an wrapper around UITableView which aims to facilitate working with tables
+ImoTableView is an wrapper around UITableView which aims to facilitate working with tables
 
 ## Example  ##
 
-Description
+<pre><code>let section = ImoTableViewSection()
+let source = DemoCellSource()
+section.add(source)
+tableView.addSection(section)</pre></code>
 
 # Use Example
 
