@@ -1,6 +1,6 @@
 # ImoTableView
 
-ImoTableView is an wrapper around UITableView which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
+Is an wrapper around UITableView which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
 
 ## Example  ##
 
