@@ -19,11 +19,7 @@ class ViewController: UIViewController {
         let section = ImoTableViewSection()
         let source = DemoCellSource()
         section.add(source)
-        tableView.addSection(section: section)
+        tableView.add(section)
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
+    
 }

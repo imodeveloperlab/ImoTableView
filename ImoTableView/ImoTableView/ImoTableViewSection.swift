@@ -17,19 +17,19 @@ open class ImoTableViewSection {
     
     public var estimatedHeaderHeight : CGFloat = 40
     public var estimatedFooterHeight : CGFloat = 40
-    
+
     public var headerHeight : CGFloat?
     public var footerHeight : CGFloat?
+
     public var headerView : UIView?
     public var footerView : UIView?
     
-    
-    var sources = Array<ImoTableViewSource>()
+    var sources = [ImoTableViewSource]()
     
     public init() {
         
     }
-    
+
     public func add(_ source:ImoTableViewSource) {
         
         sources.append(source)
@@ -40,7 +40,7 @@ open class ImoTableViewSection {
         if containIndex(index:index) {
             return sources[index]
         }
-        
+
         return nil
     }
     
@@ -48,8 +48,7 @@ open class ImoTableViewSection {
         
         if containIndex(index:index) {
            sources.remove(at: index)
-        }
-        else {
+        } else {
             throw ImoTableViewSectionError.unknown
         }
     }
@@ -59,10 +58,10 @@ open class ImoTableViewSection {
         if sources.indices.contains(index) {
             return true
         }
-        return false;
+        return false
     }
     
-    public func delete(source:ImoTableViewSource) throws {
+    public func delete(_ source:ImoTableViewSource) throws {
     
         sources.remove(at:try indexOfSource(source:source))
     }
@@ -76,9 +75,7 @@ open class ImoTableViewSection {
         
         if let index = sources.index(of:source) {
             return index
-        }
-        else {
-            
+        } else {
             throw ImoTableViewSectionError.indexOfSource
         }
     }

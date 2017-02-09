@@ -8,10 +8,9 @@
 
 import UIKit
 
-open class  ImoTableViewCell : UITableViewCell {
-
+open class ImoTableViewCell : UITableViewCell {
     open func setUpWithSource(source:AnyObject) {
-        
+
     }
 
 }

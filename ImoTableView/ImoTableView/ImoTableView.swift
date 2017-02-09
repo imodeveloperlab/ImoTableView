@@ -10,32 +10,31 @@ import UIKit
 
 open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
+    //This array hold all table sections
     var sections = Array<ImoTableViewSection>()
+    
+    //Array off Registered Cells Identifiers
     var registeredCells = Array<String>()
     
     public var didSelectSource : ((ImoTableViewSource?) -> (Void))?
     
     override init(frame: CGRect, style: UITableViewStyle) {
-        
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
     }
     
     public required init?(coder aDecoder: NSCoder) {
-   
         super.init(coder: aDecoder)
         self.delegate = self
         self.dataSource = self
-        
     }
     
     // MARK: - UITableView
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if self.sections.indices.contains(section)
-        {
+        if self.sections.indices.contains(section) {
             let section : ImoTableViewSection = self.sections[section]
             return section.count()
         }
@@ -49,22 +48,19 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
             
             self.registerCellClassForSource(source: source)
             
-            if let cell = source.staticCell
-            {
+            if let cell = source.staticCell {
                 cell.setUpWithSource(source: source)
                 return cell as UITableViewCell
-            }
-            else
-            {
-                let cell : ImoTableViewCell = tableView.dequeueReusableCell(withIdentifier: source.cellClass, for: indexPath) as! ImoTableViewCell
-                cell.setUpWithSource(source: source)
-                return cell as UITableViewCell
+            } else {
+                if let cell : ImoTableViewCell = tableView.dequeueReusableCell(withIdentifier: source.cellClass, for: indexPath) as? ImoTableViewCell {
+                    cell.setUpWithSource(source: source)
+                    return cell as UITableViewCell
+                }
             }
         }
         
         return UITableViewCell()
     }
-    
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -86,14 +82,12 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     }
     
     
-    public func numberOfSections(in tableView: UITableView) -> Int  {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         
         return sections.count
     }
-    
-    
+        
     // MARK: - UITableView HeaderView
-    
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
@@ -103,7 +97,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
         return nil
     }
-    
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
@@ -125,7 +118,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    
     public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         
         if let section = sectionForIndex(index: section) {
@@ -133,7 +125,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         }
         return 0
     }
-    
     
     // MARK: - UITableView FooterView
     
@@ -155,7 +146,6 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
         return UITableViewAutomaticDimension
     }
     
-    
     public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
         
         if let section = sectionForIndex(index: section) {
@@ -176,12 +166,12 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     
     // MARK: - Sources
     
-    public func addSection(_ section:ImoTableViewSection) {
+    public func add(_ section:ImoTableViewSection) {
         
         sections.append(section)
     }
     
-    public func addSections(_ addSections:Array<ImoTableViewSection>) {
+    public func add(_ addSections:Array<ImoTableViewSection>) {
         
         for section in addSections {
             sections.append(section)
@@ -215,7 +205,7 @@ open class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSourc
     
     public func registerCellClassForSource(source:ImoTableViewSource) {
         
-        registerCellClass(cellClass: source.cellClass,nib: source.nib)
+        registerCellClass(cellClass: source.cellClass, nib: source.nib)
     }
     
     public func registerCellClass(cellClass:String,nib:UINib?) {

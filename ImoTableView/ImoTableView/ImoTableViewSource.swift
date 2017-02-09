@@ -26,7 +26,6 @@ open class ImoTableViewSource : NSObject {
         
         self.cellClass = cellClass
         super.init()
-        
     }
     
 }
