@@ -1,6 +1,6 @@
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/Logo.png "ImoTableView Logo")
 
-ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates.
+ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
 ## Quick Onboarding  ##
 
