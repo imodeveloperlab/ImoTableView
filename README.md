@@ -26,6 +26,7 @@ let source = DemoCellSource(title:"Demo Cell")
 section.add(source)
 //Add section to table
 table.add(section)
+//Update our table view
 table.reloadData()
 ```
 ## ImoCell.xctemplate ##
