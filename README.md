@@ -17,7 +17,7 @@ To start use **ImoTableView** you need to undesrstand the concept,**ImoTableView
 ```swift 
 let table = ImoTableView()
 let section = ImoTableViewSection()
-let source = DemoCellSource()
+let source = DemoCellSource(title:"Demo Cell")
 section.add(source)
 table.add(section)
 ```
