@@ -6,11 +6,12 @@ ImoTableView an wrapper around **UITableView** which aims to facilitate working 
 
 ## Quick Onboarding  ##
 
-To start use **ImoTableView** you need to undesrstand the concept,**ImoTableView** is composed with four base classes.
-* **ImoTableView** which is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s.
-* **ImoTableViewSection** is an class which work with **ImoTableViewSource**'s.
-* **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example. 
-* **ImoTableViewCell** is view representation of properties you have stored in your source.
+To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
+
+1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
+2. **ImoTableViewSection** is an class which work with **ImoTableViewSource**'s, add new source, delete, update.
+3. **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example. 
+4. **ImoTableViewCell** is view representation of properties you have stored in your source.
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
 
