@@ -5,7 +5,7 @@ Is an wrapper around **UITableView** which aims to facilitate working with table
 ## Example  ##
 
 
-![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "Logo Title Text 1")
+![](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView@3x.png)
 
 
 ```swift 
