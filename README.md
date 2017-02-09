@@ -12,13 +12,14 @@ To start use **ImoTableView** you need to undesrstand the concept,**ImoTableView
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
 
-## Example  ##
+## Quick Implementation Example ##
 
 ```swift 
+let table = ImoTableView()
 let section = ImoTableViewSection()
 let source = DemoCellSource()
 section.add(source)
-tableView.addSection(section)
+table.add(section)
 ```
 ## ImoCell.xctemplate ##
 
