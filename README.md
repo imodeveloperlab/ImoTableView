@@ -16,10 +16,15 @@ To start use **ImoTableView** you need to undesrstand the concept,**ImoTableView
 
 Example of how quick and simple you can add an populate an tableView
 ```swift 
+//Create table
 let table = ImoTableView()
+//Create an section for our table
 let section = ImoTableViewSection()
+//Create an source for section
 let source = DemoCellSource(title:"Demo Cell")
+//Add our source to section
 section.add(source)
+//Add section to table
 table.add(section)
 table.reloadData()
 ```
