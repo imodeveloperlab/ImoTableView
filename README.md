@@ -4,6 +4,10 @@ Is an wrapper around **UITableView** which aims to facilitate working with table
 
 ## Example  ##
 
+
+![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "Logo Title Text 1")
+
+
 ```swift 
 let section = ImoTableViewSection()
 let source = DemoCellSource()
