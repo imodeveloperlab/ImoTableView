@@ -1,10 +1,18 @@
 # ImoTableView
 
-Is an wrapper around **UITableView** which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement.
+ImoTableView an wrapper around **UITableView** which aims to facilitate working with tables make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates.
 
-## Example  ##
+## Quick Onboarding  ##
+
+To start use **ImoTableView** you need to undesrstand the concept,**ImoTableView** is composed with four base classes.
+* **ImoTableView** which is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s.
+* **ImoTableViewSection** is an class which work with **ImoTableViewSource**'s.
+* **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example. 
+* **ImoTableViewCell** is view representation of properties you have stored in your source.
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
+
+## Example  ##
 
 ```swift 
 let section = ImoTableViewSection()
