@@ -4,9 +4,7 @@ Is an wrapper around **UITableView** which aims to facilitate working with table
 
 ## Example  ##
 
-
-![](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView@2x.png)
-
+<img src="https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView@3x.png" alt="Drawing" style="width: 200px; height:100"/>
 
 ```swift 
 let section = ImoTableViewSection()
