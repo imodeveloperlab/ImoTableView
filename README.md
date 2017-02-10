@@ -53,9 +53,11 @@ import UIKit
 
 open class ActionCellSource : ImoTableViewSource {
     
-    public init() {
+    let title: String
+    
+    public init(title: String) {
         
-        //TODO: Set your custom properties
+        self.title = title
         
         super.init(cellClass: "ActionCell")
         //Nib file reference
@@ -67,14 +69,16 @@ open class ActionCellSource : ImoTableViewSource {
 
 open class ActionCell : ImoTableViewCell {
     
+    @IBOutlet weak var title: UILabel!
+  
     open override func setUpWithSource(source:AnyObject) {
-        if source is ActionCellSource {
-            //TODO: Do your work here
+        if let source = source as? ActionCellSource {
+            title.text = source.title
         }
     }
 }
-```
 
+```
 
 ## ImoCell.xctemplate ##
 
