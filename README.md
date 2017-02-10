@@ -2,8 +2,7 @@
 
 ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
-## Quick Onboarding  ##
-
+## Quick Onboarding ##
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
 1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
