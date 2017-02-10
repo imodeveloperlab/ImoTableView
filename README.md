@@ -64,3 +64,28 @@ open class ExampleCell : ImoTableViewCell {
 }
 
 ```
+
+### Example Implementation ###
+
+```swift
+import UIKit
+import ImoTableView
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var tableView: ImoTableView!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        //Create new section
+        let section = ImoTableViewSection()
+        //Create new cellSource
+        let actionCellSource = ActionCellCellSource(title: "Action")
+        //Add cellSource to section
+        section.add(actionCellSource)
+        //Add section to table View
+        tableView.add(section)
+    }
+}
+```
