@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         //Create new section
         let section = ImoTableViewSection()
         //Create new cellSource
-        let actionCellSource = ActionCellCellSource(title: "Action")
+        let actionCellSource = ActionCellSource(title: "Action")
         //Add cellSource to section
         section.add(actionCellSource)
         //Add section to table View
