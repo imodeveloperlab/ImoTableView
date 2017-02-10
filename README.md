@@ -154,7 +154,7 @@ table.add(YourSection)
 table.add(YourSections)
 
 //Delete section at index
-table.deleteAllSections(at: YourSectionIndex)
+table.deleteSection(at: YourSectionIndex)
 
 //Delete all sections
 table.deleteAllSections()
