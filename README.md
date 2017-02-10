@@ -113,3 +113,24 @@ The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctem
 To add **ImoTableViewCell.xctemplate.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
 
 After create an folder **ImoTableView** and copy in this folder **ImoTableViewCell.xctemplate** from Templates/ folder of this repo.
+
+## Snippets
+### ImoTableViewSection
+
+```swift 
+//Create new section
+let section = ImoTableViewSection()
+
+//Add CellSource
+section.add(YourCellSource)
+
+//Delete CellSource
+section.delete(atIndex:YourCellIndex)
+
+//Delete CellSource
+section.delete(YourCellSource)
+
+//Delete All 
+section.deleteAll()
+```
+
