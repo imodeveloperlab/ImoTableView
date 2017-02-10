@@ -2,6 +2,12 @@
 
 ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
+## Requirements
+
+- iOS 9.3+
+- Xcode 8.1+
+- Swift 3.0+
+
 ## Quick Onboarding ##
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
