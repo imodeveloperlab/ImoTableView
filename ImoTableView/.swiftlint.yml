@@ -4,9 +4,13 @@ disabled_rules: # rule identifiers to exclude from running
   - control_statement
   - trailing_whitespace
 opt_in_rules: # some rules are only opt-in
-  - empty_count
-  - missing_docs
-  - cyclomatic_complexity
+ # missing_docs
+
+- empty_count
+- cyclomatic_complexity
+- closure_end_indentation
+- closure_spacing
+- conditional_returns_on_newline
   # Find all the available rules by running:
   # swiftlint rules
 whitelist_rules:

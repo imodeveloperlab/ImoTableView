@@ -236,7 +236,7 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     /// Register cell class for source
     ///
     /// - Parameter source: ImoTableViewSource
-    func registerCellClassForSource(source:ImoTableViewSource) {
+    public func registerCellClassForSource(source:ImoTableViewSource) {
         
         registerCellClass(cellClass: source.cellClass, nib: source.nib)
     }
@@ -246,7 +246,7 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     /// - Parameters:
     ///   - cellClass: Cell class name, also this name is uniq identifier of the cell
     ///   - nib: Cell nib
-    func registerCellClass(cellClass: String, nib: UINib?) {
+    public func registerCellClass(cellClass: String, nib: UINib?) {
         
         if !registeredCells.contains(cellClass) {
             if let _ = nib {
