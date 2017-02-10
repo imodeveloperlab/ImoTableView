@@ -16,20 +16,64 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 ## Quick Implementation Example ##
 
 Example of how quick and simple you can add an populate an tableView
-```swift 
-//Create table
-let table = ImoTableView()
-//Create an section for our table
-let section = ImoTableViewSection()
-//Create an source for section
-let source = DemoCellSource(title:"Demo Cell")
-//Add our source to section
-section.add(source)
-//Add section to table
-table.add(section)
-//Update our table view
-table.reloadData()
+This is how ```swift ViewController.swift ``` looks like
+```swift
+import UIKit
+import ImoTableView
+
+class ViewController: UIViewController {
+
+    //ImoTableView reference from ViewController
+    @IBOutlet weak var tableView: ImoTableView!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        //Create new section
+        let section = ImoTableViewSection()
+        //Create new cellSource
+        let actionCellSource = ActionCellCellSource(title: "Action")
+        //Add cellSource to section
+        section.add(actionCellSource)
+        //Add section to table View
+        tableView.add(section)
+        //Reload table
+        tableView.reloadData()
+    }
+}
 ```
+
+And this is how ```swift ActionCell.swift ``` looks like
+
+```swift
+import ImoTableView
+import UIKit
+
+open class ActionCellSource : ImoTableViewSource {
+    
+    public init() {
+        
+        //TODO: Set your custom properties
+        
+        super.init(cellClass: "ActionCell")
+        //Nib file reference
+        self.nib = UINib(nibName: self.cellClass, bundle: Bundle.init(for: self.classForCoder))
+        //Height and width have default value but you can change it here or dynamically from extern
+        self.height = 100
+    }
+}
+
+open class ActionCell : ImoTableViewCell {
+    
+    open override func setUpWithSource(source:AnyObject) {
+        if source is ActionCellSource {
+            //TODO: Do your work here
+        }
+    }
+}
+```
+
+
 ## ImoCell.xctemplate ##
 
 The quick onboarding for use **ImoTableView** is to add **ImoCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
@@ -66,26 +110,5 @@ open class ExampleCell : ImoTableViewCell {
 ```
 
 ### Example Implementation ###
+This example shows how simple can be an implementation of ImoTableView
 
-```swift
-import UIKit
-import ImoTableView
-
-class ViewController: UIViewController {
-
-    @IBOutlet weak var tableView: ImoTableView!
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        //Create new section
-        let section = ImoTableViewSection()
-        //Create new cellSource
-        let actionCellSource = ActionCellCellSource(title: "Action")
-        //Add cellSource to section
-        section.add(actionCellSource)
-        //Add section to table View
-        tableView.add(section)
-    }
-}
-```
