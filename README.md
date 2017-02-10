@@ -8,7 +8,28 @@ ImoTableView is an wrapper around **UITableView** which aims to facilitate worki
 - Xcode 8.1+
 - Swift 3.0+
 
-## Quick Onboarding ##
+## Installation
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "Alamofire/Alamofire" ~> 4.3
+```
+
+Run `carthage update` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
+
+## Quick Onboarding 
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
 1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
@@ -18,7 +39,7 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
 
-## Quick Implementation Example ##
+## Quick Implementation Example
 
 Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
@@ -81,7 +102,7 @@ open class ActionCellSource : ImoTableViewSource {
 }
 ```
 
-## Templates for everything 🍾 ##
+## Templates for everything 🍾 
 The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCellFromTemplate.gif "ImoTableView Logo")
