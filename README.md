@@ -151,4 +151,15 @@ table.deleteAllSections(at: YourSectionIndex)
 
 //Delete all sections
 table.deleteAllSections()
+
+//Did select source, after user touch up on cell
+table.didSelectSource = { source in
+    //Do something with source
+}
+
+//Did select cell at index path, after user touch up on cell
+table.didSelectCellAtIndexPath = { source in
+    //Do something with source
+}
+
 ```
