@@ -43,42 +43,31 @@ class ViewController: UIViewController {
 }
 ```
 
-The `ActionCell.swift` contain two classes `ActionCellSource` and `ActionCell`
-**ActionCellSource** Contain all information about the ActionCell class name, nib file, height and so on.
-**ActionCell** Contain on method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
+The `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
-import ImoTableView
-import UIKit
-
-open class ActionCellSource : ImoTableViewSource {
-    
-    let title: String
-    
-    public init(title: String) {
-        
-        self.title = title
-        
-        super.init(cellClass: "ActionCell")
-        //Nib file reference
-        self.nib = UINib(nibName: self.cellClass, bundle: Bundle.init(for: self.classForCoder))
-        //Height and width have default value but you can change it here or dynamically from extern
-        self.height = 100
-    }
-}
-
-open class ActionCell : ImoTableViewCell {
-    
-    @IBOutlet weak var title: UILabel!
-  
+open class ActionCell : ImoTableViewCell {   
+    @IBOutlet weak var actionTitle: UILabel!
     open override func setUpWithSource(source:AnyObject) {
         if let source = source as? ActionCellSource {
-            title.text = source.title
+            self.actionTitle.text = source.title
         }
     }
 }
-
 ```
+The `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
+
+```swift
+open class ActionCellSource : ImoTableViewSource {
+    public var title : String
+    init(title:String) {
+        self.title = title
+        super.init(cellClass: "ActionCell")
+        setNibBundle(with:Bundle.init(for: self.classForCoder))
+    }
+}
+```
+
 
 ## ImoCell.xctemplate ##
 
