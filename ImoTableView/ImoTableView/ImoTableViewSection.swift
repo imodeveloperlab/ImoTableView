@@ -93,7 +93,6 @@ open class ImoTableViewSection {
     
     /// Delete all sources
     public func deleteAll() {
-        
         sources.removeAll()
     }
     

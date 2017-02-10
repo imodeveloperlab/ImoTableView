@@ -19,6 +19,9 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     //Did select source closure
     public var didSelectSource : ((ImoTableViewSource?) -> (Void))?
     
+    //Did select cell at index path
+    public var didSelectCellAtIndexPath : ((IndexPath) -> (Void))?
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -190,8 +193,14 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     ///
     /// - Parameter sections: Array<ImoTableViewSection>
     public func add(_ sections:[ImoTableViewSection]) {
-        
         self.sections.append(contentsOf: sections)
+    }
+    
+    /// Delete section at index
+    ///
+    /// - Parameter index: Int
+    public func deleteSection(at index:Int) {
+        self.sections.remove(at: index)
     }
     
     /// Delete all sections
@@ -250,13 +259,21 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
         }
     }
     
-    //MARK : - Actions
+    // MARK: - Actions
     
+    /// Did select row delegate
+    ///
+    /// - Parameters:
+    ///   - tableView: UITableView
+    ///   - indexPath: IndexPath
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let action = self.didSelectSource {
             action(self.cellSourceForIndexPath(indexPath: indexPath))
         }
+        
+        if let action = self.didSelectCellAtIndexPath {
+            action(indexPath)
+        }
     }
-    
 }
