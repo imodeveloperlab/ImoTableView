@@ -46,23 +46,31 @@ class ViewController: UIViewController {
 The `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
-open class ActionCell : ImoTableViewCell {   
+open class ActionCell : ImoTableViewCell {
+    //UILabel from ActionCell.xib
     @IBOutlet weak var actionTitle: UILabel!
+    //This method is called every time your cell will be displayed on screen
     open override func setUpWithSource(source:AnyObject) {
+        //Cast source to ActionCellSource
         if let source = source as? ActionCellSource {
+            //Set the label title
             self.actionTitle.text = source.title
         }
     }
 }
 ```
-The `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
+The `ActionCellSource.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
 open class ActionCellSource : ImoTableViewSource {
+    
     public var title : String
+
     init(title:String) {
         self.title = title
+        //Init source an specify cell class you will represent by this source
         super.init(cellClass: "ActionCell")
+        //Set nib bundle if your cell is not in current project bundle
         setNibBundle(with:Bundle.init(for: self.classForCoder))
     }
 }
