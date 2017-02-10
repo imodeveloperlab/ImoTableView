@@ -7,9 +7,9 @@ ImoTableView is an wrapper around **UITableView** which aims to facilitate worki
 
 ## Requirements
 
-- iOS 9.3+
+- iOS 8.0+
 - Xcode 8.1+
-- Swift 3.0+
+- Swift 3.1+
 
 ## Installation
 
