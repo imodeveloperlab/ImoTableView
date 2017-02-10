@@ -132,6 +132,13 @@ section.delete(YourCellSource)
 
 //Delete All 
 section.deleteAll()
+
+//Set section header View
+section.headerView = YourView
+
+//Set section footer View
+section.footerView = YourView
+
 ```
 
 ### ImoTableView
