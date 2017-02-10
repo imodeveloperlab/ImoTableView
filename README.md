@@ -1,5 +1,8 @@
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/Logo.png "ImoTableView Logo")
 
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)]
+[![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
+
 ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
 ## Requirements
