@@ -79,7 +79,7 @@ open class ActionCellSource : ImoTableViewSource {
 
 ## Templates for everything 🍾 ##
 
-![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCell.gif "ImoTableView Logo")
+![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCellFromTemplate.gif "ImoTableView Logo")
 
 The quick onboarding for use **ImoTableView** is to add **ImoCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
