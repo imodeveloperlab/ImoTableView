@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     {
         super.viewDidLoad()
         let section = ImoTableViewSection()
-        let source = DemoCellSource()
-        section.add(source)
+        let actionCellSource = ActionCellCellSource(title: "Action")
+        section.add(actionCellSource)
         tableView.add(section)
     }
     

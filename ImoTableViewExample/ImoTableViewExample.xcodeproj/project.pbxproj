@@ -14,11 +14,8 @@
 		411410F11DF55ECD00E737BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411410EF1DF55ECD00E737BA /* LaunchScreen.storyboard */; };
 		411410F91DF55F1300E737BA /* ImoTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411410F81DF55F1300E737BA /* ImoTableView.framework */; };
 		411410FA1DF55F1300E737BA /* ImoTableView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 411410F81DF55F1300E737BA /* ImoTableView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4114114D1DF57D9600E737BA /* ImoCell.xctemplate in Resources */ = {isa = PBXBuildFile; fileRef = 4114114C1DF57D9600E737BA /* ImoCell.xctemplate */; };
-		4114115A1DF582F900E737BA /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 411411581DF582F900E737BA /* DemoCell.swift */; };
-		4114115B1DF582F900E737BA /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 411411591DF582F900E737BA /* DemoCell.xib */; };
-		4118D7A21E4B8641008A0423 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4118D7A01E4B8641008A0423 /* ExampleCell.swift */; };
-		4118D7A31E4B8641008A0423 /* ExampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4118D7A11E4B8641008A0423 /* ExampleCell.xib */; };
+		412338F91E4DB71000D71EAD /* ActionCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412338F71E4DB71000D71EAD /* ActionCellCell.swift */; };
+		412338FA1E4DB71000D71EAD /* ActionCellCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412338F81E4DB71000D71EAD /* ActionCellCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,11 +41,8 @@
 		411410F01DF55ECD00E737BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		411410F21DF55ECD00E737BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		411410F81DF55F1300E737BA /* ImoTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImoTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4114114C1DF57D9600E737BA /* ImoCell.xctemplate */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ImoCell.xctemplate; sourceTree = "<group>"; };
-		411411581DF582F900E737BA /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		411411591DF582F900E737BA /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
-		4118D7A01E4B8641008A0423 /* ExampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
-		4118D7A11E4B8641008A0423 /* ExampleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExampleCell.xib; sourceTree = "<group>"; };
+		412338F71E4DB71000D71EAD /* ActionCellCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellCell.swift; sourceTree = "<group>"; };
+		412338F81E4DB71000D71EAD /* ActionCellCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCellCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +77,6 @@
 		411410E51DF55ECD00E737BA /* ImoTableViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				4114114C1DF57D9600E737BA /* ImoCell.xctemplate */,
 				411410E61DF55ECD00E737BA /* AppDelegate.swift */,
 				411410E81DF55ECD00E737BA /* ViewController.swift */,
 				4118D7931E4B8175008A0423 /* Cells */,
@@ -106,10 +99,8 @@
 		4118D7931E4B8175008A0423 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				411411581DF582F900E737BA /* DemoCell.swift */,
-				411411591DF582F900E737BA /* DemoCell.xib */,
-				4118D7A01E4B8641008A0423 /* ExampleCell.swift */,
-				4118D7A11E4B8641008A0423 /* ExampleCell.xib */,
+				412338F71E4DB71000D71EAD /* ActionCellCell.swift */,
+				412338F81E4DB71000D71EAD /* ActionCellCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -174,11 +165,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4114114D1DF57D9600E737BA /* ImoCell.xctemplate in Resources */,
 				411410F11DF55ECD00E737BA /* LaunchScreen.storyboard in Resources */,
-				4114115B1DF582F900E737BA /* DemoCell.xib in Resources */,
+				412338FA1E4DB71000D71EAD /* ActionCellCell.xib in Resources */,
 				411410EE1DF55ECD00E737BA /* Assets.xcassets in Resources */,
-				4118D7A31E4B8641008A0423 /* ExampleCell.xib in Resources */,
 				411410EC1DF55ECD00E737BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,10 +179,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4118D7A21E4B8641008A0423 /* ExampleCell.swift in Sources */,
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
 				411410E71DF55ECD00E737BA /* AppDelegate.swift in Sources */,
-				4114115A1DF582F900E737BA /* DemoCell.swift in Sources */,
+				412338F91E4DB71000D71EAD /* ActionCellCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
