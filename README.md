@@ -27,10 +27,10 @@ $ brew install carthage
 To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Alamofire/Alamofire" ~> 4.3
+github "imodeveloperlab/ImoTableView" ~> 1.0
 ```
 
-Run `carthage update` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
+Run `carthage update` to build the framework and drag the built `ImoTableView.framework` into your Xcode project.
 
 ## Quick Onboarding 
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
@@ -165,7 +165,7 @@ table.didSelectSource = { source in
 }
 
 //Did select cell at index path, after user touch up on cell
-table.didSelectCellAtIndexPath = { source in
+table.didSelectCellAtIndexPath = { indexPath in
     //Do something with source
 }
 
