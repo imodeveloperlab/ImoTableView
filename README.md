@@ -43,7 +43,9 @@ class ViewController: UIViewController {
 }
 ```
 
-And this is how ```swift ActionCell.swift ``` looks like
+The `ActionCell.swift` contain two classes `ActionCellSource` and `ActionCell`
+**ActionCellSource** Contain all information about the ActionCell class name, nib file, height and so on.
+**ActionCell** Contain on method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
 import ImoTableView
