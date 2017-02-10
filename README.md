@@ -134,3 +134,21 @@ section.delete(YourCellSource)
 section.deleteAll()
 ```
 
+### ImoTableView
+
+```swift 
+//Create new table
+let table = ImoTableView()
+
+//Add section
+table.add(YourSection)
+
+//Add sections
+table.add(YourSections)
+
+//Delete section at index
+table.deleteAllSections(at: YourSectionIndex)
+
+//Delete all sections
+table.deleteAllSections()
+```
