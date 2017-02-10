@@ -1,9 +1,38 @@
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/Logo.png "ImoTableView Logo")
 
+![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
+[![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
+
 ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
-## Quick Onboarding  ##
+## Requirements
 
+- iOS 8.0+
+- Xcode 8.1+
+- Swift 3.1+
+
+## Installation
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "Alamofire/Alamofire" ~> 4.3
+```
+
+Run `carthage update` to build the framework and drag the built `Alamofire.framework` into your Xcode project.
+
+## Quick Onboarding 
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
 1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
@@ -13,54 +42,74 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
 
-## Quick Implementation Example ##
+## Quick Implementation Example
 
 Example of how quick and simple you can add an populate an tableView
-```swift 
-//Create table
-let table = ImoTableView()
-//Create an section for our table
-let section = ImoTableViewSection()
-//Create an source for section
-let source = DemoCellSource(title:"Demo Cell")
-//Add our source to section
-section.add(source)
-//Add section to table
-table.add(section)
-//Update our table view
-table.reloadData()
-```
-## ImoCell.xctemplate ##
-
-The quick onboarding for use **ImoTableView** is to add **ImoCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
-
-To add **ImoCell.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
-
-After create an folder ImoTableView and copy in this folder **ImoCell.xctemplate** from root folder of this repo
-
-### ExampleCell ###
-
+This is how ```swift ViewController.swift ``` looks like
 ```swift
-import ImoTableView
 import UIKit
+import ImoTableView
 
-open class ExampleCellSource : ImoTableViewSource {
-    public init() {
-        //TODO: Do your work here
-        super.init(cellClass: "ExampleCell")
-        //Load the nib file
-        self.nib = UINib(nibName: self.cellClass, bundle: Bundle.init(for: self.classForCoder))
-        //Height and width have default value but you can change it here or dynamically from extern
-        self.height = 100
+class ViewController: UIViewController {
+
+    //ImoTableView reference from ViewController
+    @IBOutlet weak var tableView: ImoTableView!
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        //Create new section
+        let section = ImoTableViewSection()
+        //Create new cellSource
+        let actionCellSource = ActionCellSource(title: "Action")
+        //Add cellSource to section
+        section.add(actionCellSource)
+        //Add section to table View
+        tableView.add(section)
+        //Reload table
+        tableView.reloadData()
     }
 }
+```
 
-open class ExampleCell : ImoTableViewCell {
+`ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
+
+```swift
+open class ActionCell : ImoTableViewCell {
+    //UILabel from ActionCell.xib
+    @IBOutlet weak var actionTitle: UILabel!
+    //This method is called every time your cell will be displayed on screen
     open override func setUpWithSource(source:AnyObject) {
-        if source is ExampleCellSource {
-            //TODO: Do your work here
+        //Cast source to ActionCellSource
+        if let source = source as? ActionCellSource {
+            //Set the label title
+            self.actionTitle.text = source.title
         }
     }
 }
-
 ```
+`ActionCellSource.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
+
+```swift
+open class ActionCellSource : ImoTableViewSource {
+    
+    public var title : String
+
+    init(title:String) {
+        self.title = title
+        //Init source an specify cell class you will represent by this source
+        super.init(cellClass: "ActionCell")
+        //Set nib bundle if your cell is not in current project bundle
+        setNibBundle(with:Bundle.init(for: self.classForCoder))
+    }
+}
+```
+
+## Templates for everything 🍾 
+The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
+
+![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCellFromTemplate.gif "ImoTableView Logo")
+
+To add **ImoTableViewCell.xctemplate.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
+
+After create an folder **ImoTableView** and copy in this folder **ImoTableViewCell.xctemplate** from Templates/ folder of this repo.
