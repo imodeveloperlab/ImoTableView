@@ -79,6 +79,8 @@ open class ActionCellSource : ImoTableViewSource {
 
 ## Templates for everything 🍾 ##
 
+![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCell.gif "ImoTableView Logo")
+
 The quick onboarding for use **ImoTableView** is to add **ImoCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
 To add **ImoCell.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
