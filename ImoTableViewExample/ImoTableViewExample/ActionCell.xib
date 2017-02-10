@@ -12,31 +12,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCellCell" rowHeight="97" id="nSl-cs-Nk9" customClass="ActionCellCell" customModule="ImoTableViewExample" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActionCell" rowHeight="97" id="nSl-cs-Nk9" customClass="ActionCell" customModule="ImoTableViewExample" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nSl-cs-Nk9" id="iPI-fm-6Gg">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tlT-lh-Gi0">
-                        <rect key="frame" x="18" y="8" width="349" height="81"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cs2-X7-sFg">
+                        <rect key="frame" x="18" y="8" width="349" height="80"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="tlT-lh-Gi0" firstAttribute="top" secondItem="iPI-fm-6Gg" secondAttribute="topMargin" id="56j-qO-46h"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="tlT-lh-Gi0" secondAttribute="bottom" id="9Xq-bi-WgU"/>
-                    <constraint firstItem="tlT-lh-Gi0" firstAttribute="leading" secondItem="iPI-fm-6Gg" secondAttribute="leadingMargin" constant="10" id="ocl-PD-j83"/>
-                    <constraint firstItem="tlT-lh-Gi0" firstAttribute="trailing" secondItem="iPI-fm-6Gg" secondAttribute="trailingMargin" id="tAd-lR-h60"/>
+                    <constraint firstItem="cs2-X7-sFg" firstAttribute="bottom" secondItem="iPI-fm-6Gg" secondAttribute="bottomMargin" id="TSp-IQ-jOU"/>
+                    <constraint firstItem="cs2-X7-sFg" firstAttribute="top" secondItem="iPI-fm-6Gg" secondAttribute="topMargin" id="WON-oD-6M2"/>
+                    <constraint firstItem="cs2-X7-sFg" firstAttribute="trailing" secondItem="iPI-fm-6Gg" secondAttribute="trailingMargin" id="cWN-sJ-qZ7"/>
+                    <constraint firstItem="cs2-X7-sFg" firstAttribute="leading" secondItem="iPI-fm-6Gg" secondAttribute="leadingMargin" constant="10" id="i8Z-Yl-CLY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="actionTitle" destination="tlT-lh-Gi0" id="adg-H2-DoB"/>
+                <outlet property="actionTitle" destination="cs2-X7-sFg" id="rRI-QH-0Bt"/>
             </connections>
-            <point key="canvasLocation" x="-422" y="-224"/>
+            <point key="canvasLocation" x="-354.5" y="-194.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:ImoTableView/ImoTableView.xcodeproj">
+      location = "group:ImoTableViewExample/ImoTableViewExample.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:ImoTableViewExample/ImoTableViewExample.xcodeproj">
+      location = "group:ImoTableView/ImoTableView.xcodeproj">
    </FileRef>
 </Workspace>
