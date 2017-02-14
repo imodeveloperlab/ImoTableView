@@ -6,62 +6,6 @@
 
 ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
 
-## Requirements
-
-- iOS 8.0+
-- Xcode 8.1+
-- Swift 3.1+
-
-## Installation
-
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "imodeveloperlab/ImoTableView" ~> 1.0
-```
-
-Run `carthage update` to build the framework and drag the built `ImoTableView.framework` into your Xcode project.
-
-
-### CocoaPods
-
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
-
-```bash
-$ gem install cocoapods
-```
-
-> CocoaPods 1.1.0+ is required to build ImoTableView 1.0.8+.
-
-To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.0'
-use_frameworks!
-
-target '<Your Target Name>' do
-    pod 'ImoTableView', '~> 1.0.8'
-end
-```
-
-Then, run the following command:
-
-```bash
-$ pod install
-```
-
 ## Quick Onboarding 
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
@@ -200,3 +144,60 @@ table.didSelectCellAtIndexPath = { indexPath in
 }
 
 ```
+
+## Requirements
+
+- iOS 8.0+
+- Xcode 8.1+
+- Swift 3.1+
+
+## Installation
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate Alamofire into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "imodeveloperlab/ImoTableView" ~> 1.0
+```
+
+Run `carthage update` to build the framework and drag the built `ImoTableView.framework` into your Xcode project.
+
+
+### CocoaPods
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+
+```bash
+$ gem install cocoapods
+```
+
+> CocoaPods 1.1.0+ is required to build ImoTableView 1.0.8+.
+
+To integrate Alamofire into your Xcode project using CocoaPods, specify it in your `Podfile`:
+
+```ruby
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+target '<Your Target Name>' do
+    pod 'ImoTableView', '~> 1.0.8'
+end
+```
+
+Then, run the following command:
+
+```bash
+$ pod install
+```
+
