@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     {
         super.viewDidLoad()
         
+        //Create an table andd ad on self.view
         let tableView = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
         //Create new section
         let section = ImoTableViewSection()
