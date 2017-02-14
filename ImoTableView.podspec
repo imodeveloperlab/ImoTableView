@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ImoTableView"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "More dynamic and reusable tables"
 
   # This description is used to generate tags and improve search results.
@@ -50,7 +50,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Borinschi Ivan" => "" }
+  s.author             = { "Borinschi Ivan" => "imodeveloperlab@gmail.com" }
   s.social_media_url   = "https://twitter.com/imodeveloper"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
