@@ -8,7 +8,25 @@
 
 import UIKit
 
-public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+    
+    //TableView
+    var tableView : UITableView
+    
+    public var separatorColor : UIColor? {
+        get { return self.tableView.separatorColor }
+        set { self.tableView.separatorColor = newValue }
+    }
+    
+    public var separatorInset : UIEdgeInsets {
+        get { return self.tableView.separatorInset }
+        set { self.tableView.separatorInset = newValue }
+    }
+    
+    override public var backgroundColor: UIColor? {
+        get { return self.tableView.backgroundColor }
+        set { self.tableView.backgroundColor = newValue }
+    }
     
     //This array hold all table sections
     var sections = [ImoTableViewSection]()
@@ -22,16 +40,37 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     //Did select cell at index path
     public var didSelectCellAtIndexPath : ((IndexPath) -> (Void))?
     
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
-        self.delegate = self
-        self.dataSource = self
+    public init(on view:UIView, insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
+
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        
+        view.addSubview(self)
+        view.edgesConstraints(to: self, insets: insets)
+        setUpTable()
     }
     
-    public required init?(coder aDecoder: NSCoder) {
+    override init(frame: CGRect) {
+        
+        self.tableView = UITableView(frame: frame)
+        super.init(frame: frame)
+        setUpTable()
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        
+        self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         super.init(coder: aDecoder)
-        self.delegate = self
-        self.dataSource = self
+        setUpTable()
+    }
+    
+    func setUpTable() {
+        
+        self.backgroundColor = UIColor.clear
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.addSubview(self.tableView)
+        self.edgesConstraints(to: self.tableView)
     }
     
     // MARK: - UITableView
@@ -103,7 +142,16 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
     public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-        
+    
+    public func reloadData() {
+        tableView.reloadData()
+    }
+    
+    public func statiCell(cellClass:String, nib: UINib?) -> ImoTableViewCell? {
+        self.registerCellClass(cellClass: cellClass, nib: nib)
+        return tableView.dequeueReusableCell(withIdentifier:cellClass) as! ImoTableViewCell?
+    }
+    
     // MARK: - UITableView HeaderView
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -250,10 +298,10 @@ public final class ImoTableView : UITableView, UITableViewDelegate, UITableViewD
         
         if !registeredCells.contains(cellClass) {
             if let _ = nib {
-                self.register(nib, forCellReuseIdentifier:cellClass)
+                self.tableView.register(nib, forCellReuseIdentifier:cellClass)
                 registeredCells.append(cellClass)
             } else {
-                self.register(NSClassFromString(cellClass), forCellReuseIdentifier:cellClass)
+                self.tableView.register(NSClassFromString(cellClass), forCellReuseIdentifier:cellClass)
                 registeredCells.append(cellClass)
             }
         }

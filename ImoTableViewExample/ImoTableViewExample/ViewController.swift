@@ -11,13 +11,11 @@ import ImoTableView
 
 class ViewController: UIViewController {
 
-    //ImoTableView reference from ViewController
-    @IBOutlet weak var tableView: ImoTableView!
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        let tableView = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
         //Create new section
         let section = ImoTableViewSection()
         //Create new cellSource
