@@ -4,9 +4,17 @@
 ![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
 
-ImoTableView is an wrapper around **UITableView** which aims to facilitate working with tables and make work more reusable and more dynamic, make it simple and quick to implement, you don't need to work with standart **UITableView** delegates anymore.
+An wrapper around **UITableView** which aims to facilitate working with tables.
 
-## Quick Onboarding 
+
+- [Onboarding](#onboarding)
+- [Implementation Example](#implementation-example)
+- [Templates](#templates)
+- [Snippets](#snippets)
+- [Requirements](#requirements)
+- [Installation](#installation)
+
+## Onboarding 
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
 1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
@@ -16,7 +24,7 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
 
-## Quick Implementation Example
+## Implementation Example
 
 Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
@@ -79,7 +87,7 @@ open class ActionCellSource : ImoTableViewSource {
 }
 ```
 
-## Templates for everything 🍾 
+## Templates 
 The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCellFromTemplate.gif "ImoTableView Logo")
