@@ -30,17 +30,8 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
 ```swift
-import UIKit
-import ImoTableView
-
-class ViewController: UIViewController {
-
-    //ImoTableView reference from ViewController
-    @IBOutlet weak var tableView: ImoTableView!
-    
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
+//Create an table andd ad on SomeUIView
+        let tableView = ImoTableView(on: SomeUIView, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
         //Create new section
         let section = ImoTableViewSection()
         //Create new cellSource
@@ -51,8 +42,6 @@ class ViewController: UIViewController {
         tableView.add(section)
         //Reload table
         tableView.reloadData()
-    }
-}
 ```
 
 `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
