@@ -28,12 +28,13 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         set { self.tableView.backgroundColor = newValue }
     }
     
+    
     //This array hold all table sections
     var sections = [ImoTableViewSection]()
     
     //Array off Registered Cells Identifiers
     var registeredCells = [String]()
-
+    
     //Did select source closure
     public var didSelectSource : ((ImoTableViewSource?) -> (Void))?
     
@@ -41,7 +42,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public var didSelectCellAtIndexPath : ((IndexPath) -> (Void))?
     
     public init(on view:UIView, insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
-
+        
         self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
@@ -143,9 +144,15 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return sections.count
     }
     
-    public func reloadData() {
+    public func update(animated:Bool = false,
+                       insertAnimation:UITableViewRowAnimation = .fade,
+                       deleteAnimation:UITableViewRowAnimation = .fade,
+                       updateAnimation:UITableViewRowAnimation = .fade)
+    {
         tableView.reloadData()
     }
+    
+    
     
     public func statiCell(cellClass:String, nib: UINib?) -> ImoTableViewCell? {
         self.registerCellClass(cellClass: cellClass, nib: nib)
@@ -173,7 +180,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     func heightForHeaderViewInSection(_ section: ImoTableViewSection) -> CGFloat {
         
-        if (section.headerView == nil) {
+        if (section.headerView == nil && section.headerTitle == nil) {
             return 0
         } else if let height = section.headerHeight {
             return height
@@ -190,6 +197,15 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return 0
     }
     
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.headerTitle
+        }
+        return nil
+    }
+    
+    
     // MARK: - UITableView FooterView
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -202,7 +218,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     func heightForFooterInSection(_ section:ImoTableViewSection) -> CGFloat {
         
-        if (section.footerView == nil) {
+        if (section.footerView == nil && section.footerTitle == nil) {
             return 0
         } else if let height = section.footerHeight {
             return height
@@ -228,32 +244,61 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return nil
     }
     
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        
+        if let section = sectionForIndex(index: section) {
+            return section.footerTitle
+        }
+        return nil
+    }
+    
     // MARK: - Sources
     
     /// Add section to table view
     ///
     /// - Parameter section: ImoTableViewSection
-    public func add(_ section:ImoTableViewSection) {
+    public func add(section:ImoTableViewSection) {
         sections.append(section)
     }
     
     /// Add sections to table view
     ///
     /// - Parameter sections: Array<ImoTableViewSection>
-    public func add(_ sections:[ImoTableViewSection]) {
+    public func add(sections:[ImoTableViewSection]) {
+        
         self.sections.append(contentsOf: sections)
+        
     }
     
     /// Delete section at index
     ///
     /// - Parameter index: Int
     public func deleteSection(at index:Int) {
+        
         self.sections.remove(at: index)
     }
     
     /// Delete all sections
     public func deleteAllSections() {
+        
         sections.removeAll()
+    }
+    
+    /// Delete first
+    public func deleteFirstSection() {
+        
+        sections.removeFirst()
+    }
+    
+    /// Delete last
+    public func deleteLastSection() {
+
+        sections.removeLast()
+    }
+    
+    
+    public func lastSection() -> ImoTableViewSection? {
+        return self.sections.last
     }
     
     /// Get section for given Index
@@ -279,6 +324,14 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return section.get(sourceAtIndex: indexPath.row)
         }
         return nil
+    }
+    
+    /// Index of section
+    ///
+    /// - Parameter section: Section object
+    /// - Returns: Section Index
+    public func indexFor(section:ImoTableViewSection) -> Int? {
+        return self.sections.index(of:section)
     }
     
     /// Register cell class for source
@@ -316,8 +369,17 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     ///   - indexPath: IndexPath
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let source = self.cellSourceForIndexPath(indexPath: indexPath)
+        
         if let action = self.didSelectSource {
-            action(self.cellSourceForIndexPath(indexPath: indexPath))
+            action(source)
+        }
+        
+        //Call sources target with selector
+        if let target = source?.target {
+            if let selector = source?.selector {
+                target.perform(selector)
+            }
         }
         
         if let action = self.didSelectCellAtIndexPath {

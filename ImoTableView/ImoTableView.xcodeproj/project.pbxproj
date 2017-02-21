@@ -15,6 +15,8 @@
 		4114112D1DF564DC00E737BA /* ImoTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411410CF1DF55EB000E737BA /* ImoTableView.framework */; };
 		412339411E4E192500D71EAD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 412339401E4E192500D71EAD /* .swiftlint.yml */; };
 		412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */; };
+		412DA90C1E5CAE510096F22D /* ImoTableViewUpdateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */; };
+		412DA90E1E5CAF110096F22D /* ImoTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DA90D1E5CAF110096F22D /* ImoTableViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		4114112C1DF564DC00E737BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		412339401E4E192500D71EAD /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUtils.swift; sourceTree = "<group>"; };
+		412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUpdateAction.swift; sourceTree = "<group>"; };
+		412DA90D1E5CAF110096F22D /* ImoTableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +88,11 @@
 				412339401E4E192500D71EAD /* .swiftlint.yml */,
 				412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */,
 				4114111B1DF55FBF00E737BA /* ImoTableView.swift */,
+				412DA90D1E5CAF110096F22D /* ImoTableViewExtensions.swift */,
 				4114111D1DF5604B00E737BA /* ImoTableViewSection.swift */,
 				4114111F1DF5607100E737BA /* ImoTableViewSource.swift */,
 				411411211DF5608100E737BA /* ImoTableViewCell.swift */,
+				412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */,
 				411410D31DF55EB000E737BA /* Info.plist */,
 			);
 			path = ImoTableView;
@@ -233,6 +239,8 @@
 				412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */,
 				411411221DF5608100E737BA /* ImoTableViewCell.swift in Sources */,
 				411411201DF5607100E737BA /* ImoTableViewSource.swift in Sources */,
+				412DA90E1E5CAF110096F22D /* ImoTableViewExtensions.swift in Sources */,
+				412DA90C1E5CAE510096F22D /* ImoTableViewUpdateAction.swift in Sources */,
 				4114111E1DF5604B00E737BA /* ImoTableViewSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

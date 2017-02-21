@@ -18,7 +18,7 @@ enum ImoTableViewSectionError : Error {
 }
 
 /// Section hold all table sources, header and footer view
-open class ImoTableViewSection {
+open class ImoTableViewSection : NSObject {
     
     /// default is 40
     public var estimatedHeaderHeight : CGFloat = 40
@@ -33,16 +33,31 @@ open class ImoTableViewSection {
     /// Footer UIView
     public var footerView : UIView?
     
+    /// Header title
+    public var headerTitle : String?
+    
+    /// Footer title
+    public var footerTitle : String?
+    
     var sources = [ImoTableViewSource]()
     
-    public init() {
+    public override init() {
         
     }
     
     /// Add new source in section
     ///
     /// - Parameter source: CellSource
-    public func add(_ source: ImoTableViewSource) {
+    public func add(_ source: ImoTableViewSource, target:AnyObject? = nil, _ selector:Selector? = nil) {
+        
+        if let target = target {
+            source.target = target
+        }
+        
+        if let selector = selector {
+            source.selector = selector
+        }
+        
         sources.append(source)
     }
     

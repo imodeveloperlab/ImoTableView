@@ -11,21 +11,127 @@ import ImoTableView
 
 class ViewController: UIViewController {
 
+    var tableView : ImoTableView?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         //Create an table andd ad on self.view
-        let tableView = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
-        //Create new section
-        let section = ImoTableViewSection()
-        //Create new cellSource
-        let actionCellSource = ActionCellSource(title: "Action")
-        //Add cellSource to section
-        section.add(actionCellSource)
-        //Add section to table View
-        tableView.add(section)
-        //Reload table
-        tableView.reloadData()
+        tableView = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+
+        if let tableView = self.tableView {
+            
+            //Create new section
+            let section = ImoTableViewSection()
+            
+            //Add one section
+            let addSectionCellSource = ActionCellSource(title: "- Add section")
+            section.add(addSectionCellSource, target:self, #selector(addSection))
+            
+            //Add multiple sections
+            let addSectionsCellSource = ActionCellSource(title: "Add multiple sections")
+            section.add(addSectionsCellSource, target:self, #selector(addSections))
+            
+            //Delete last section
+            let deleteSectionCellSource = ActionCellSource(title: "Delete last section")
+            section.add(deleteSectionCellSource, target:self, #selector(deleteLastSection))
+            
+            //Mix updates
+            let mixUpdatesCellSource = ActionCellSource(title: "Mix updates")
+            section.add(mixUpdatesCellSource, target:self, #selector(mixedUpdates))
+            
+            //Mix updates
+            let updateCellSource = ActionCellSource(title: "Update last section")
+            section.add(updateCellSource, target:self, #selector(updateLastSection))
+
+            //Add section to table View
+            tableView.add(section:section)
+            
+            tableView.update()
+      
+        }
     }
+    
+    func addSections() {
+        
+        if let tableView = self.tableView {
+            
+            var sections : [ImoTableViewSection] = []
+            sections.append(makeSection(with: "First section"))
+            sections.append(makeSection(with: "Second section"))
+            tableView.add(sections:sections)
+            tableView.update(animated: true)
+        }
+    }
+    
+    func addSection() {
+        
+        if let tableView = self.tableView {
+
+            tableView.add(section:makeSection(with: "New section"))
+            tableView.add(section:makeSection(with: "New section"))
+            tableView.add(section:makeSection(with: "New section"))
+            tableView.add(section:makeSection(with: "New section"))
+            tableView.add(section:makeSection(with: "New section"))
+            tableView.update(animated: true)
+        }
+    }
+    
+    
+    func deleteLastSection() {
+        
+        if let tableView = self.tableView {
+            
+            tableView.deleteLastSection()
+            tableView.update(animated: true)
+        }
+    }
+    
+    
+    func mixedUpdates() {
+        
+        if let tableView = self.tableView {
+            
+            tableView.deleteLastSection()
+            tableView.add(section:makeSection(with: "Updated section 1"))
+            tableView.add(section:makeSection(with: "Updated section 2"))
+            tableView.add(section:makeSection(with: "Updated section 3"))
+            tableView.deleteLastSection()
+            tableView.add(section:makeSection(with: "Updated section 4"))
+            tableView.add(section:makeSection(with: "Updated section 5"))
+            
+            tableView.update(animated: true)
+            
+        }
+    }
+    
+    func updateLastSection() {
+        if let tableView = self.tableView {
+            if let section = tableView.lastSection() {
+                
+                section.add(ActionCellSource(title: "New source"))
+                tableView.update(animated: true)
+            }
+        }
+    }
+    
+    
+    func makeSection(with title:String) -> ImoTableViewSection {
+        
+        let section = ImoTableViewSection()
+        section.headerTitle = title
+        section.headerHeight = 40
+        
+        let fisrsCellSource = ActionCellSource(title: "First cell source")
+        section.add(fisrsCellSource)
+        
+        let secondCellSource = ActionCellSource(title: "Second source")
+        section.add(secondCellSource)
+        
+        return section;
+
+    }
+    
+    
 }
