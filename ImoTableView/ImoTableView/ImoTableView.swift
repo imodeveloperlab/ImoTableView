@@ -149,12 +149,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func update(animated:Bool = false,
                        insertAnimation:UITableViewRowAnimation = .fade,
                        deleteAnimation:UITableViewRowAnimation = .fade,
-                       updateAnimation:UITableViewRowAnimation = .fade)
-    {
+                       updateAnimation:UITableViewRowAnimation = .fade) {
         tableView.reloadData()
     }
-    
-    
     
     public func statiCell(cellClass:String, nib: UINib?) -> ImoTableViewCell? {
         self.registerCellClass(cellClass: cellClass, nib: nib)
