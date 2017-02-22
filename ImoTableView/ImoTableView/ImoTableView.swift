@@ -13,24 +13,38 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //TableView
     var tableView : UITableView
     
+    /// Set the separator collor of table view
     public var separatorColor : UIColor? {
         get { return self.tableView.separatorColor }
         set { self.tableView.separatorColor = newValue }
     }
     
+    /// Separator insset
     public var separatorInset : UIEdgeInsets {
         get { return self.tableView.separatorInset }
         set { self.tableView.separatorInset = newValue }
     }
     
+    // Tableview background Color
     override public var backgroundColor: UIColor? {
         get { return self.tableView.backgroundColor }
         set { self.tableView.backgroundColor = newValue }
     }
     
+    public var tableSections = [ImoTableSection]() {
+        
+        didSet {
+            print("didSet")
+        }
+    }
     
     //This array hold all table sections
-    var sections = [ImoTableViewSection]()
+    var sections = [ImoTableViewSection]() {
+        
+        didSet {
+            print("Changes")
+        }
+    }
     
     //Array off Registered Cells Identifiers
     var registeredCells = [String]()

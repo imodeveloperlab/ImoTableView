@@ -7,3 +7,31 @@
 //
 
 import Foundation
+
+public struct ImoTableSource {
+   
+    var cellClass : String
+    
+    public init(cellClass : String) {
+        self.cellClass = cellClass
+    }
+    
+}
+
+public struct ImoTableSection {
+    
+    public init () {
+        
+    }
+    
+    public var ion : String = ""
+    
+    var sources : [ImoTableSource] = []
+}
+
+public extension ImoTableSection {
+    
+    mutating func addSource(source:ImoTableSource) {
+        sources.append(source)
+    }
+}

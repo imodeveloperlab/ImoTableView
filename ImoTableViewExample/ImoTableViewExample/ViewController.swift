@@ -12,6 +12,8 @@ import ImoTableView
 class ViewController: UIViewController {
 
     var tableView : ImoTableView?
+    let section = ImoTableViewSection()
+    var section1 = ImoTableSection()
     
     override func viewDidLoad()
     {
@@ -21,9 +23,6 @@ class ViewController: UIViewController {
         tableView = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
 
         if let tableView = self.tableView {
-            
-            //Create new section
-            let section = ImoTableViewSection()
             
             //Add one section
             let addSectionCellSource = ActionCellSource(title: "- Add section")
@@ -44,13 +43,37 @@ class ViewController: UIViewController {
             //Mix updates
             let updateCellSource = ActionCellSource(title: "Update last section")
             section.add(updateCellSource, target:self, #selector(updateLastSection))
+            
+            
+            //Mix updates
+            let addRowCellSource = ActionCellSource(title: "Add row in section")
+            section.add(addRowCellSource, target:self, #selector(addRowInSection))
 
             //Add section to table View
             tableView.add(section:section)
             
             tableView.update()
+            
+            
+            
+            let source = ImoTableSource(cellClass:"Ion")
+            
+            section1.addSource(source: source)
+            
+            tableView.tableSections = [section1];
       
         }
+    }
+    
+    func addRowInSection() {
+        
+        let rowCellSource = ActionCellSource(title: "New ro in main section")
+        section.add(rowCellSource)
+        //tableView?.update()
+        
+        let source = ImoTableSource(cellClass:"Ion")
+        section1.addSource(source: source)
+        section1.ion = "Ion"
     }
     
     func addSections() {
