@@ -31,20 +31,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         set { self.tableView.backgroundColor = newValue }
     }
     
-    public var tableSections = [ImoTableSection]() {
-        
-        didSet {
-            print("didSet")
-        }
-    }
-    
     //This array hold all table sections
-    var sections = [ImoTableViewSection]() {
-        
-        didSet {
-            print("Changes")
-        }
-    }
+    var sections = [ImoTableViewSection]()
     
     //Array off Registered Cells Identifiers
     var registeredCells = [String]()

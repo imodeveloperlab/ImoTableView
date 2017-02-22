@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 
     var tableView : ImoTableView?
     let section = ImoTableViewSection()
-    var section1 = ImoTableSection()
+    let addRowCellSource = ActionCellSource(title: "Add row in section")
     
     override func viewDidLoad()
     {
@@ -46,21 +46,12 @@ class ViewController: UIViewController {
             
             
             //Mix updates
-            let addRowCellSource = ActionCellSource(title: "Add row in section")
             section.add(addRowCellSource, target:self, #selector(addRowInSection))
 
             //Add section to table View
             tableView.add(section:section)
             
             tableView.update()
-            
-            
-            
-            let source = ImoTableSource(cellClass:"Ion")
-            
-            section1.addSource(source: source)
-            
-            tableView.tableSections = [section1];
       
         }
     }
@@ -69,11 +60,8 @@ class ViewController: UIViewController {
         
         let rowCellSource = ActionCellSource(title: "New ro in main section")
         section.add(rowCellSource)
-        //tableView?.update()
-        
-        let source = ImoTableSource(cellClass:"Ion")
-        section1.addSource(source: source)
-        section1.ion = "Ion"
+        addRowCellSource.title = "Hello world";
+        tableView?.update()
     }
     
     func addSections() {
