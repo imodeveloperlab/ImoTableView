@@ -81,8 +81,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     /// Give to table view number of rows in your section
     ///
     /// - Parameters:
-    ///   - tableView: UITableView
-    ///   - section: Section
+    /// - tableView: UITableView
+    /// - section: Section
     /// - Returns: Number of rows in section
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if self.sections.indices.contains(section) {
@@ -291,7 +291,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     /// Delete last
     public func deleteLastSection() {
-
+        
         sections.removeLast()
     }
     
@@ -344,8 +344,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     /// Register cell class
     ///
     /// - Parameters:
-    ///   - cellClass: Cell class name, also this name is uniq identifier of the cell
-    ///   - nib: Cell nib
+    /// - cellClass: Cell class name, also this name is uniq identifier of the cell
+    /// - nib: Cell nib
     public func registerCellClass(cellClass: String, nib: UINib?) {
         
         if !registeredCells.contains(cellClass) {
@@ -364,25 +364,38 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     /// Did select row delegate
     ///
     /// - Parameters:
-    ///   - tableView: UITableView
-    ///   - indexPath: IndexPath
+    /// - tableView: UITableView
+    /// - indexPath: IndexPath
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let source = self.cellSourceForIndexPath(indexPath: indexPath)
-        
-        if let action = self.didSelectSource {
-            action(source)
-        }
-        
-        //Call sources target with selector
-        if let target = source?.target {
-            if let selector = source?.selector {
-                target.perform(selector)
+        if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
+            
+            if let didSelect = self.didSelectSource {
+                didSelect(source)
             }
-        }
-        
-        if let action = self.didSelectCellAtIndexPath {
-            action(indexPath)
+            
+            if let action = self.didSelectCellAtIndexPath {
+                action(indexPath)
+            }
+            
+            self.performSelector(for: source)
         }
     }
+    
+    /// Perform selector
+    ///
+    /// - Parameter source: ImoTableViewSource
+    func performSelector(for source:ImoTableViewSource) {
+        
+        if let target = source.target {
+            if let selector = source.selector {
+                if target.responds(to: selector) {
+                    if let object = source.object {
+                        target.perform(selector, with: object)
+                    } else { target.perform(selector) }
+                }
+            }
+        }
+    }
+    
 }
