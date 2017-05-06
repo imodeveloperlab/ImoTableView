@@ -61,6 +61,20 @@ open class ImoTableViewSection : NSObject {
         sources.append(source)
     }
     
+
+    /// Add array of sources
+    ///
+    /// - Parameters:
+    ///   - sources: Cell Source
+    ///   - target: Add source action to an target
+    ///   - selector: Sellector for target
+    public func add(sources: [ImoTableViewSource], target:AnyObject? = nil, _ selector:Selector? = nil) {
+        for source in sources {
+            self.add(source, target: target, selector)
+        }
+    }
+    
+    
     /// Get source from section specific index
     ///
     /// - Parameter index: Source Index

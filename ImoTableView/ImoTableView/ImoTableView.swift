@@ -11,7 +11,7 @@ import UIKit
 public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     //TableView
-    var tableView : UITableView
+    public var tableView : UITableView
     
     /// Set the separator collor of table view
     public var separatorColor : UIColor? {
