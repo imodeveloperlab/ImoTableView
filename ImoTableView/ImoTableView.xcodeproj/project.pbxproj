@@ -16,6 +16,12 @@
 		412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */; };
 		412DA90C1E5CAE510096F22D /* ImoTableViewUpdateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */; };
 		412DA90E1E5CAF110096F22D /* ImoTableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DA90D1E5CAF110096F22D /* ImoTableViewExtensions.swift */; };
+		414B8C681EBE417000836AE3 /* ImoTableViewTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */; };
+		414B8C6B1EBE422800836AE3 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C691EBE422800836AE3 /* TestCell.swift */; };
+		414B8C6C1EBE422800836AE3 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414B8C6A1EBE422800836AE3 /* TestCell.xib */; };
+		414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C6E1EBE44E400836AE3 /* TestACell.swift */; };
+		414B8C711EBE44E400836AE3 /* TestACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414B8C6F1EBE44E400836AE3 /* TestACell.xib */; };
+		414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C721EBE4D7300836AE3 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +47,12 @@
 		412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUtils.swift; sourceTree = "<group>"; };
 		412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUpdateAction.swift; sourceTree = "<group>"; };
 		412DA90D1E5CAF110096F22D /* ImoTableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtensions.swift; sourceTree = "<group>"; };
+		414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewTestsHelper.swift; sourceTree = "<group>"; };
+		414B8C691EBE422800836AE3 /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		414B8C6A1EBE422800836AE3 /* TestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
+		414B8C6E1EBE44E400836AE3 /* TestACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestACell.swift; sourceTree = "<group>"; };
+		414B8C6F1EBE44E400836AE3 /* TestACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestACell.xib; sourceTree = "<group>"; };
+		414B8C721EBE4D7300836AE3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +110,24 @@
 		411411291DF564DB00E737BA /* ImoTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
+				414B8C721EBE4D7300836AE3 /* TestViewController.swift */,
+				414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */,
 				4114112A1DF564DB00E737BA /* ImoTableViewTests.swift */,
 				4114112C1DF564DC00E737BA /* Info.plist */,
+				414B8C6D1EBE44BC00836AE3 /* Cells */,
 			);
 			path = ImoTableViewTests;
+			sourceTree = "<group>";
+		};
+		414B8C6D1EBE44BC00836AE3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				414B8C691EBE422800836AE3 /* TestCell.swift */,
+				414B8C6A1EBE422800836AE3 /* TestCell.xib */,
+				414B8C6E1EBE44E400836AE3 /* TestACell.swift */,
+				414B8C6F1EBE44E400836AE3 /* TestACell.xib */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +187,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Imodeveloperlab;
 				TargetAttributes = {
 					411410CE1DF55EB000E737BA = {
@@ -205,6 +231,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414B8C6C1EBE422800836AE3 /* TestCell.xib in Resources */,
+				414B8C711EBE44E400836AE3 /* TestACell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */,
 				4114112B1DF564DB00E737BA /* ImoTableViewTests.swift in Sources */,
+				414B8C6B1EBE422800836AE3 /* TestCell.swift in Sources */,
+				414B8C681EBE417000836AE3 /* ImoTableViewTestsHelper.swift in Sources */,
+				414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +310,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -331,6 +364,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

@@ -31,6 +31,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         set { self.tableView.backgroundColor = newValue }
     }
     
+    //Estimated height for row
+    var estimatedHeightForRow: CGFloat = 40
+    
     //This array hold all table sections
     var sections = [ImoTableViewSection]()
     
@@ -43,7 +46,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //Did select cell at index path
     public var didSelectCellAtIndexPath : ((IndexPath) -> (Void))?
     
-    public init(on view:UIView, insets:UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
+    public init(on view: UIView, insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
         
         self.tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -85,17 +88,18 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     /// - section: Section
     /// - Returns: Number of rows in section
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         if self.sections.indices.contains(section) {
             let section : ImoTableViewSection = self.sections[section]
             return section.count()
         }
+
         return 0
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
-            
             self.registerCellClassForSource(source: source)
             return self.cellForSource(tableView, source, cellForRowAt: indexPath)
         }
@@ -139,7 +143,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 40
+        return self.estimatedHeightForRow
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -150,12 +154,21 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
                        insertAnimation:UITableViewRowAnimation = .fade,
                        deleteAnimation:UITableViewRowAnimation = .fade,
                        updateAnimation:UITableViewRowAnimation = .fade) {
+        
         tableView.reloadData()
     }
     
     public func statiCell(cellClass:String, nib: UINib?) -> ImoTableViewCell? {
         self.registerCellClass(cellClass: cellClass, nib: nib)
-        return tableView.dequeueReusableCell(withIdentifier:cellClass) as! ImoTableViewCell?
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier:cellClass) {
+            if cell.isKind(of: ImoTableViewCell.classForCoder()) {
+                return cell as? ImoTableViewCell
+            }
+        }
+        
+        return ImoTableViewCell()
+        
     }
     
     // MARK: - UITableView HeaderView
@@ -203,7 +216,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         }
         return nil
     }
-    
     
     // MARK: - UITableView FooterView
     
@@ -295,7 +307,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         sections.removeLast()
     }
     
-    
     public func lastSection() -> ImoTableViewSection? {
         return self.sections.last
     }
@@ -337,7 +348,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     ///
     /// - Parameter source: ImoTableViewSource
     public func registerCellClassForSource(source:ImoTableViewSource) {
-        
         registerCellClass(cellClass: source.cellClass, nib: source.nib)
     }
     
@@ -370,32 +380,44 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         
         if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
             
-            if let didSelect = self.didSelectSource {
-                didSelect(source)
-            }
-            
-            if let action = self.didSelectCellAtIndexPath {
-                action(indexPath)
-            }
-            
-            self.performSelector(for: source)
+            didSelect(source: source)
+            didSelectCellAtIndexPath(indexPath: indexPath)
+            performSelector(for: source)
+        }
+    }
+    
+    func didSelect(source: ImoTableViewSource) {
+        
+        if let didSelect = self.didSelectSource {
+            didSelect(source)
+        }
+    }
+    
+    func didSelectCellAtIndexPath(indexPath: IndexPath) {
+        
+        if let action = self.didSelectCellAtIndexPath {
+            action(indexPath)
         }
     }
     
     /// Perform selector
     ///
     /// - Parameter source: ImoTableViewSource
-    func performSelector(for source:ImoTableViewSource) {
+    func performSelector(for source: ImoTableViewSource) {
         
         if let target = source.target {
             if let selector = source.selector {
-                if target.responds(to: selector) {
-                    if let object = source.object {
-                        target.perform(selector, with: object)
-                    } else { target.perform(selector) }
-                }
+                performSelector(target: target, selector: selector, source: source)
             }
         }
+    }
+    
+    func performSelector(target: AnyObject, selector: Selector, source: ImoTableViewSource) {
+        
+        if let object = source.object {
+            _ = target.perform(selector, with: object)
+        } else { _ = target.perform(selector) }
+        
     }
     
 }

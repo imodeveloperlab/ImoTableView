@@ -61,7 +61,6 @@ open class ImoTableViewSection : NSObject {
         sources.append(source)
     }
     
-
     /// Add array of sources
     ///
     /// - Parameters:
@@ -73,7 +72,6 @@ open class ImoTableViewSection : NSObject {
             self.add(source, target: target, selector)
         }
     }
-    
     
     /// Get source from section specific index
     ///
