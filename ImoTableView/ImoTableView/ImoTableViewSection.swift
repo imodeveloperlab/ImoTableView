@@ -32,10 +32,8 @@ open class ImoTableViewSection : NSObject {
     public var headerView : UIView?
     /// Footer UIView
     public var footerView : UIView?
-    
     /// Header title
     public var headerTitle : String?
-    
     /// Footer title
     public var footerTitle : String?
     

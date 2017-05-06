@@ -22,6 +22,7 @@
 		414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C6E1EBE44E400836AE3 /* TestACell.swift */; };
 		414B8C711EBE44E400836AE3 /* TestACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414B8C6F1EBE44E400836AE3 /* TestACell.xib */; };
 		414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C721EBE4D7300836AE3 /* TestViewController.swift */; };
+		414B8C751EBE609800836AE3 /* ImoTableViewSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		414B8C6E1EBE44E400836AE3 /* TestACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestACell.swift; sourceTree = "<group>"; };
 		414B8C6F1EBE44E400836AE3 /* TestACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestACell.xib; sourceTree = "<group>"; };
 		414B8C721EBE4D7300836AE3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				414B8C721EBE4D7300836AE3 /* TestViewController.swift */,
 				414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */,
 				4114112A1DF564DB00E737BA /* ImoTableViewTests.swift */,
+				414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */,
 				4114112C1DF564DC00E737BA /* Info.plist */,
 				414B8C6D1EBE44BC00836AE3 /* Cells */,
 			);
@@ -276,6 +279,7 @@
 				414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */,
 				4114112B1DF564DB00E737BA /* ImoTableViewTests.swift in Sources */,
 				414B8C6B1EBE422800836AE3 /* TestCell.swift in Sources */,
+				414B8C751EBE609800836AE3 /* ImoTableViewSectionTests.swift in Sources */,
 				414B8C681EBE417000836AE3 /* ImoTableViewTestsHelper.swift in Sources */,
 				414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */,
 			);
