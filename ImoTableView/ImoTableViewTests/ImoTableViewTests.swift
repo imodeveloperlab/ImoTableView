@@ -222,6 +222,8 @@ class ImoTableViewTests: XCTestCase {
         
         table.add(section: section)
         
+        table.update()
+        
         let height = table.tableView(table.tableView, heightForRowAt: IndexPath(row: 0, section: 0))
         
         XCTAssertEqual(height, 200)
@@ -236,4 +238,26 @@ class ImoTableViewTests: XCTestCase {
         XCTAssertEqual(estimated, 15)
     }
     
+    func testIndexSetForSections() {
+        
+        let table = tableView()
+        
+        let sectionA = ImoTableViewSection()
+        let sectionB = ImoTableViewSection()
+        let sectionC = ImoTableViewSection()
+        let sectionD = ImoTableViewSection()
+        let sectionE = ImoTableViewSection()
+        
+        table.add(section: sectionA)
+        table.add(section: sectionB)
+        table.add(section: sectionC)
+        table.add(section: sectionD)
+        table.add(section: sectionE)
+        
+        let indexSet = table.indexSetForSections(sections: [sectionA, sectionC, sectionE])
+        
+        XCTAssertTrue(indexSet.contains(0))
+        XCTAssertTrue(indexSet.contains(2))
+        XCTAssertTrue(indexSet.contains(4))
+    }
 }

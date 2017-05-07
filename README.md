@@ -1,6 +1,8 @@
 ![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/Logo.png "ImoTableView Logo")
 
+
 ![Swift](http://img.shields.io/badge/swift-3.0-brightgreen.svg)
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=590f6ccf598da90001a1d9b7&branch=development&build=latest)](https://dashboard.buddybuild.com/apps/590f6ccf598da90001a1d9b7/build/latest?branch=development)
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 ![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
