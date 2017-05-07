@@ -19,7 +19,6 @@ open class ActionCellSource : ImoTableViewSource {
         super.init(cellClass: "ActionCell")
         //Set nib bundle if your cell is not in current project bundle
         setNibBundle(with:Bundle.init(for: self.classForCoder))
-        
-        self.height = 70
+
     }
 }
