@@ -91,7 +91,7 @@ class ImoTableViewSectionTests: XCTestCase {
 
         do {
             try section.delete(sourceB)
-        } catch {  }
+        } catch { print(error) }
         
         XCTAssertEqual(section.count(), 2)
     }
@@ -121,7 +121,7 @@ class ImoTableViewSectionTests: XCTestCase {
         
         do {
             index = try section.indexOfSource(source: sourceC)
-        } catch {  }
+        } catch { print(error) }
         
         XCTAssertEqual(index, 2)
     }

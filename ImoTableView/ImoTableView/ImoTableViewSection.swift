@@ -15,6 +15,7 @@ import UIKit
 enum ImoTableViewSectionError : Error {
     case unknown
     case dontExistSourceAtIndex
+    case dontExistSectionAtIndex
 }
 
 /// Section hold all table sources, header and footer view
@@ -36,7 +37,7 @@ open class ImoTableViewSection : NSObject {
     public var headerTitle : String?
     /// Footer title
     public var footerTitle : String?
-    
+    /// Sourcess array
     var sources = [ImoTableViewSource]()
     
     public override init() {
@@ -111,14 +112,39 @@ open class ImoTableViewSection : NSObject {
     ///
     /// - Parameter source: Source you want to delete
     /// - Throws: ImoTableViewSectionError
-    public func delete(_ source:ImoTableViewSource) throws {
+    public func delete(_ source: ImoTableViewSource) throws {
         
         sources.remove(at:try indexOfSource(source:source))
+    }
+    
+    /// Delete sources from section
+    ///
+    /// - Parameter source: Source you want to delete
+    /// - Throws: ImoTableViewSectionError
+    public func delete(sources: [ImoTableViewSource]) throws {
+        
+        for source in sources {
+            self.sources.remove(at: try indexOfSource(source: source))
+        }
     }
     
     /// Delete all sources
     public func deleteAll() {
         sources.removeAll()
+    }
+    
+    /// Last source if exist
+    ///
+    /// - Returns: CellSource
+    public func lastSource() -> ImoTableViewSource? {
+       return sources.last
+    }
+    
+    /// FirstSource if exist
+    ///
+    /// - Returns: CellSource
+    public func firstSource() -> ImoTableViewSource? {
+        return sources.first
     }
     
     /// Get index for given source
@@ -135,6 +161,9 @@ open class ImoTableViewSection : NSObject {
         }
     }
     
+    /// Sources count
+    ///
+    /// - Returns: Sources count
     public func count() -> Int {
         return sources.count
     }
