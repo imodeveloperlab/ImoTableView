@@ -14,17 +14,20 @@
 		4114112B1DF564DB00E737BA /* ImoTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114112A1DF564DB00E737BA /* ImoTableViewTests.swift */; };
 		4114112D1DF564DC00E737BA /* ImoTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411410CF1DF55EB000E737BA /* ImoTableView.framework */; };
 		412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */; };
-		412DA90C1E5CAE510096F22D /* ImoTableViewUpdateAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */; };
 		414B8C681EBE417000836AE3 /* ImoTableViewTestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */; };
 		414B8C6B1EBE422800836AE3 /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C691EBE422800836AE3 /* TestCell.swift */; };
 		414B8C6C1EBE422800836AE3 /* TestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414B8C6A1EBE422800836AE3 /* TestCell.xib */; };
 		414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C6E1EBE44E400836AE3 /* TestACell.swift */; };
 		414B8C711EBE44E400836AE3 /* TestACell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414B8C6F1EBE44E400836AE3 /* TestACell.xib */; };
-		414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C721EBE4D7300836AE3 /* TestViewController.swift */; };
+		414B8C731EBE4D7300836AE3 /* TestViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C721EBE4D7300836AE3 /* TestViewControllers.swift */; };
 		414B8C751EBE609800836AE3 /* ImoTableViewSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */; };
 		414B8C771EBF789700836AE3 /* ImoTableViewSectionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */; };
 		414B8C791EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */; };
 		414B8C7B1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */; };
+		4187E3341EC1F4BC0030218F /* ImoTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */; };
+		4187E3361EC2F8810030218F /* ImoTableViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */; };
+		4187E33E1EC2FC400030218F /* ImoTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E33D1EC2FC400030218F /* ImoTableViewUITests.swift */; };
+		4187E36B1EC348D40030218F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,17 +51,22 @@
 		4114112A1DF564DB00E737BA /* ImoTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewTests.swift; sourceTree = "<group>"; };
 		4114112C1DF564DC00E737BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUtils.swift; sourceTree = "<group>"; };
-		412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewUpdateAction.swift; sourceTree = "<group>"; };
 		414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewTestsHelper.swift; sourceTree = "<group>"; };
 		414B8C691EBE422800836AE3 /* TestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
 		414B8C6A1EBE422800836AE3 /* TestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestCell.xib; sourceTree = "<group>"; };
 		414B8C6E1EBE44E400836AE3 /* TestACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestACell.swift; sourceTree = "<group>"; };
 		414B8C6F1EBE44E400836AE3 /* TestACell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestACell.xib; sourceTree = "<group>"; };
-		414B8C721EBE4D7300836AE3 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		414B8C721EBE4D7300836AE3 /* TestViewControllers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewControllers.swift; sourceTree = "<group>"; };
 		414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSectionTests.swift; sourceTree = "<group>"; };
 		414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSectionsExtension.swift; sourceTree = "<group>"; };
 		414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewActionsExtension.swift; sourceTree = "<group>"; };
 		414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSourcesExtension.swift; sourceTree = "<group>"; };
+		4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtension.swift; sourceTree = "<group>"; };
+		4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtensionTests.swift; sourceTree = "<group>"; };
+		4187E33B1EC2FC400030218F /* ImoTableViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImoTableViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4187E33D1EC2FC400030218F /* ImoTableViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewUITests.swift; sourceTree = "<group>"; };
+		4187E33F1EC2FC400030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E3381EC2FC400030218F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,6 +100,7 @@
 			children = (
 				411410D11DF55EB000E737BA /* ImoTableView */,
 				411411291DF564DB00E737BA /* ImoTableViewTests */,
+				4187E33C1EC2FC400030218F /* ImoTableViewUITests */,
 				411410D01DF55EB000E737BA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +110,7 @@
 			children = (
 				411410CF1DF55EB000E737BA /* ImoTableView.framework */,
 				411411281DF564DB00E737BA /* ImoTableViewTests.xctest */,
+				4187E33B1EC2FC400030218F /* ImoTableViewUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,13 +120,10 @@
 			children = (
 				412339D71E5362D200D71EAD /* ImoTableViewUtils.swift */,
 				4114111B1DF55FBF00E737BA /* ImoTableView.swift */,
-				414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */,
-				414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */,
-				414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */,
 				4114111D1DF5604B00E737BA /* ImoTableViewSection.swift */,
 				4114111F1DF5607100E737BA /* ImoTableViewSource.swift */,
 				411411211DF5608100E737BA /* ImoTableViewCell.swift */,
-				412DA90B1E5CAE510096F22D /* ImoTableViewUpdateAction.swift */,
+				4187E3691EC33A150030218F /* Extensions */,
 				411410D31DF55EB000E737BA /* Info.plist */,
 			);
 			path = ImoTableView;
@@ -118,10 +132,11 @@
 		411411291DF564DB00E737BA /* ImoTableViewTests */ = {
 			isa = PBXGroup;
 			children = (
-				414B8C721EBE4D7300836AE3 /* TestViewController.swift */,
+				414B8C721EBE4D7300836AE3 /* TestViewControllers.swift */,
 				414B8C671EBE417000836AE3 /* ImoTableViewTestsHelper.swift */,
 				4114112A1DF564DB00E737BA /* ImoTableViewTests.swift */,
 				414B8C741EBE609800836AE3 /* ImoTableViewSectionTests.swift */,
+				4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */,
 				4114112C1DF564DC00E737BA /* Info.plist */,
 				414B8C6D1EBE44BC00836AE3 /* Cells */,
 			);
@@ -137,6 +152,27 @@
 				414B8C6F1EBE44E400836AE3 /* TestACell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		4187E33C1EC2FC400030218F /* ImoTableViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4187E33D1EC2FC400030218F /* ImoTableViewUITests.swift */,
+				4187E33F1EC2FC400030218F /* Info.plist */,
+			);
+			path = ImoTableViewUITests;
+			sourceTree = "<group>";
+		};
+		4187E3691EC33A150030218F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */,
+				414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */,
+				414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */,
+				414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */,
+				4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,13 +225,30 @@
 			productReference = 411411281DF564DB00E737BA /* ImoTableViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4187E33A1EC2FC400030218F /* ImoTableViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4187E3401EC2FC400030218F /* Build configuration list for PBXNativeTarget "ImoTableViewUITests" */;
+			buildPhases = (
+				4187E3371EC2FC400030218F /* Sources */,
+				4187E3381EC2FC400030218F /* Frameworks */,
+				4187E3391EC2FC400030218F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImoTableViewUITests;
+			productName = ImoTableViewUITests;
+			productReference = 4187E33B1EC2FC400030218F /* ImoTableViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		411410C61DF55EB000E737BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Imodeveloperlab;
 				TargetAttributes = {
@@ -206,6 +259,10 @@
 					};
 					411411271DF564DB00E737BA = {
 						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					4187E33A1EC2FC400030218F = {
+						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -224,6 +281,7 @@
 			targets = (
 				411410CE1DF55EB000E737BA /* ImoTableView */,
 				411411271DF564DB00E737BA /* ImoTableViewTests */,
+				4187E33A1EC2FC400030218F /* ImoTableViewUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +300,13 @@
 			files = (
 				414B8C6C1EBE422800836AE3 /* TestCell.xib in Resources */,
 				414B8C711EBE44E400836AE3 /* TestACell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4187E3391EC2FC400030218F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +335,12 @@
 			files = (
 				4114111C1DF55FBF00E737BA /* ImoTableView.swift in Sources */,
 				412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */,
+				4187E36B1EC348D40030218F /* UIViewControllerExtension.swift in Sources */,
 				411411221DF5608100E737BA /* ImoTableViewCell.swift in Sources */,
 				411411201DF5607100E737BA /* ImoTableViewSource.swift in Sources */,
 				414B8C791EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift in Sources */,
-				412DA90C1E5CAE510096F22D /* ImoTableViewUpdateAction.swift in Sources */,
 				414B8C771EBF789700836AE3 /* ImoTableViewSectionsExtension.swift in Sources */,
+				4187E3341EC1F4BC0030218F /* ImoTableViewExtension.swift in Sources */,
 				414B8C7B1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift in Sources */,
 				4114111E1DF5604B00E737BA /* ImoTableViewSection.swift in Sources */,
 			);
@@ -284,12 +350,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				414B8C731EBE4D7300836AE3 /* TestViewController.swift in Sources */,
+				414B8C731EBE4D7300836AE3 /* TestViewControllers.swift in Sources */,
 				4114112B1DF564DB00E737BA /* ImoTableViewTests.swift in Sources */,
+				4187E3361EC2F8810030218F /* ImoTableViewExtensionTests.swift in Sources */,
 				414B8C6B1EBE422800836AE3 /* TestCell.swift in Sources */,
 				414B8C751EBE609800836AE3 /* ImoTableViewSectionTests.swift in Sources */,
 				414B8C681EBE417000836AE3 /* ImoTableViewTestsHelper.swift in Sources */,
 				414B8C701EBE44E400836AE3 /* TestACell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4187E3371EC2FC400030218F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4187E33E1EC2FC400030218F /* ImoTableViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +546,32 @@
 			};
 			name = Release;
 		};
+		4187E3411EC2FC400030218F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4187E3421EC2FC400030218F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +601,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		4187E3401EC2FC400030218F /* Build configuration list for PBXNativeTarget "ImoTableViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4187E3411EC2FC400030218F /* Debug */,
+				4187E3421EC2FC400030218F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
