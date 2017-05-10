@@ -24,7 +24,11 @@ class ViewController: UIViewController {
         
         super.viewDidAppear(animated)
         var explore: [Explorable] = []
+        
+        explore.append(BasicsExampleVC())
+        explore.append(MultipleSectionsExampleVC())
         explore.append(AutomaticScrollAdjustExampleVC())
+        
         self.show(examples: explore)
         
     }

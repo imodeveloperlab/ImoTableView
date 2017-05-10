@@ -13,23 +13,18 @@ import Fakery
 
 class AutomaticScrollAdjustExampleVC: BaseViewController {
   
-    var table: ImoTableView!
+    let faker = Faker.init()
     
     override func exploreTitle() -> String {
-        return "Automatic Scroll"
+        return "Adjust scroll for keyboard"
     }
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-        self.table = ImoTableView(on: self.view, insets: UIEdgeInsetsMake(0, 0, 0, 0))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        let table = ImoTableView(on: self.view)
         
-        super.viewDidAppear(animated)
-
         table.adjustContentInsetsForKeyboard(true)
         let section = ImoTableViewSection()
         
@@ -37,16 +32,11 @@ class AutomaticScrollAdjustExampleVC: BaseViewController {
         section.add(textField)
         
         for _ in 0...20 {
-            let text = Faker.init().lorem.sentence()
+            let text = faker.lorem.sentence()
             section.add(TextCellSource(text:text))
         }
         
-        self.table.add(section: section, animated: true, animation: .top)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        table.adjustContentInsetsForKeyboard(false)
+        table.add(section: section)
     }
 }
 

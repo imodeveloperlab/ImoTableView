@@ -17,6 +17,7 @@
 		412339081E4DC99100D71EAD /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339051E4DC99100D71EAD /* ActionCell.swift */; };
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
+		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
 		4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */; };
 		4187E3471EC308150030218F /* Explorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3461EC308150030218F /* Explorable.swift */; };
 		4187E3491EC314A80030218F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3481EC314A80030218F /* BaseViewController.swift */; };
@@ -27,6 +28,7 @@
 		4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3651EC3183B0030218F /* TextFieldCell.swift */; };
 		4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3661EC3183B0030218F /* TextFieldCell.xib */; };
 		4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */; };
+		4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3801EC354ED0030218F /* BasicsExampleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		412339051E4DC99100D71EAD /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
+		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
 		4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticScrollAdjustExampleVC.swift; sourceTree = "<group>"; };
 		4187E3461EC308150030218F /* Explorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explorable.swift; sourceTree = "<group>"; };
 		4187E3481EC314A80030218F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +122,7 @@
 		4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImoTableViewExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewExampleUITests.swift; sourceTree = "<group>"; };
 		4187E3761EC3507C0030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4187E3801EC354ED0030218F /* BasicsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsExampleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,8 @@
 		4187E3431EC2FCCE0030218F /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				4187E3801EC354ED0030218F /* BasicsExampleVC.swift */,
+				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
 			);
 			name = Examples;
@@ -392,7 +398,9 @@
 				4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */,
 				412339081E4DC99100D71EAD /* ActionCell.swift in Sources */,
 				4187E3631EC316950030218F /* TextCell.swift in Sources */,
+				4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */,
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
+				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,
 				411410E71DF55ECD00E737BA /* AppDelegate.swift in Sources */,
@@ -619,6 +627,7 @@
 				4187E37A1EC3507C0030218F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
