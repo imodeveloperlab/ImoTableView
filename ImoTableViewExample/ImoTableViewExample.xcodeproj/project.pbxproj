@@ -26,6 +26,7 @@
 		4187E3641EC316950030218F /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3621EC316950030218F /* TextCell.xib */; };
 		4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3651EC3183B0030218F /* TextFieldCell.swift */; };
 		4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3661EC3183B0030218F /* TextFieldCell.xib */; };
+		4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,13 @@
 			remoteGlobalIDString = BCF0DF391BF9F77E00427DB4;
 			remoteInfo = "Fakery-iOS";
 		};
+		4187E3771EC3507C0030218F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 411410DB1DF55ECD00E737BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 411410E21DF55ECD00E737BA;
+			remoteInfo = ImoTableViewExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -108,6 +116,9 @@
 		4187E3621EC316950030218F /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		4187E3651EC3183B0030218F /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		4187E3661EC3183B0030218F /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImoTableViewExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewExampleUITests.swift; sourceTree = "<group>"; };
+		4187E3761EC3507C0030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +131,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E36F1EC3507C0030218F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				411410E51DF55ECD00E737BA /* ImoTableViewExample */,
+				4187E3731EC3507C0030218F /* ImoTableViewExampleUITests */,
 				411410E41DF55ECD00E737BA /* Products */,
 				411410FC1DF55F1800E737BA /* Embedded */,
 			);
@@ -136,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				411410E31DF55ECD00E737BA /* ImoTableViewExample.app */,
+				4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +228,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4187E3731EC3507C0030218F /* ImoTableViewExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */,
+				4187E3761EC3507C0030218F /* Info.plist */,
+			);
+			path = ImoTableViewExampleUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,19 +259,42 @@
 			productReference = 411410E31DF55ECD00E737BA /* ImoTableViewExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4187E3711EC3507C0030218F /* ImoTableViewExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4187E37F1EC3507C0030218F /* Build configuration list for PBXNativeTarget "ImoTableViewExampleUITests" */;
+			buildPhases = (
+				4187E36E1EC3507C0030218F /* Sources */,
+				4187E36F1EC3507C0030218F /* Frameworks */,
+				4187E3701EC3507C0030218F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4187E3781EC3507C0030218F /* PBXTargetDependency */,
+			);
+			name = ImoTableViewExampleUITests;
+			productName = ImoTableViewExampleUITests;
+			productReference = 4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		411410DB1DF55ECD00E737BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Imodeveloperlab;
 				TargetAttributes = {
 					411410E21DF55ECD00E737BA = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+					};
+					4187E3711EC3507C0030218F = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 411410E21DF55ECD00E737BA;
 					};
 				};
 			};
@@ -266,6 +318,7 @@
 			projectRoot = "";
 			targets = (
 				411410E21DF55ECD00E737BA /* ImoTableViewExample */,
+				4187E3711EC3507C0030218F /* ImoTableViewExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +375,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E3701EC3507C0030218F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -341,6 +401,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E36E1EC3507C0030218F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -348,6 +416,11 @@
 			isa = PBXTargetDependency;
 			name = "Fakery-iOS";
 			targetProxy = 4187E35F1EC316560030218F /* PBXContainerItemProxy */;
+		};
+		4187E3781EC3507C0030218F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 411410E21DF55ECD00E737BA /* ImoTableViewExample */;
+			targetProxy = 4187E3771EC3507C0030218F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -490,6 +563,34 @@
 			};
 			name = Release;
 		};
+		4187E3791EC3507C0030218F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ImoTableViewExample;
+			};
+			name = Debug;
+		};
+		4187E37A1EC3507C0030218F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ImoTableViewExample;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -510,6 +611,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		4187E37F1EC3507C0030218F /* Build configuration list for PBXNativeTarget "ImoTableViewExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4187E3791EC3507C0030218F /* Debug */,
+				4187E37A1EC3507C0030218F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

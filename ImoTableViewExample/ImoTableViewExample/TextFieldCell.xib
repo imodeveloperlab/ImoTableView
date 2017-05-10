@@ -20,6 +20,9 @@
                 <subviews>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Some text field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cCK-pO-MU7">
                         <rect key="frame" x="18" y="15" width="339" height="30"/>
+                        <accessibility key="accessibilityConfiguration" hint="Text Field" identifier="textField">
+                            <accessibilityTraits key="traits" staticText="YES"/>
+                        </accessibility>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
@@ -32,7 +35,10 @@
                     <constraint firstItem="cCK-pO-MU7" firstAttribute="top" secondItem="iPI-fm-6Gg" secondAttribute="top" constant="15" id="x3k-Uk-QsF"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-18" y="-140"/>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <point key="canvasLocation" x="-216" y="-157"/>
         </tableViewCell>
     </objects>
 </document>
