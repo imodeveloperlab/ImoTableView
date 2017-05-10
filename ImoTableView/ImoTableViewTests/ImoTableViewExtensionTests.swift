@@ -20,29 +20,4 @@ class ImoTableViewExtensionTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func testKeyboadIntersection() {
-        
-        let expect = expectation(description: "Expect")
-        
-        let controller = TestViewControllerKeyboardIntersection()
-        
-        controller.table.shouldAdjustScrollForKeyboard(adjust: true)
-        controller.textField.becomeFirstResponder()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            expect.fulfill()
-        }
-        
-        
-        waitForExpectations(timeout: 2) { (error) in
-            if let error = error {
-                XCTFail("Error: \(error.localizedDescription)")
-            }
-        }
-        
-    }
-    
 }
-
-
