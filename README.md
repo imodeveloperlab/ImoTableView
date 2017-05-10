@@ -1,5 +1,4 @@
-![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/Logo.png "ImoTableView Logo")
-
+![alt text](Content/Logo.png "ImoTableView Logo")
 
 ![Swift](http://img.shields.io/badge/swift-3.0-brightgreen.svg)
 [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=590f6ccf598da90001a1d9b7&branch=development&build=latest)](https://dashboard.buddybuild.com/apps/590f6ccf598da90001a1d9b7/build/latest?branch=development)
@@ -25,7 +24,7 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 3. **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example. 
 4. **ImoTableViewCell** is view representation of properties you have stored in your source.
 
-![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/ImoTableView.png "ImoTableView")
+![alt text](Content/ImoTableView.png "ImoTableView")
 
 ## Implementation Example
 
@@ -82,7 +81,7 @@ open class ActionCellSource : ImoTableViewSource {
 ## Templates 
 The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
-![alt text](https://github.com/imodeveloperlab/ImoTableView/blob/master/CreateCellFromTemplate.gif "ImoTableView Logo")
+![alt text](Content/CreateCellFromTemplate.gif "ImoTableView Logo")
 
 To add **ImoTableViewCell.xctemplate.xctemplate** in xcode you need to open File Templates folder, you can simply call this terminal command ```open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/```
 

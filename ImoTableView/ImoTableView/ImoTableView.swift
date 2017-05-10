@@ -13,6 +13,12 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //TableView
     public var tableView : UITableView
     
+    //For storing original table UIEdgeInsets when an keyboard apears on screen 
+    //table will change its content inssets and after when keyboard dissapears
+    //we need to set previous table ContentInset asnd ScrollIndicatorInsets
+    open var storedContentInset: UIEdgeInsets?
+    open var storedScrollIndicatorInsets: UIEdgeInsets?
+    
     /// Set the separator collor of table view
     public var separatorColor : UIColor? {
         get { return self.tableView.separatorColor }

@@ -13,12 +13,9 @@ open class ActionCellSource : ImoTableViewSource {
     
     public var title : String
 
-    init(title:String) {
+    init(title: String) {
         self.title = title
-        //Init source an specify cell class you will represent by this source
         super.init(cellClass: "ActionCell")
-        //Set nib bundle if your cell is not in current project bundle
         setNibBundle(with:Bundle.init(for: self.classForCoder))
-
     }
 }

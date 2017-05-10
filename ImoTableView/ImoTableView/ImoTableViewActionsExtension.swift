@@ -68,9 +68,12 @@ public extension ImoTableView {
                          selector: Selector,
                          source: ImoTableViewSource) {
         
-        if let object = source.object {
-            _ = target.perform(selector, with: object)
-        } else { _ = target.perform(selector) }
+        if target.responds(to: selector) {
+            if let object = source.object {
+                _ = target.perform(selector, with: object)
+            } else {
+                _ = target.perform(selector, with: source)
+            }
+        }
     }
-    
 }
