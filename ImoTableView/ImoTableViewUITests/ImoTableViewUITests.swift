@@ -27,7 +27,4 @@ class ImoTableViewUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        
-    }
 }
