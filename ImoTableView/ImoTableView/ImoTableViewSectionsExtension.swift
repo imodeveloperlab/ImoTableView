@@ -105,11 +105,12 @@ public extension ImoTableView {
                                   animation: UITableViewRowAnimation = .fade) {
         
         let indexSet = indexSetForSections(sections: self.sections)
-        
         sections.removeAll()
         
         if animated {
             animateDeleteSections(indexSet, animation)
+        } else {
+            tableView.reloadData()
         }
     }
     
