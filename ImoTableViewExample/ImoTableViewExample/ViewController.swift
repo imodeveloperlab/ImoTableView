@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         
         explore.append(BasicsExampleVC())
         explore.append(MultipleSectionsExampleVC())
+        explore.append(AnimatedAddCellsExample())
+        explore.append(AnimatedDeleteCellsExample())
         explore.append(AutomaticScrollAdjustExampleVC())
         
         self.show(examples: explore)

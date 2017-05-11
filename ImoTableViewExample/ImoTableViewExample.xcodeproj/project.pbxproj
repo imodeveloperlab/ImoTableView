@@ -18,6 +18,8 @@
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
 		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
+		4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */; };
+		4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */; };
 		4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */; };
 		4187E3471EC308150030218F /* Explorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3461EC308150030218F /* Explorable.swift */; };
 		4187E3491EC314A80030218F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3481EC314A80030218F /* BaseViewController.swift */; };
@@ -111,6 +113,8 @@
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
 		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
+		4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAddCellsExample.swift; sourceTree = "<group>"; };
+		4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedDeleteCellsExample.swift; sourceTree = "<group>"; };
 		4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticScrollAdjustExampleVC.swift; sourceTree = "<group>"; };
 		4187E3461EC308150030218F /* Explorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explorable.swift; sourceTree = "<group>"; };
 		4187E3481EC314A80030218F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				4187E3801EC354ED0030218F /* BasicsExampleVC.swift */,
 				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
+				4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */,
+				4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -410,10 +416,12 @@
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
 				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
+				4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,
 				411410E71DF55ECD00E737BA /* AppDelegate.swift in Sources */,
 				4187E3491EC314A80030218F /* BaseViewController.swift in Sources */,
 				4187E3471EC308150030218F /* Explorable.swift in Sources */,
+				4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

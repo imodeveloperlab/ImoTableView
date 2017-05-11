@@ -147,6 +147,13 @@ open class ImoTableViewSection : NSObject {
         return sources.first
     }
     
+    /// All sources
+    ///
+    /// - Returns: [CellSource]
+    public func allSources() -> [ImoTableViewSource] {
+        return sources
+    }
+    
     /// Get index for given source
     ///
     /// - Parameter source: CellSource
