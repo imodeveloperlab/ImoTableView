@@ -150,4 +150,16 @@ public extension ImoTableView {
         return nil
     }
     
+    public func spaceBetwenLastCellAndTableBottom() -> CGFloat {
+        
+        tableView.layoutIfNeeded()
+        let difference = self.tableView.frame.size.height - tableView.contentSize.height
+        
+        if difference > 0 {
+            return difference
+        } else {
+            return 0
+        }
+    }
+    
 }

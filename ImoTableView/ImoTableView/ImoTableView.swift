@@ -87,21 +87,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     // MARK: - UITableView
     
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-//        cell.alpha = 0
-//        //cell.layer.transform = rotation
-//        cell.layer.anchorPoint = CGPoint(x: CGFloat(0), y: CGFloat(0))
-//        //3. Define the final state (After the animation) and commit the animation
-//        UIView.beginAnimations("rotation", context: nil)
-//        UIView.setAnimationDuration(0.5)
-//        UIView.setAnimationCurve(.easeInOut)
-//        
-//        //cell.layer.transform = CATransform3DIdentity
-//        cell.alpha = 1
-//        UIView.commitAnimations()
-    }
-    
     /// Give to table view number of rows in your section
     ///
     /// - Parameters:

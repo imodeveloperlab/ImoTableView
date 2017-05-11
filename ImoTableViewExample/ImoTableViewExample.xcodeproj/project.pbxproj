@@ -20,6 +20,11 @@
 		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
 		4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */; };
 		4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */; };
+		4172BEB91EC495D800E33F64 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEB71EC495D800E33F64 /* ColorCell.swift */; };
+		4172BEBA1EC495D800E33F64 /* ColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4172BEB81EC495D800E33F64 /* ColorCell.xib */; };
+		4172BEBD1EC495F100E33F64 /* SpaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEBB1EC495F100E33F64 /* SpaceCell.swift */; };
+		4172BEBE1EC495F100E33F64 /* SpaceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4172BEBC1EC495F100E33F64 /* SpaceCell.xib */; };
+		4172BEC01EC4963A00E33F64 /* SpaceExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEBF1EC4963A00E33F64 /* SpaceExampleVC.swift */; };
 		4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */; };
 		4187E3471EC308150030218F /* Explorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3461EC308150030218F /* Explorable.swift */; };
 		4187E3491EC314A80030218F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3481EC314A80030218F /* BaseViewController.swift */; };
@@ -115,6 +120,11 @@
 		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
 		4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAddCellsExample.swift; sourceTree = "<group>"; };
 		4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedDeleteCellsExample.swift; sourceTree = "<group>"; };
+		4172BEB71EC495D800E33F64 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		4172BEB81EC495D800E33F64 /* ColorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorCell.xib; sourceTree = "<group>"; };
+		4172BEBB1EC495F100E33F64 /* SpaceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceCell.swift; sourceTree = "<group>"; };
+		4172BEBC1EC495F100E33F64 /* SpaceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpaceCell.xib; sourceTree = "<group>"; };
+		4172BEBF1EC4963A00E33F64 /* SpaceExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceExampleVC.swift; sourceTree = "<group>"; };
 		4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticScrollAdjustExampleVC.swift; sourceTree = "<group>"; };
 		4187E3461EC308150030218F /* Explorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explorable.swift; sourceTree = "<group>"; };
 		4187E3481EC314A80030218F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +208,10 @@
 				4187E3621EC316950030218F /* TextCell.xib */,
 				4187E3651EC3183B0030218F /* TextFieldCell.swift */,
 				4187E3661EC3183B0030218F /* TextFieldCell.xib */,
+				4172BEB71EC495D800E33F64 /* ColorCell.swift */,
+				4172BEB81EC495D800E33F64 /* ColorCell.xib */,
+				4172BEBB1EC495F100E33F64 /* SpaceCell.swift */,
+				4172BEBC1EC495F100E33F64 /* SpaceCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -217,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				4187E3801EC354ED0030218F /* BasicsExampleVC.swift */,
+				4172BEBF1EC4963A00E33F64 /* SpaceExampleVC.swift */,
 				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
 				4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */,
@@ -309,7 +324,7 @@
 				TargetAttributes = {
 					411410E21DF55ECD00E737BA = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					4187E3711EC3507C0030218F = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -388,10 +403,12 @@
 			files = (
 				411410F11DF55ECD00E737BA /* LaunchScreen.storyboard in Resources */,
 				412339091E4DC99100D71EAD /* ActionCell.xib in Resources */,
+				4172BEBE1EC495F100E33F64 /* SpaceCell.xib in Resources */,
 				411410EE1DF55ECD00E737BA /* Assets.xcassets in Resources */,
 				4187E3641EC316950030218F /* TextCell.xib in Resources */,
 				411410EC1DF55ECD00E737BA /* Main.storyboard in Resources */,
 				4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */,
+				4172BEBA1EC495D800E33F64 /* ColorCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +426,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4172BEC01EC4963A00E33F64 /* SpaceExampleVC.swift in Sources */,
 				4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */,
 				412339081E4DC99100D71EAD /* ActionCell.swift in Sources */,
 				4187E3631EC316950030218F /* TextCell.swift in Sources */,
@@ -418,6 +436,8 @@
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
 				4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,
+				4172BEB91EC495D800E33F64 /* ColorCell.swift in Sources */,
+				4172BEBD1EC495F100E33F64 /* SpaceCell.swift in Sources */,
 				411410E71DF55ECD00E737BA /* AppDelegate.swift in Sources */,
 				4187E3491EC314A80030218F /* BaseViewController.swift in Sources */,
 				4187E3471EC308150030218F /* Explorable.swift in Sources */,
@@ -566,10 +586,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ImoTableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -579,10 +601,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ImoTableViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         explore.append(AnimatedAddCellsExample())
         explore.append(AnimatedDeleteCellsExample())
         explore.append(AutomaticScrollAdjustExampleVC())
+        explore.append(SpaceExampleVC())
         
         self.show(examples: explore)
     }

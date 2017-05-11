@@ -24,7 +24,6 @@
 		414B8C771EBF789700836AE3 /* ImoTableViewSectionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */; };
 		414B8C791EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */; };
 		414B8C7B1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */; };
-		4172BEAF1EC45E8400E33F64 /* ImoTableViewAnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAE1EC45E8400E33F64 /* ImoTableViewAnimationsExtension.swift */; };
 		4187E3341EC1F4BC0030218F /* ImoTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */; };
 		4187E3361EC2F8810030218F /* ImoTableViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */; };
 		4187E36B1EC348D40030218F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */; };
@@ -61,7 +60,6 @@
 		414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSectionsExtension.swift; sourceTree = "<group>"; };
 		414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewActionsExtension.swift; sourceTree = "<group>"; };
 		414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewSourcesExtension.swift; sourceTree = "<group>"; };
-		4172BEAE1EC45E8400E33F64 /* ImoTableViewAnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewAnimationsExtension.swift; sourceTree = "<group>"; };
 		4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtension.swift; sourceTree = "<group>"; };
 		4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtensionTests.swift; sourceTree = "<group>"; };
 		4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */,
 				414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */,
 				4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */,
-				4172BEAE1EC45E8400E33F64 /* ImoTableViewAnimationsExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -291,7 +288,6 @@
 				411411221DF5608100E737BA /* ImoTableViewCell.swift in Sources */,
 				411411201DF5607100E737BA /* ImoTableViewSource.swift in Sources */,
 				414B8C791EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift in Sources */,
-				4172BEAF1EC45E8400E33F64 /* ImoTableViewAnimationsExtension.swift in Sources */,
 				414B8C771EBF789700836AE3 /* ImoTableViewSectionsExtension.swift in Sources */,
 				4187E3341EC1F4BC0030218F /* ImoTableViewExtension.swift in Sources */,
 				414B8C7B1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift in Sources */,
