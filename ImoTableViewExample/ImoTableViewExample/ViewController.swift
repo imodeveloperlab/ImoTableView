@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         explore.append(AutomaticScrollAdjustExampleVC())
         
         self.show(examples: explore)
-        
     }
     
     func show(examples: [Explorable]) {

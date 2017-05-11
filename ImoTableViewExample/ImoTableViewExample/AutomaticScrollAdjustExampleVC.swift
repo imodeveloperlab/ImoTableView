@@ -28,8 +28,10 @@ class AutomaticScrollAdjustExampleVC: BaseViewController {
         table.adjustContentInsetsForKeyboard(true)
         let section = ImoTableViewSection()
         
-        let textField = TextFieldCellSource(staticCellWithTableView: table)
-        section.add(textField)
+        for _ in 0...5 {
+            let textField = TextFieldCellSource(staticCellWithTableView: table)
+            section.add(textField)
+        }
         
         for _ in 0...20 {
             let text = faker.lorem.sentence()
@@ -39,5 +41,3 @@ class AutomaticScrollAdjustExampleVC: BaseViewController {
         table.add(section: section)
     }
 }
-
-

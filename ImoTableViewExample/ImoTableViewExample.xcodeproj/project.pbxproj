@@ -167,9 +167,8 @@
 		411410E51DF55ECD00E737BA /* ImoTableViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				411410E61DF55ECD00E737BA /* AppDelegate.swift */,
-				411410E81DF55ECD00E737BA /* ViewController.swift */,
 				4187E3431EC2FCCE0030218F /* Examples */,
+				4172BE9C1EC3597000E33F64 /* Helpers */,
 				4118D7931E4B8175008A0423 /* Cells */,
 				4187E34A1EC315560030218F /* Resources */,
 				411410F21DF55ECD00E737BA /* Info.plist */,
@@ -199,6 +198,17 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		4172BE9C1EC3597000E33F64 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				411410E61DF55ECD00E737BA /* AppDelegate.swift */,
+				411410E81DF55ECD00E737BA /* ViewController.swift */,
+				4187E3461EC308150030218F /* Explorable.swift */,
+				4187E3481EC314A80030218F /* BaseViewController.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		4187E3431EC2FCCE0030218F /* Examples */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,8 +226,6 @@
 				411410ED1DF55ECD00E737BA /* Assets.xcassets */,
 				411410EA1DF55ECD00E737BA /* Main.storyboard */,
 				411410EF1DF55ECD00E737BA /* LaunchScreen.storyboard */,
-				4187E3461EC308150030218F /* Explorable.swift */,
-				4187E3481EC314A80030218F /* BaseViewController.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
