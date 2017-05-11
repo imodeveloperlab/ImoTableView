@@ -17,6 +17,9 @@
 		412339081E4DC99100D71EAD /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339051E4DC99100D71EAD /* ActionCell.swift */; };
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
+		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
+		4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */; };
+		4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */; };
 		4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */; };
 		4187E3471EC308150030218F /* Explorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3461EC308150030218F /* Explorable.swift */; };
 		4187E3491EC314A80030218F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3481EC314A80030218F /* BaseViewController.swift */; };
@@ -26,6 +29,8 @@
 		4187E3641EC316950030218F /* TextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3621EC316950030218F /* TextCell.xib */; };
 		4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3651EC3183B0030218F /* TextFieldCell.swift */; };
 		4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3661EC3183B0030218F /* TextFieldCell.xib */; };
+		4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */; };
+		4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3801EC354ED0030218F /* BasicsExampleVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +76,13 @@
 			remoteGlobalIDString = BCF0DF391BF9F77E00427DB4;
 			remoteInfo = "Fakery-iOS";
 		};
+		4187E3771EC3507C0030218F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 411410DB1DF55ECD00E737BA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 411410E21DF55ECD00E737BA;
+			remoteInfo = ImoTableViewExample;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -100,6 +112,9 @@
 		412339051E4DC99100D71EAD /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
+		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
+		4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAddCellsExample.swift; sourceTree = "<group>"; };
+		4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedDeleteCellsExample.swift; sourceTree = "<group>"; };
 		4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutomaticScrollAdjustExampleVC.swift; sourceTree = "<group>"; };
 		4187E3461EC308150030218F /* Explorable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explorable.swift; sourceTree = "<group>"; };
 		4187E3481EC314A80030218F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +123,10 @@
 		4187E3621EC316950030218F /* TextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextCell.xib; sourceTree = "<group>"; };
 		4187E3651EC3183B0030218F /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		4187E3661EC3183B0030218F /* TextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImoTableViewExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewExampleUITests.swift; sourceTree = "<group>"; };
+		4187E3761EC3507C0030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4187E3801EC354ED0030218F /* BasicsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsExampleVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +139,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E36F1EC3507C0030218F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -127,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				411410E51DF55ECD00E737BA /* ImoTableViewExample */,
+				4187E3731EC3507C0030218F /* ImoTableViewExampleUITests */,
 				411410E41DF55ECD00E737BA /* Products */,
 				411410FC1DF55F1800E737BA /* Embedded */,
 			);
@@ -136,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				411410E31DF55ECD00E737BA /* ImoTableViewExample.app */,
+				4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,9 +171,8 @@
 		411410E51DF55ECD00E737BA /* ImoTableViewExample */ = {
 			isa = PBXGroup;
 			children = (
-				411410E61DF55ECD00E737BA /* AppDelegate.swift */,
-				411410E81DF55ECD00E737BA /* ViewController.swift */,
 				4187E3431EC2FCCE0030218F /* Examples */,
+				4172BE9C1EC3597000E33F64 /* Helpers */,
 				4118D7931E4B8175008A0423 /* Cells */,
 				4187E34A1EC315560030218F /* Resources */,
 				411410F21DF55ECD00E737BA /* Info.plist */,
@@ -175,10 +202,25 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		4172BE9C1EC3597000E33F64 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				411410E61DF55ECD00E737BA /* AppDelegate.swift */,
+				411410E81DF55ECD00E737BA /* ViewController.swift */,
+				4187E3461EC308150030218F /* Explorable.swift */,
+				4187E3481EC314A80030218F /* BaseViewController.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		4187E3431EC2FCCE0030218F /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				4187E3801EC354ED0030218F /* BasicsExampleVC.swift */,
+				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
+				4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */,
+				4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */,
 			);
 			name = Examples;
 			sourceTree = "<group>";
@@ -190,8 +232,6 @@
 				411410ED1DF55ECD00E737BA /* Assets.xcassets */,
 				411410EA1DF55ECD00E737BA /* Main.storyboard */,
 				411410EF1DF55ECD00E737BA /* LaunchScreen.storyboard */,
-				4187E3461EC308150030218F /* Explorable.swift */,
-				4187E3481EC314A80030218F /* BaseViewController.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -206,6 +246,15 @@
 				4187E35C1EC3164D0030218F /* Fakery-Mac-Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4187E3731EC3507C0030218F /* ImoTableViewExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */,
+				4187E3761EC3507C0030218F /* Info.plist */,
+			);
+			path = ImoTableViewExampleUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,19 +279,42 @@
 			productReference = 411410E31DF55ECD00E737BA /* ImoTableViewExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4187E3711EC3507C0030218F /* ImoTableViewExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4187E37F1EC3507C0030218F /* Build configuration list for PBXNativeTarget "ImoTableViewExampleUITests" */;
+			buildPhases = (
+				4187E36E1EC3507C0030218F /* Sources */,
+				4187E36F1EC3507C0030218F /* Frameworks */,
+				4187E3701EC3507C0030218F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4187E3781EC3507C0030218F /* PBXTargetDependency */,
+			);
+			name = ImoTableViewExampleUITests;
+			productName = ImoTableViewExampleUITests;
+			productReference = 4187E3721EC3507C0030218F /* ImoTableViewExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		411410DB1DF55ECD00E737BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Imodeveloperlab;
 				TargetAttributes = {
 					411410E21DF55ECD00E737BA = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
+					};
+					4187E3711EC3507C0030218F = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 411410E21DF55ECD00E737BA;
 					};
 				};
 			};
@@ -266,6 +338,7 @@
 			projectRoot = "";
 			targets = (
 				411410E21DF55ECD00E737BA /* ImoTableViewExample */,
+				4187E3711EC3507C0030218F /* ImoTableViewExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -322,6 +395,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4187E3701EC3507C0030218F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -332,12 +412,24 @@
 				4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */,
 				412339081E4DC99100D71EAD /* ActionCell.swift in Sources */,
 				4187E3631EC316950030218F /* TextCell.swift in Sources */,
+				4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */,
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
+				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
+				4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,
 				411410E71DF55ECD00E737BA /* AppDelegate.swift in Sources */,
 				4187E3491EC314A80030218F /* BaseViewController.swift in Sources */,
 				4187E3471EC308150030218F /* Explorable.swift in Sources */,
+				4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4187E36E1EC3507C0030218F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +440,11 @@
 			isa = PBXTargetDependency;
 			name = "Fakery-iOS";
 			targetProxy = 4187E35F1EC316560030218F /* PBXContainerItemProxy */;
+		};
+		4187E3781EC3507C0030218F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 411410E21DF55ECD00E737BA /* ImoTableViewExample */;
+			targetProxy = 4187E3771EC3507C0030218F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -490,6 +587,34 @@
 			};
 			name = Release;
 		};
+		4187E3791EC3507C0030218F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ImoTableViewExample;
+			};
+			name = Debug;
+		};
+		4187E37A1EC3507C0030218F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = ImoTableViewExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = ImoTableViewExample;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +632,15 @@
 			buildConfigurations = (
 				411410F61DF55ECD00E737BA /* Debug */,
 				411410F71DF55ECD00E737BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4187E37F1EC3507C0030218F /* Build configuration list for PBXNativeTarget "ImoTableViewExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4187E3791EC3507C0030218F /* Debug */,
+				4187E37A1EC3507C0030218F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

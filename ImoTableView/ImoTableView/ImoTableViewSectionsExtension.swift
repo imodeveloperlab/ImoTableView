@@ -200,7 +200,7 @@ public extension ImoTableView {
     /// - Parameter section: Section object
     /// - Returns: Section Index
     public func indexFor(section: ImoTableViewSection) -> Int? {
-        return self.sections.index(of:section)
+        return self.sections.index(of: section)
     }
     
     // MARK: - Animated updates

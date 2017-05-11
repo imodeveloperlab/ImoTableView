@@ -38,13 +38,13 @@ public extension ImoTableView {
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardDidShow),
-                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               selector: #selector(keyboardWillHide),
+                                               name: NSNotification.Name.UIKeyboardWillHide,
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               selector: #selector(keyboardDidChangeFrame),
+                                               name: NSNotification.Name.UIKeyboardDidChangeFrame,
                                                object: nil)
     }
     
@@ -63,17 +63,17 @@ public extension ImoTableView {
         adjustScroll(for: notification)
     }
     
-    /// Keyboard did show notification
+    /// Keyboard will hide notification
     ///
     /// - Parameter notification: Notification
-    func keyboardDidShow(_ notification: Notification) {
+    func keyboardWillHide(_ notification: Notification) {
         adjustScroll(for: notification)
     }
     
     /// Keyboard will hide notification
     ///
     /// - Parameter notification: Notification
-    func keyboardWillHide(_ notification: Notification) {
+    func keyboardDidChangeFrame(_ notification: Notification) {
         adjustScroll(for: notification)
     }
     
@@ -121,9 +121,8 @@ public extension ImoTableView {
         if let view = mainView() {
             
             let tableFrame = self.tableView.frame
-            let convertedTableFrame = tableView.convert(tableFrame, to: view)
+            let convertedTableFrame = view.convert(tableFrame, to: view)
             let inset = keyboardFrame.intersection(convertedTableFrame).height
-            
             let currentTableInsets = self.tableView.contentInset
             
             return UIEdgeInsets(top: currentTableInsets.top,
