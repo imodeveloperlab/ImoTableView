@@ -45,7 +45,7 @@ class AnimatedAddCellsExample: BaseViewController {
         
         let text = faker.lorem.sentence()
         let source = TextCellSource(text: text)
-        table.add(source: source, in: secondSection, animated: true, animation: .top)
+        table.add(source: source, in: secondSection, animated: true, animation: .none)
     }
     
     func addMultipleCells() {
@@ -57,6 +57,6 @@ class AnimatedAddCellsExample: BaseViewController {
             sources.append(TextCellSource(text: text))
         }
         
-        table.add(sources: sources, in: secondSection, animated: true, animation: .none)
+        table.add(sources: sources, in: secondSection, animated: true, animation: .top)
     }
 }
