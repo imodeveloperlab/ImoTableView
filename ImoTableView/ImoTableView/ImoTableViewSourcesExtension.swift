@@ -123,6 +123,19 @@ public extension ImoTableView {
         
         if animated {
             tableView.reloadRows(at: indexPaths, with: animation)
+        } else {
+            self.update()
+        }
+    }
+    
+    func update(section: ImoTableViewSection, animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
+        
+        if let index = indexFor(section: section) {
+            if animated {
+                tableView.reloadSections([index], with: animation)
+            } else {
+                self.update()
+            }
         }
     }
     
