@@ -117,12 +117,12 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
                        _ source: ImoTableViewSource,
                        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = source.staticCell {
-            cell.setUpWithSource(source: source)
-            return cell as UITableViewCell
-        } else {
+        guard let cell = source.staticCell else {
             return reusableCell(tableView, source, cellForRowAt: indexPath)
         }
+        
+        cell.setUpWithSource(source: source)
+        return cell as UITableViewCell
     }
     
     func reusableCell(_ tableView: UITableView,
@@ -139,13 +139,12 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
-            if let height = source.height {
-                return height
-            }
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
+              let height = source.height else {
+            return UITableViewAutomaticDimension
         }
         
-        return UITableViewAutomaticDimension
+        return height
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -171,7 +170,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         }
         
         return ImoTableViewCell()
-        
     }
     
     // MARK: - UITableView HeaderView
