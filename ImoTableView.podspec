@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ImoTableView"
-  s.version      = "1.0.18"
+  s.version      = "1.0.19"
   s.summary      = "More dynamic and reusable tables"
 
   # This description is used to generate tags and improve search results.
