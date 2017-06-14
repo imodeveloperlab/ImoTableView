@@ -14,8 +14,6 @@
 		411410F11DF55ECD00E737BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 411410EF1DF55ECD00E737BA /* LaunchScreen.storyboard */; };
 		411410F91DF55F1300E737BA /* ImoTableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411410F81DF55F1300E737BA /* ImoTableView.framework */; };
 		411410FA1DF55F1300E737BA /* ImoTableView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 411410F81DF55F1300E737BA /* ImoTableView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		411A1A581EE6371600205704 /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411A1A571EE6371500205704 /* Fakery.framework */; };
-		411A1A591EE6371600205704 /* Fakery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 411A1A571EE6371500205704 /* Fakery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		412339081E4DC99100D71EAD /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339051E4DC99100D71EAD /* ActionCell.swift */; };
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
@@ -36,6 +34,8 @@
 		4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3661EC3183B0030218F /* TextFieldCell.xib */; };
 		4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */; };
 		4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3801EC354ED0030218F /* BasicsExampleVC.swift */; };
+		41C677C81EF136E2003AD834 /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C677C71EF136E2003AD834 /* Fakery.framework */; };
+		41C677CA1EF136E5003AD834 /* Fakery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41C677C71EF136E2003AD834 /* Fakery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41DB85C51EE063D00099CFC4 /* BasicsActionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DB85C41EE063D00099CFC4 /* BasicsActionsExampleVC.swift */; };
 		41DB85C71EE067B10099CFC4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DB85C61EE067B10099CFC4 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
@@ -67,11 +67,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		411410FB1DF55F1300E737BA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				411A1A591EE6371600205704 /* Fakery.framework in Embed Frameworks */,
+				41C677CA1EF136E5003AD834 /* Fakery.framework in Embed Frameworks */,
 				411410FA1DF55F1300E737BA /* ImoTableView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -88,7 +88,6 @@
 		411410F01DF55ECD00E737BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		411410F21DF55ECD00E737BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		411410F81DF55F1300E737BA /* ImoTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ImoTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		411A1A571EE6371500205704 /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fakery.framework; path = ../../Carthage/Carthage/Build/iOS/Fakery.framework; sourceTree = "<group>"; };
 		412339051E4DC99100D71EAD /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
@@ -111,6 +110,7 @@
 		4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewExampleUITests.swift; sourceTree = "<group>"; };
 		4187E3761EC3507C0030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4187E3801EC354ED0030218F /* BasicsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsExampleVC.swift; sourceTree = "<group>"; };
+		41C677C71EF136E2003AD834 /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fakery.framework; sourceTree = "<group>"; };
 		41DB85BB1EE0630C0099CFC4 /* ImoTableView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImoTableView.xcodeproj; path = ../../ImoTableView/ImoTableView.xcodeproj; sourceTree = "<group>"; };
 		41DB85C41EE063D00099CFC4 /* BasicsActionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsActionsExampleVC.swift; sourceTree = "<group>"; };
 		41DB85C61EE067B10099CFC4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				411A1A581EE6371600205704 /* Fakery.framework in Frameworks */,
+				41C677C81EF136E2003AD834 /* Fakery.framework in Frameworks */,
 				411410F91DF55F1300E737BA /* ImoTableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +139,7 @@
 		411410DA1DF55ECD00E737BA = {
 			isa = PBXGroup;
 			children = (
-				411A1A571EE6371500205704 /* Fakery.framework */,
+				41C677C71EF136E2003AD834 /* Fakery.framework */,
 				411410E51DF55ECD00E737BA /* ImoTableViewExample */,
 				4187E3731EC3507C0030218F /* ImoTableViewExampleUITests */,
 				411410E41DF55ECD00E737BA /* Products */,
@@ -536,7 +536,6 @@
 		411410F61DF55ECD00E737BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -555,7 +554,6 @@
 		411410F71DF55ECD00E737BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (

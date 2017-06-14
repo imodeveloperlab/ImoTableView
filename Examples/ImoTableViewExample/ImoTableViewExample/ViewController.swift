@@ -18,11 +18,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.title = "Examples"
         
-        if #available(iOS 11.0, *) {
-            self.navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
         
         tableView = ImoTableView(on: self.view)
     }
