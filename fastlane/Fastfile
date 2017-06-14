@@ -17,14 +17,35 @@ default_platform :ios
 
 platform :ios do
   before_all do
+
+    
      ENV["SLACK_URL"] = "https://imotableview.slack.com"
+  end
+
+  desc "Deploy new release"
+  lane :release do
+    
+    #ensure_git_branch
+    version = version_bump_podspec(path: "ImoTableView.podspec")
+    git_commit(path: ["ImoTableView.podspec"], message: "Bumped to version #{version}")
+    push_to_git_remote(remote_branch: 'master', force: false, tags: true)
+    changelog = changelog_from_git_commits
+
+    github_release = set_github_release(
+       repository_name: "imodeveloperlab/ImoTableView",
+       api_token: ENV["GITHUB_API_TOKEN"],
+       name: version,
+       tag_name: version,
+       description: changelog,
+       commitish: "master"
+  )
+
   end
 
   desc "Runs all the tests"
   lane :test do
     
     scan
-
     slack(
        message: "Successfull tests"
     )
@@ -40,15 +61,6 @@ platform :ios do
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
-  end
-
-  desc "Deploy a new version to the App Store"
-  lane :release do
-    # match(type: "appstore")
-    # snapshot
-    gym # Build your app - more options available
-    deliver(force: true)
-    # frameit
   end
 
   # You can define as many lanes as you want

@@ -32,7 +32,10 @@ public extension ImoTableView {
     func didSelect(source: ImoTableViewSource) {
         
         if let didSelect = self.didSelectSource {
-            didSelect(source)
+        
+            DispatchQueue.main.async {
+                didSelect(source)
+            }
         }
     }
     
@@ -68,11 +71,14 @@ public extension ImoTableView {
                          selector: Selector,
                          source: ImoTableViewSource) {
         
-        if target.responds(to: selector) {
-            if let object = source.object {
-                _ = target.perform(selector, with: object)
-            } else {
-                _ = target.perform(selector, with: source)
+        DispatchQueue.main.async {
+            
+            if target.responds(to: selector) {
+                if let object = source.object {
+                    _ = target.perform(selector, with: object)
+                } else {
+                    _ = target.perform(selector, with: source)
+                }
             }
         }
     }

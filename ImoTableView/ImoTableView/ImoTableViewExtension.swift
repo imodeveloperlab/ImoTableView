@@ -101,15 +101,12 @@ public extension ImoTableView {
     /// - Returns: (frame: CGRect, duration: Double)?
     func framAndDuration(for notification: Notification) -> (frame: CGRect, duration: Double)? {
         
-        if let userInfo = notification.userInfo {
-            if let keyboargFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect {
-                if let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double {
-                    return (frame: keyboargFrame, duration: duration)
-                }
-            }
+        guard let keyboargFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+            return nil
         }
         
-        return nil
+        return (frame: keyboargFrame, duration: duration)
     }
     
     /// Get UIEdgeInsets for keyboardFrame
@@ -118,36 +115,41 @@ public extension ImoTableView {
     /// - Returns: UIEdgeInsets
     func insets(for keyboardFrame: CGRect) -> UIEdgeInsets {
         
-        if let view = mainView() {
-            
-            let tableFrame = self.tableView.frame
-            let convertedTableFrame = view.convert(tableFrame, to: view)
-            let inset = keyboardFrame.intersection(convertedTableFrame).height
-            let currentTableInsets = self.tableView.contentInset
-            
-            return UIEdgeInsets(top: currentTableInsets.top,
-                                left: currentTableInsets.left,
-                                bottom: inset,
-                                right: currentTableInsets.right)
+        guard let view = self.tableView.superview,
+              let mainWindowView = mainWindowView() else {
+            if let storedContentInset = self.storedContentInset {
+                return storedContentInset
+            } else {
+                return self.tableView.contentInset
+            }
         }
         
-        if let storedContentInset = self.storedContentInset {
-            return storedContentInset
-        } else {
-            return self.tableView.contentInset
-        }
+        let tableFrame = self.tableView.frame
+        let convertedTableFrame = view.convert(tableFrame, to: view)
+        let inset = keyboardFrame.intersection(convertedTableFrame).height
+        let currentTableInsets = self.tableView.contentInset
+        let difference = mainWindowView.frame.size.height - view.frame.size.height
+        
+        return UIEdgeInsets(top: currentTableInsets.top,
+                            left: currentTableInsets.left,
+                            bottom: inset + difference,
+                            right: currentTableInsets.right)
     }
     
     /// Get top view from window
     ///
     /// - Returns: most top view from window
-    func mainView() -> UIView? {
-        if let window = UIApplication.shared.keyWindow {
-            if let controller = window.rootViewController {
-                return controller.view
-            }
+    func mainWindowView() -> UIView? {
+        
+        guard let controller = UIApplication.shared.keyWindow?.rootViewController else {
+            return nil
         }
-        return nil
+        
+        guard (controller.navigationController != nil) else {
+            return controller.view
+        }
+        
+        return controller.navigationController?.view
     }
     
     public func spaceBetwenLastCellAndTableBottom() -> CGFloat {
