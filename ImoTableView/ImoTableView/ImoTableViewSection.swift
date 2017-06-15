@@ -47,7 +47,7 @@ open class ImoTableViewSection : NSObject {
     /// Add new source in section
     ///
     /// - Parameter source: CellSource
-    public func add(_ source: ImoTableViewSource, target:AnyObject? = nil, _ selector:Selector? = nil) {
+    public func add(_ source: ImoTableViewSource, target: AnyObject? = nil, _ selector: Selector? = nil) {
         
         if let target = target {
             source.target = target
