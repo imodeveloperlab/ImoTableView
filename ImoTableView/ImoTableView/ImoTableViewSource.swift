@@ -26,7 +26,6 @@ open class ImoTableViewSource : NSObject {
     //Cell xib
     open var nib : UINib?
     
-    
     /// Init source
     ///
     /// - Parameter cellClass: Cell class / identifier
