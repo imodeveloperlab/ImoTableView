@@ -138,7 +138,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return UITableViewCell()
     }
     
-    
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
