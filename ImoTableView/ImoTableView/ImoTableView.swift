@@ -47,10 +47,56 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     var registeredCells = [String]()
     
     //Did select source closure
-    public var didSelectSource : ((ImoTableViewSource?) -> (Void))?
+    public var didSelectSource: ((ImoTableViewSource?) -> (Void))?
     
     //Did select cell at index path
-    public var didSelectCellAtIndexPath : ((IndexPath) -> (Void))?
+    public var didSelectCellAtIndexPath: ((IndexPath) -> (Void))?
+    
+    // MARK: - Scroll view closures
+    //Scroll view did scroll
+    public var scrollViewDidScroll: ((UIScrollView) -> (Void))?
+    
+    //Scroll view did zoom
+    public var scrollViewDidZoom: ((UIScrollView) -> (Void))?
+    
+    //Scroll view will begin dragging
+    public var scrollViewWillBeginDragging: ((UIScrollView) -> (Void))?
+    
+    //Scroll view will end dragging
+    public typealias ScrollVelocity = CGPoint
+    public typealias TargetContentOffset = UnsafeMutablePointer<CGPoint>
+    public var scrollViewWillEndDragging: ((UIScrollView, ScrollVelocity, TargetContentOffset) -> (Void))?
+    
+    //Scroll view did end dragging
+    public typealias WillDecelerate = Bool
+    public var scrollViewDidEndDragging: ((UIScrollView, WillDecelerate) -> (Void))?
+    
+    //Scroll view will begin decelerating
+    public var scrollViewWillBeginDecelerating: ((UIScrollView) -> (Void))?
+    
+    //Scroll view did end decelerating
+    public var scrollViewDidEndDecelerating: ((UIScrollView) -> (Void))?
+
+    //Scroll did end scrolling animation
+    public var scrollViewDidEndScrollingAnimation: ((UIScrollView) -> (Void))?
+
+    //View for zooming
+    public var viewForZooming: ((UIScrollView) -> (UIView?))?
+    
+    //Scroll view will begin zooming
+    public var scrollViewWillBeginZooming: ((UIScrollView, UIView?) -> (Void))?
+    
+    //Scroll view did end zooming
+    public typealias AtScale = CGFloat
+    public var scrollViewDidEndZooming: ((UIScrollView, UIView?, AtScale) -> (Void))?
+    
+    //Scroll view should scroll to top
+    public var scrollViewShouldScrollToTop: ((UIScrollView) -> (Bool))?
+    
+    //Scroll view did scroll to top
+    public var scrollViewDidScrollToTop: ((UIScrollView) -> (Void))?
+    
+    // MARK: - Initialization
     
     public init(on view: UIView, insets: UIEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)) {
         

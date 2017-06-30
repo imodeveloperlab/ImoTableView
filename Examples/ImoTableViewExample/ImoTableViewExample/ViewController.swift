@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         explore.append(AnimatedDeleteCellsExample())
         explore.append(AutomaticScrollAdjustExampleVC())
         explore.append(SpaceExampleVC())
+        explore.append(ScrollCatchExampleVC())
         
         self.show(examples: explore)
     }

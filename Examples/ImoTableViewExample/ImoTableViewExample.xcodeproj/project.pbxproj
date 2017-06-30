@@ -34,6 +34,7 @@
 		4187E3681EC3183B0030218F /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4187E3661EC3183B0030218F /* TextFieldCell.xib */; };
 		4187E3751EC3507C0030218F /* ImoTableViewExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */; };
 		4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3801EC354ED0030218F /* BasicsExampleVC.swift */; };
+		41BDE4B01F0627E60029E4C2 /* ScrollCatchExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BDE4AF1F0627E60029E4C2 /* ScrollCatchExampleVC.swift */; };
 		41C677C81EF136E2003AD834 /* Fakery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41C677C71EF136E2003AD834 /* Fakery.framework */; };
 		41C677CA1EF136E5003AD834 /* Fakery.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 41C677C71EF136E2003AD834 /* Fakery.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		41DB85C51EE063D00099CFC4 /* BasicsActionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41DB85C41EE063D00099CFC4 /* BasicsActionsExampleVC.swift */; };
@@ -110,6 +111,7 @@
 		4187E3741EC3507C0030218F /* ImoTableViewExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImoTableViewExampleUITests.swift; sourceTree = "<group>"; };
 		4187E3761EC3507C0030218F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4187E3801EC354ED0030218F /* BasicsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsExampleVC.swift; sourceTree = "<group>"; };
+		41BDE4AF1F0627E60029E4C2 /* ScrollCatchExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCatchExampleVC.swift; sourceTree = "<group>"; };
 		41C677C71EF136E2003AD834 /* Fakery.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fakery.framework; sourceTree = "<group>"; };
 		41DB85BB1EE0630C0099CFC4 /* ImoTableView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ImoTableView.xcodeproj; path = ../../ImoTableView/ImoTableView.xcodeproj; sourceTree = "<group>"; };
 		41DB85C41EE063D00099CFC4 /* BasicsActionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicsActionsExampleVC.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				4187E3801EC354ED0030218F /* BasicsExampleVC.swift */,
+				41BDE4AF1F0627E60029E4C2 /* ScrollCatchExampleVC.swift */,
 				41DB85C41EE063D00099CFC4 /* BasicsActionsExampleVC.swift */,
 				4172BEBF1EC4963A00E33F64 /* SpaceExampleVC.swift */,
 				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
@@ -389,6 +392,7 @@
 				4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */,
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
 				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
+				41BDE4B01F0627E60029E4C2 /* ScrollCatchExampleVC.swift in Sources */,
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
 				4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,

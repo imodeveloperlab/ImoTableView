@@ -27,6 +27,7 @@
 		4187E3341EC1F4BC0030218F /* ImoTableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */; };
 		4187E3361EC2F8810030218F /* ImoTableViewExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */; };
 		4187E36B1EC348D40030218F /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */; };
+		41BDE4B41F0628A40029E4C2 /* ImoTableViewScrollExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41BDE4B31F0628A40029E4C2 /* ImoTableViewScrollExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		4187E3331EC1F4BC0030218F /* ImoTableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtension.swift; sourceTree = "<group>"; };
 		4187E3351EC2F8810030218F /* ImoTableViewExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewExtensionTests.swift; sourceTree = "<group>"; };
 		4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		41BDE4B31F0628A40029E4C2 /* ImoTableViewScrollExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableViewScrollExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				414B8C7A1EBF80F600836AE3 /* ImoTableViewSourcesExtension.swift */,
 				414B8C761EBF789700836AE3 /* ImoTableViewSectionsExtension.swift */,
 				414B8C781EBF7FAC00836AE3 /* ImoTableViewActionsExtension.swift */,
+				41BDE4B31F0628A40029E4C2 /* ImoTableViewScrollExtension.swift */,
 				4187E36A1EC348D40030218F /* UIViewControllerExtension.swift */,
 			);
 			name = Extensions;
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41BDE4B41F0628A40029E4C2 /* ImoTableViewScrollExtension.swift in Sources */,
 				4114111C1DF55FBF00E737BA /* ImoTableView.swift in Sources */,
 				412339D81E5362D200D71EAD /* ImoTableViewUtils.swift in Sources */,
 				4187E36B1EC348D40030218F /* UIViewControllerExtension.swift in Sources */,
