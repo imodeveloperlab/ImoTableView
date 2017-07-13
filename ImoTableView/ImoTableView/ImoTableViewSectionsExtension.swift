@@ -109,8 +109,6 @@ public extension ImoTableView {
         
         if animated {
             animateDeleteSections(indexSet, animation)
-        } else {
-            tableView.reloadData()
         }
     }
     
