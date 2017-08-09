@@ -12,36 +12,40 @@ import UIKit
 ///
 /// - unknown: Uknown Error
 /// - dontExistSourceAtIndex: Missing source for given index
-enum ImoTableViewSectionError : Error {
+enum ImoTableViewSectionError: Error {
     case unknown
     case dontExistSourceAtIndex
     case dontExistSectionAtIndex
 }
 
 /// Section hold all table sources, header and footer view
-open class ImoTableViewSection : NSObject {
+open class ImoTableViewSection: NSObject {
     
     /// default is 40
-    public var estimatedHeaderHeight : CGFloat = 40
+    public var estimatedHeaderHeight: CGFloat = 40
     /// default is 40
-    public var estimatedFooterHeight : CGFloat = 40
+    public var estimatedFooterHeight: CGFloat = 40
     /// Manual header height, if is nill table will use estimatedHeaderHeight
-    public var headerHeight : CGFloat?
+    public var headerHeight: CGFloat?
     /// Manual footer height, if is nill table will use estimatedFooterHeight
-    public var footerHeight : CGFloat?
+    public var footerHeight: CGFloat?
     /// Header UIView
-    public var headerView : UIView?
+    
+    public var headerView: UIView?
+    
     /// Footer UIView
-    public var footerView : UIView?
+    public var footerView: UIView?
     /// Header title
-    public var headerTitle : String?
+    public var headerTitle: String?
     /// Footer title
-    public var footerTitle : String?
+    public var footerTitle: String?
+    /// Show header if section is empty
+    public var showHeaderIfSectionIsEmpty: Bool = false
+    
     /// Sourcess array
     var sources = [ImoTableViewSource]()
     
     public override init() {
-        
     }
     
     /// Add new source in section

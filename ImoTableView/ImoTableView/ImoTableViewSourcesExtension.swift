@@ -139,6 +139,17 @@ public extension ImoTableView {
         }
     }
     
+    func update(sections: [ImoTableViewSection], animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
+        
+        if let indexArray = indexFor(sections: sections) {
+            if animated {
+                tableView.reloadSections(indexArray, with: animation)
+            } else {
+                self.update()
+            }
+        }
+    }
+    
     /// Array of indexPaths for sources in section
     ///
     /// - Parameters:

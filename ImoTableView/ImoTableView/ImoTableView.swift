@@ -13,7 +13,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //TableView
     public var tableView : UITableView
     
-    //For storing original table UIEdgeInsets when an keyboard apears on screen 
+    //For storing original table UIEdgeInsets when an keyboard apears on screen
     //table will change its content inssets and after when keyboard dissapears
     //we need to set previous table ContentInset asnd ScrollIndicatorInsets
     open var storedContentInset: UIEdgeInsets?
@@ -76,10 +76,10 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     //Scroll view did end decelerating
     public var scrollViewDidEndDecelerating: ((UIScrollView) -> (Void))?
-
+    
     //Scroll did end scrolling animation
     public var scrollViewDidEndScrollingAnimation: ((UIScrollView) -> (Void))?
-
+    
     //View for zooming
     public var viewForZooming: ((UIScrollView) -> (UIView?))?
     
@@ -145,7 +145,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             let section : ImoTableViewSection = self.sections[section]
             return section.count()
         }
-
+        
         return 0
     }
     
@@ -187,8 +187,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
-              let height = source.height else {
-            return UITableViewAutomaticDimension
+            let height = source.height else {
+                return UITableViewAutomaticDimension
         }
         
         return height

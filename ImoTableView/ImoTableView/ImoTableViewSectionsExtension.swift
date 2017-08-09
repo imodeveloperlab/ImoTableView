@@ -72,7 +72,7 @@ public extension ImoTableView {
                        animated: Bool = false,
                        animation: UITableViewRowAnimation = .fade) {
         
-        self.delete(add(sections: [section], animated: animated, animation: animation))
+        self.delete(sections: [section], animated: animated, animation: animation)
     }
     
     /// Delete sections
@@ -200,6 +200,28 @@ public extension ImoTableView {
     public func indexFor(section: ImoTableViewSection) -> Int? {
         return self.sections.index(of: section)
     }
+    
+    /// Index array of sections
+    ///
+    /// - Parameter sections: Sections Array
+    /// - Returns: Section Index Array
+    public func indexFor(sections: [ImoTableViewSection]) -> IndexSet? {
+        
+        var sectionsIndexes: [Int] = []
+        
+        for section in sections {
+            if let index = self.indexFor(section: section) {
+                sectionsIndexes.append(index)
+            }
+        }
+        
+        if sectionsIndexes.count > 0 {
+            return IndexSet(sectionsIndexes.sorted { $0 < $1 })
+        }
+        
+        return nil
+    }
+    
     
     // MARK: - Animated updates
     
