@@ -17,6 +17,7 @@
 		412339081E4DC99100D71EAD /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339051E4DC99100D71EAD /* ActionCell.swift */; };
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
+		415016891F755B1A0032AC29 /* UpdateChangedSectionsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */; };
 		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
 		4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */; };
 		4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */; };
@@ -92,6 +93,7 @@
 		412339051E4DC99100D71EAD /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
+		415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateChangedSectionsExample.swift; sourceTree = "<group>"; };
 		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
 		4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAddCellsExample.swift; sourceTree = "<group>"; };
 		4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedDeleteCellsExample.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */,
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
 				4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */,
+				415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */,
 				4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */,
 			);
 			name = Examples;
@@ -390,6 +393,7 @@
 				412339081E4DC99100D71EAD /* ActionCell.swift in Sources */,
 				4187E3631EC316950030218F /* TextCell.swift in Sources */,
 				4187E3811EC354ED0030218F /* BasicsExampleVC.swift in Sources */,
+				415016891F755B1A0032AC29 /* UpdateChangedSectionsExample.swift in Sources */,
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
 				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
 				41BDE4B01F0627E60029E4C2 /* ScrollCatchExampleVC.swift in Sources */,

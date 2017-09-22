@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         explore.append(AutomaticScrollAdjustExampleVC())
         explore.append(SpaceExampleVC())
         explore.append(ScrollCatchExampleVC())
+        explore.append(UpdateChangedSectionsExample())
         
         self.show(examples: explore)
     }

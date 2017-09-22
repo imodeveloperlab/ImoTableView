@@ -30,9 +30,7 @@ open class ImoTableViewSection: NSObject {
     /// Manual footer height, if is nill table will use estimatedFooterHeight
     public var footerHeight: CGFloat?
     /// Header UIView
-    
     public var headerView: UIView?
-    
     /// Footer UIView
     public var footerView: UIView?
     /// Header title
@@ -41,6 +39,11 @@ open class ImoTableViewSection: NSObject {
     public var footerTitle: String?
     /// Show header if section is empty
     public var showHeaderIfSectionIsEmpty: Bool = false
+    
+    /// For checking if section was change, means you have added or deleted some cell sources
+    /// is set to true when some changes happen and to false when cells from this section are
+    /// updated on screen
+    public var wasChanged = false
     
     /// Sourcess array
     var sources = [ImoTableViewSource]()
@@ -51,7 +54,11 @@ open class ImoTableViewSection: NSObject {
     /// Add new source in section
     ///
     /// - Parameter source: CellSource
-    public func add(_ source: ImoTableViewSource, target: AnyObject? = nil, _ selector: Selector? = nil) {
+    public func add(_ source: ImoTableViewSource,
+                    target: AnyObject? = nil,
+                    _ selector: Selector? = nil) {
+        
+        wasChanged = true
         
         if let target = target {
             source.target = target
@@ -70,7 +77,12 @@ open class ImoTableViewSection: NSObject {
     ///   - sources: Cell Source
     ///   - target: Add source action to an target
     ///   - selector: Sellector for target
-    public func add(sources: [ImoTableViewSource], target:AnyObject? = nil, _ selector:Selector? = nil) {
+    public func add(sources: [ImoTableViewSource],
+                    target: AnyObject? = nil,
+                    _ selector: Selector? = nil) {
+        
+        wasChanged = true
+        
         for source in sources {
             self.add(source, target: target, selector)
         }
@@ -80,8 +92,9 @@ open class ImoTableViewSection: NSObject {
     ///
     /// - Parameter index: Source Index
     /// - Returns: ImoTableViewSource?
-    public func get(sourceAtIndex index:Int) -> ImoTableViewSource? {
-        if containIndex(index:index) {
+    public func get(sourceAtIndex index: Int) -> ImoTableViewSource? {
+        
+        if containIndex(index: index) {
             return sources[index]
         }
         return nil
@@ -91,9 +104,11 @@ open class ImoTableViewSection: NSObject {
     ///
     /// - Parameter index: Source Index
     /// - Throws: ImoTableViewSectionError
-    public func delete(atIndex index:Int) throws {
+    public func delete(atIndex index: Int) throws {
         
-        if containIndex(index:index) {
+        wasChanged = true
+        
+        if containIndex(index: index) {
            sources.remove(at: index)
         } else {
             throw ImoTableViewSectionError.unknown
@@ -104,7 +119,7 @@ open class ImoTableViewSection: NSObject {
     ///
     /// - Parameter index: Index
     /// - Returns: Bool
-    public func containIndex(index:Int) -> Bool {
+    public func containIndex(index: Int) -> Bool {
         
         if sources.indices.contains(index) {
             return true
@@ -118,7 +133,8 @@ open class ImoTableViewSection: NSObject {
     /// - Throws: ImoTableViewSectionError
     public func delete(_ source: ImoTableViewSource) throws {
         
-        sources.remove(at:try indexOfSource(source:source))
+        wasChanged = true
+        sources.remove(at: try indexOfSource(source: source))
     }
     
     /// Delete sources from section
@@ -127,6 +143,8 @@ open class ImoTableViewSection: NSObject {
     /// - Throws: ImoTableViewSectionError
     public func delete(sources: [ImoTableViewSource]) throws {
         
+        wasChanged = true
+        
         for source in sources {
             self.sources.remove(at: try indexOfSource(source: source))
         }
@@ -134,6 +152,8 @@ open class ImoTableViewSection: NSObject {
     
     /// Delete all sources
     public func deleteAll() {
+        
+        wasChanged = true
         sources.removeAll()
     }
     
@@ -163,9 +183,9 @@ open class ImoTableViewSection: NSObject {
     /// - Parameter source: CellSource
     /// - Returns: Index
     /// - Throws: ImoTableViewSectionError
-    public func indexOfSource(source:ImoTableViewSource) throws -> Int {
+    public func indexOfSource(source: ImoTableViewSource) throws -> Int {
 
-        if let index = sources.index(of:source) {
+        if let index = sources.index(of: source) {
             return index
         } else {
             throw ImoTableViewSectionError.dontExistSourceAtIndex

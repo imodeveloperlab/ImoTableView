@@ -130,7 +130,7 @@ public extension ImoTableView {
     
     func update(section: ImoTableViewSection, animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
         
-        if let index = indexFor(section: section) {
+        if let index = indexSetFor(section: section) {
             if animated {
                 tableView.reloadSections([index], with: animation)
             } else {
@@ -141,12 +141,19 @@ public extension ImoTableView {
     
     func update(sections: [ImoTableViewSection], animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
         
-        if let indexArray = indexFor(sections: sections) {
+        if let indexArray = indexSetFor(sections: sections) {
             if animated {
                 tableView.reloadSections(indexArray, with: animation)
             } else {
                 self.update()
             }
+        }
+    }
+    
+    func updateChangedSections(animation: UITableViewRowAnimation = .fade) {
+        
+        if let indexArray = indexSetForChanged(sections: sections) {
+            tableView.reloadSections(indexArray, with: animation)
         }
     }
     
@@ -160,7 +167,7 @@ public extension ImoTableView {
                               in section: ImoTableViewSection) -> [IndexPath] {
         
         var indexes: [IndexPath] = []
-        if let sectionIndex = self.indexFor(section: section) {
+        if let sectionIndex = self.indexSetFor(section: section) {
             for source in sources {
                 do {
                     let sourceIndex = try section.indexOfSource(source: source)

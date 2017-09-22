@@ -187,7 +187,12 @@ public extension ImoTableView {
     public func cellSourceForIndexPath(indexPath: IndexPath) -> ImoTableViewSource? {
         
         if self.sections.indices.contains(indexPath.section) {
-            let section : ImoTableViewSection = self.sections[indexPath.section]
+            
+            let section: ImoTableViewSection = self.sections[indexPath.section]
+            
+            //WAS CHANGED TO FALSE 
+            section.wasChanged = false
+            
             return section.get(sourceAtIndex: indexPath.row)
         }
         return nil
@@ -197,25 +202,57 @@ public extension ImoTableView {
     ///
     /// - Parameter section: Section object
     /// - Returns: Section Index
-    public func indexFor(section: ImoTableViewSection) -> Int? {
+    public func indexSetFor(section: ImoTableViewSection) -> Int? {
         return self.sections.index(of: section)
     }
+    
     
     /// Index array of sections
     ///
     /// - Parameter sections: Sections Array
     /// - Returns: Section Index Array
-    public func indexFor(sections: [ImoTableViewSection]) -> IndexSet? {
+    public func indexSetFor(sections: [ImoTableViewSection]) -> IndexSet? {
         
         var sectionsIndexes: [Int] = []
         
         for section in sections {
-            if let index = self.indexFor(section: section) {
+            if let index = self.indexSetFor(section: section) {
                 sectionsIndexes.append(index)
             }
         }
         
         if sectionsIndexes.count > 0 {
+            
+            return IndexSet(sectionsIndexes.sorted { $0 < $1 })
+        }
+        
+        return nil
+    }
+    
+    
+    /// Index array of sections
+    ///
+    /// - Parameter sections: Sections Array
+    /// - Returns: Section Index Array
+    public func indexSetForChanged(sections: [ImoTableViewSection]) -> IndexSet? {
+        
+        var sectionsIndexes: [Int] = []
+        
+        for section in sections {
+            
+            if section.wasChanged {
+                
+                //SET WAS CHANGED TO FALSE
+                section.wasChanged = false
+                
+                if let index = self.indexSetFor(section: section) {
+                    sectionsIndexes.append(index)
+                }
+            }
+        }
+        
+        if sectionsIndexes.count > 0 {
+            
             return IndexSet(sectionsIndexes.sorted { $0 < $1 })
         }
         
