@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-open class ImoTableViewSource : NSObject {
+open class ImoTableViewSource: NSObject {
 
     /// Static cell
     public var staticCell : ImoTableViewCell?

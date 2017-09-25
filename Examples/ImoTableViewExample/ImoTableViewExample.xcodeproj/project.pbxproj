@@ -18,6 +18,9 @@
 		412339091E4DC99100D71EAD /* ActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 412339061E4DC99100D71EAD /* ActionCell.xib */; };
 		4123390A1E4DC99100D71EAD /* ActionCellSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 412339071E4DC99100D71EAD /* ActionCellSource.swift */; };
 		415016891F755B1A0032AC29 /* UpdateChangedSectionsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */; };
+		415016D61F79454D0032AC29 /* AddDeleteIfExistExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415016D51F79454D0032AC29 /* AddDeleteIfExistExample.swift */; };
+		415016DB1F7945800032AC29 /* ComparableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 415016D91F7945800032AC29 /* ComparableCell.swift */; };
+		415016DC1F7945800032AC29 /* ComparableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 415016DA1F7945800032AC29 /* ComparableCell.xib */; };
 		4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */; };
 		4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */; };
 		4172BEAD1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */; };
@@ -94,6 +97,9 @@
 		412339061E4DC99100D71EAD /* ActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionCell.xib; sourceTree = "<group>"; };
 		412339071E4DC99100D71EAD /* ActionCellSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCellSource.swift; sourceTree = "<group>"; };
 		415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateChangedSectionsExample.swift; sourceTree = "<group>"; };
+		415016D51F79454D0032AC29 /* AddDeleteIfExistExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeleteIfExistExample.swift; sourceTree = "<group>"; };
+		415016D91F7945800032AC29 /* ComparableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComparableCell.swift; sourceTree = "<group>"; };
+		415016DA1F7945800032AC29 /* ComparableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComparableCell.xib; sourceTree = "<group>"; };
 		4172BE9A1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipleSectionsExampleVC.swift; sourceTree = "<group>"; };
 		4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedAddCellsExample.swift; sourceTree = "<group>"; };
 		4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedDeleteCellsExample.swift; sourceTree = "<group>"; };
@@ -195,6 +201,8 @@
 				4172BEB81EC495D800E33F64 /* ColorCell.xib */,
 				4172BEBB1EC495F100E33F64 /* SpaceCell.swift */,
 				4172BEBC1EC495F100E33F64 /* SpaceCell.xib */,
+				415016D91F7945800032AC29 /* ComparableCell.swift */,
+				415016DA1F7945800032AC29 /* ComparableCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 				4187E3441EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift */,
 				4172BEA61EC4533E00E33F64 /* AnimatedAddCellsExample.swift */,
 				415016881F755B1A0032AC29 /* UpdateChangedSectionsExample.swift */,
+				415016D51F79454D0032AC29 /* AddDeleteIfExistExample.swift */,
 				4172BEAC1EC4593200E33F64 /* AnimatedDeleteCellsExample.swift */,
 			);
 			name = Examples;
@@ -362,6 +371,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				415016DC1F7945800032AC29 /* ComparableCell.xib in Resources */,
 				411410F11DF55ECD00E737BA /* LaunchScreen.storyboard in Resources */,
 				412339091E4DC99100D71EAD /* ActionCell.xib in Resources */,
 				4172BEBE1EC495F100E33F64 /* SpaceCell.xib in Resources */,
@@ -397,6 +407,8 @@
 				411410E91DF55ECD00E737BA /* ViewController.swift in Sources */,
 				4172BE9B1EC356BF00E33F64 /* MultipleSectionsExampleVC.swift in Sources */,
 				41BDE4B01F0627E60029E4C2 /* ScrollCatchExampleVC.swift in Sources */,
+				415016D61F79454D0032AC29 /* AddDeleteIfExistExample.swift in Sources */,
+				415016DB1F7945800032AC29 /* ComparableCell.swift in Sources */,
 				4187E3451EC2FD440030218F /* AutomaticScrollAdjustExampleVC.swift in Sources */,
 				4172BEA71EC4533E00E33F64 /* AnimatedAddCellsExample.swift in Sources */,
 				4187E3671EC3183B0030218F /* TextFieldCell.swift in Sources */,

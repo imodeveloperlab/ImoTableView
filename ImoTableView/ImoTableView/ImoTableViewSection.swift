@@ -51,6 +51,90 @@ open class ImoTableViewSection: NSObject {
     public override init() {
     }
     
+    //MARK: -
+    //MARK: Get
+    
+    /// Get source from section specific index
+    ///
+    /// - Parameter index: Source Index
+    /// - Returns: ImoTableViewSource?
+    public func get(sourceAtIndex index: Int) -> ImoTableViewSource? {
+        
+        if containIndex(index: index) {
+            return sources[index]
+        }
+        return nil
+    }
+    
+    //MARK: -
+    //MARK: Delete
+    
+    /// Delete source from section
+    ///
+    /// - Parameter source: Source you want to delete
+    /// - Throws: ImoTableViewSectionError
+    public func delete(_ source: ImoTableViewSource) throws {
+        
+        wasChanged = true
+        sources.remove(at: try indexOfSource(source: source))
+    }
+    
+    /// Delete if source exist using Equtable protocol
+    ///
+    /// - Parameter source: CellSource
+    public func deleteIfExist(source: ImoTableViewSource) {
+        
+        if sources.contains(source) {
+            
+            wasChanged = true
+            
+            do {
+                sources.remove(at: try indexOfSource(source: source))
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    
+    /// Delete source from section specific index
+    ///
+    /// - Parameter index: Source Index
+    /// - Throws: ImoTableViewSectionError
+    public func delete(atIndex index: Int) throws {
+        
+        wasChanged = true
+        
+        if containIndex(index: index) {
+            sources.remove(at: index)
+        } else {
+            throw ImoTableViewSectionError.unknown
+        }
+    }
+    
+    /// Delete sources from section
+    ///
+    /// - Parameter source: Source you want to delete
+    /// - Throws: ImoTableViewSectionError
+    public func delete(sources: [ImoTableViewSource]) throws {
+        
+        wasChanged = true
+        
+        for source in sources {
+            self.sources.remove(at: try indexOfSource(source: source))
+        }
+    }
+    
+    /// Delete all sources
+    public func deleteAll() {
+        
+        wasChanged = true
+        sources.removeAll()
+    }
+    
+    //MARK: -
+    //MARK: ADD
+    
     /// Add new source in section
     ///
     /// - Parameter source: CellSource
@@ -88,74 +172,23 @@ open class ImoTableViewSection: NSObject {
         }
     }
     
-    /// Get source from section specific index
+    /// Add new source in section if source not exist using Equtable protocol
     ///
-    /// - Parameter index: Source Index
-    /// - Returns: ImoTableViewSource?
-    public func get(sourceAtIndex index: Int) -> ImoTableViewSource? {
+    /// - Parameter source: CellSource
+    public func addIfNotExist(source: ImoTableViewSource) {
         
-        if containIndex(index: index) {
-            return sources[index]
+        for compareSource in sources {
+            if compareSource == source {
+                return
+            }
         }
-        return nil
-    }
-    
-    /// Delete source from section specific index
-    ///
-    /// - Parameter index: Source Index
-    /// - Throws: ImoTableViewSectionError
-    public func delete(atIndex index: Int) throws {
         
         wasChanged = true
-        
-        if containIndex(index: index) {
-           sources.remove(at: index)
-        } else {
-            throw ImoTableViewSectionError.unknown
-        }
+        sources.append(source)
     }
     
-    /// Check if section contain given index
-    ///
-    /// - Parameter index: Index
-    /// - Returns: Bool
-    public func containIndex(index: Int) -> Bool {
-        
-        if sources.indices.contains(index) {
-            return true
-        }
-        return false
-    }
-    
-    /// Delete source from section
-    ///
-    /// - Parameter source: Source you want to delete
-    /// - Throws: ImoTableViewSectionError
-    public func delete(_ source: ImoTableViewSource) throws {
-        
-        wasChanged = true
-        sources.remove(at: try indexOfSource(source: source))
-    }
-    
-    /// Delete sources from section
-    ///
-    /// - Parameter source: Source you want to delete
-    /// - Throws: ImoTableViewSectionError
-    public func delete(sources: [ImoTableViewSource]) throws {
-        
-        wasChanged = true
-        
-        for source in sources {
-            self.sources.remove(at: try indexOfSource(source: source))
-        }
-    }
-    
-    /// Delete all sources
-    public func deleteAll() {
-        
-        wasChanged = true
-        sources.removeAll()
-    }
+    //MARK: -
+    //MARK: HELPERS
     
     /// Last source if exist
     ///
@@ -198,4 +231,30 @@ open class ImoTableViewSection: NSObject {
     public func count() -> Int {
         return sources.count
     }
+    
+    /// Check if section contain given index
+    ///
+    /// - Parameter index: Index
+    /// - Returns: Bool
+    public func containIndex(index: Int) -> Bool {
+        
+        if sources.indices.contains(index) {
+            return true
+        }
+        return false
+    }
+    
+    
+//    public func containSource<T: ImoTableViewSource>(_ source: T) -> Bool where T: Equatable  {
+//        
+//        for tmpSource in self.sources {
+//            
+//            if tmpSource == source {
+//                return true
+//            }
+//        }
+//        
+//        return false
+//    }
+    
 }
