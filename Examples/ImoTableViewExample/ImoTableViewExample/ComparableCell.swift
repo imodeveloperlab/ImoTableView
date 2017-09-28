@@ -45,5 +45,4 @@ extension ComparableCellSource {
     override open func isEqual(_ source: Any?) -> Bool {
         return message == (source as! ComparableCellSource).message
     }
-    
 }

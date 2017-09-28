@@ -50,7 +50,18 @@ class AddDeleteIfExistExample: BaseViewController {
         //ADD SECTIONS TO TABLE
         table.add(section: mainSection)
         table.add(section: firstSection)
+        
         table.add(section: secondSection)
+        
+        let firstName = TextCellSource(text: "First Name: \(faker.name.firstName())")
+        firstSection.add(firstName)
+        
+        let lastName = TextCellSource(text: "Last Name: \(faker.name.lastName())")
+        firstSection.add(lastName)
+        
+        let company = TextCellSource(text: "Company: \(faker.company.name())")
+        secondSection.add(company)
+        
     }
     
     func addFirstSource() {

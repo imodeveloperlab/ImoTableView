@@ -159,7 +159,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return UITableViewCell()
     }
     
-    func cellForSource(_ tableView: UITableView,
+    public func cellForSource(_ tableView: UITableView,
                        _ source: ImoTableViewSource,
                        cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -172,7 +172,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     //
-    func reusableCell(_ tableView: UITableView,
+    public func reusableCell(_ tableView: UITableView,
                       _ source: ImoTableViewSource,
                       cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
