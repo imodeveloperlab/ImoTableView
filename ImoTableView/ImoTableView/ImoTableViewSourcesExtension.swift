@@ -176,6 +176,10 @@ public extension ImoTableView {
             }
         }
         
+        for ip in indexes {
+            print("\(ip.row) \(ip.section)")
+        }
+        
         return indexes
     }
 }

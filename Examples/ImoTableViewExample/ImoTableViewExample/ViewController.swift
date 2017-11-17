@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         explore.append(ScrollCatchExampleVC())
         explore.append(UpdateChangedSectionsExample())
         explore.append(AddDeleteIfExistExample())
-
+        explore.append(AnimatedInsertMultipleSections())
         
         self.show(examples: explore)
     }

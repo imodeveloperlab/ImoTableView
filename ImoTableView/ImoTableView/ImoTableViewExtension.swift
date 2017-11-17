@@ -60,6 +60,8 @@ public extension ImoTableView {
         
         storedContentInset = self.tableView.contentInset
         storedScrollIndicatorInsets = self.tableView.scrollIndicatorInsets
+        
+        isKeyboardOnScreen = true
         adjustScroll(for: notification)
     }
     
@@ -67,6 +69,8 @@ public extension ImoTableView {
     ///
     /// - Parameter notification: Notification
     func keyboardWillHide(_ notification: Notification) {
+        
+        isKeyboardOnScreen = false
         adjustScroll(for: notification)
     }
     
@@ -115,25 +119,32 @@ public extension ImoTableView {
     /// - Returns: UIEdgeInsets
     func insets(for keyboardFrame: CGRect) -> UIEdgeInsets {
         
-        guard let view = self.tableView.superview,
-              let mainWindowView = mainWindowView() else {
-            if let storedContentInset = self.storedContentInset {
-                return storedContentInset
-            } else {
-                return self.tableView.contentInset
+        if isKeyboardOnScreen {
+            
+            guard let view = self.superview,
+                  let mainWindowView = mainWindowView() else {
+                    return self.tableView.contentInset
             }
+            
+            let tableFrame = self.tableView.frame
+            let convertedTableFrame = view.convert(tableFrame, to: view)
+            let inset = keyboardFrame.intersection(convertedTableFrame).height
+            let currentTableInsets = self.tableView.contentInset
+            let topMargin = view.frame.size.height - (self.frame.size.height + self.frame.origin.y)
+            let difference = mainWindowView.frame.size.height - self.frame.size.height - topMargin
+            
+            let insetts = UIEdgeInsets(top: currentTableInsets.top,
+                                       left: currentTableInsets.left,
+                                       bottom: inset + difference,
+                                       right: currentTableInsets.right)
+            return insetts
         }
         
-        let tableFrame = self.tableView.frame
-        let convertedTableFrame = view.convert(tableFrame, to: view)
-        let inset = keyboardFrame.intersection(convertedTableFrame).height
-        let currentTableInsets = self.tableView.contentInset
-        let difference = mainWindowView.frame.size.height - view.frame.size.height
+        if let storedContentInset = self.storedContentInset {
+            return storedContentInset
+        }
         
-        return UIEdgeInsets(top: currentTableInsets.top,
-                            left: currentTableInsets.left,
-                            bottom: inset + difference,
-                            right: currentTableInsets.right)
+        return self.tableView.contentInset
     }
     
     /// Get top view from window

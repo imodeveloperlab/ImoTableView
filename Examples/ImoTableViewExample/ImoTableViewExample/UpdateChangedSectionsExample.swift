@@ -52,6 +52,9 @@ class UpdateChangedSectionsExample: BaseViewController {
         let updateChanged = ActionCellSource(title: "Update changed sections")
         mainSection.add(updateChanged, target: self, #selector(updateChangedSections))
         
+        let sequenceChangeAndUpdate = ActionCellSource(title: "Sequence Change And Update Sections")
+        mainSection.add(sequenceChangeAndUpdate, target: self, #selector(sequenceChangeAndUpdateSections))
+        
         //ADD SECTIONS TO TABLE
         table.add(section: mainSection)
         
@@ -103,6 +106,29 @@ class UpdateChangedSectionsExample: BaseViewController {
         
         table.updateChangedSections()
         
+    }
+    
+    func sequenceChangeAndUpdateSections()  {
+        
+        table.updateChangedSections()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+         
+            self.addSourceInSecondSection()
+            self.addSourceInSecondSection()
+            self.table.updateChangedSections()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            
+            self.addSourceInThirdSection()
+            self.addSourceInThirdSection()
+            self.addSourceInThirdSection()
+            self.table.updateChangedSections()
+            
+        }
+    
     }
     
     

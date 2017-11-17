@@ -38,6 +38,7 @@ public extension ImoTableView {
                     animation: UITableViewRowAnimation = .fade) {
         
         self.sections.append(contentsOf: sections)
+        
         if animated {
             animateInsertSections(sections, animation)
         }
@@ -206,7 +207,6 @@ public extension ImoTableView {
         return self.sections.index(of: section)
     }
     
-    
     /// Index array of sections
     ///
     /// - Parameter sections: Sections Array
@@ -228,7 +228,6 @@ public extension ImoTableView {
         
         return nil
     }
-    
     
     /// Index array of sections
     ///
@@ -258,7 +257,6 @@ public extension ImoTableView {
         
         return nil
     }
-    
     
     // MARK: - Animated updates
     
@@ -303,7 +301,7 @@ public extension ImoTableView {
     ///
     /// - Parameter sections: Array of sections
     /// - Returns: IndexSet
-    func indexSetForSections(sections: [ImoTableViewSection]) -> IndexSet {
+    public func indexSetForSections(sections: [ImoTableViewSection]) -> IndexSet {
         
         var indexes: [Int] = []
         for section in sections {

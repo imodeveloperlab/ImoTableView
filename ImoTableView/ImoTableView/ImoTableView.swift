@@ -40,6 +40,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //Estimated height for row
     var estimatedHeightForRow: CGFloat = 40
     
+    //Is keyboard on screeen
+    var isKeyboardOnScreen: Bool = false
+    
     //This array hold all table sections
     var sections = [ImoTableViewSection]()
     
@@ -249,13 +252,13 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return UITableViewAutomaticDimension
     }
     
-    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        
-        if let section = sectionForIndex(index: section) {
-            return section.estimatedHeaderHeight
-        }
-        return 0
-    }
+//    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+//        
+//        if let section = sectionForIndex(index: section) {
+//            return section.estimatedHeaderHeight
+//        }
+//        return 0
+//    }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -286,13 +289,13 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return UITableViewAutomaticDimension
     }
     
-    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-        
-        if let section = sectionForIndex(index: section) {
-            return section.estimatedFooterHeight
-        }
-        return 0
-    }
+//    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+//        
+//        if let section = sectionForIndex(index: section) {
+//            return section.estimatedFooterHeight
+//        }
+//        return 0
+//    }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
