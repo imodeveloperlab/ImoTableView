@@ -281,3 +281,156 @@ func didSelectAppName() {
 ```
 ![alt text](Content/BasicActionsExample.gif "ImoTableView Logo")
 
+### Multiple Sections Example
+
+```swift
+//TABLE
+let table = ImoTableView(on: self.view)
+
+//USER INFO SECTION
+let userInfoSection = ImoTableViewSection()
+userInfoSection.headerTitle = "User info"
+
+let firstName = TextCellSource(text: "First Name: \(faker.name.firstName())")
+userInfoSection.add(firstName)
+
+let lastName = TextCellSource(text: "Last Name: \(faker.name.lastName())")
+userInfoSection.add(lastName)
+table.add(section: userInfoSection)
+
+//BUSSINES INFO SECTION
+let bussinesInfoSection = ImoTableViewSection()
+bussinesInfoSection.headerTitle = "Bussines info"
+
+let company = TextCellSource(text: "Company: \(faker.company.name())")
+bussinesInfoSection.add(company)
+
+let cardNumber = TextCellSource(text: "Credit Card: \(faker.business.creditCardNumber())")
+bussinesInfoSection.add(cardNumber)
+
+let cardType = TextCellSource(text: "Type: \(faker.business.creditCardType())")
+bussinesInfoSection.add(cardType)
+table.add(section: bussinesInfoSection)
+
+//Lorem section
+let loremSection = ImoTableViewSection()
+loremSection.headerTitle = "Lorem Ipsum"
+
+for _ in 0...20 {
+    let text = faker.lorem.sentence()
+    loremSection.add(TextCellSource(text: text))
+}
+
+table.add(section: loremSection)
+```
+![alt text](Content/MultipleSectionsExample.gif "ImoTableView Logo")
+
+### Animate Add Cells Example
+
+```swift
+override func viewDidLoad() {
+
+  super.viewDidLoad()
+
+  //HIDE THE KAYBOARD WHEN TAPPED ARROUND
+  self.hideKeyboardWhenTappedAround()
+
+  //TABLE
+  self.table = ImoTableView(on: self.view)
+
+  //ADD ONE CELL ACTION
+  let addSource = ActionCellSource(title: "Add new Cell")
+  mainSection.add(addSource, target: self, #selector(addNewCell))
+
+  //ADD MULTIPLE CELL'S ACTION
+  let addMultipleSource = ActionCellSource(title: "Add multiple Cells")
+  mainSection.add(addMultipleSource, target: self, #selector(addMultipleCells))
+
+  //HEADER TITLE
+  secondSection.headerTitle = "Cells"
+
+  //ADD SECTIONS TO TABLE
+  table.add(section: mainSection)
+  table.add(section: secondSection)
+}
+
+func addNewCell() {
+
+  let text = faker.lorem.sentence()
+  let source = TextCellSource(text: text)
+  table.add(source: source, in: secondSection, animated: true, animation: .top)
+}
+
+func addMultipleCells() {
+
+  var sources:[TextCellSource] = []
+
+  for _ in 0...10 {
+      let text = faker.lorem.sentence()
+      sources.append(TextCellSource(text: text))
+  }
+
+  table.add(sources: sources, in: secondSection, animated: true, animation: .top)
+}
+```
+![alt text](Content/AnimateAddCellsExample.gif "ImoTableView Logo")
+
+### Animate Delete Cells Example
+
+```swift
+override func viewDidLoad() {
+
+    super.viewDidLoad()
+    self.hideKeyboardWhenTappedAround()
+    self.table = ImoTableView(on: self.view)
+
+    let deleteFirstSource = ActionCellSource(title: "Delete first cell")
+    mainSection.add(deleteFirstSource, target: self, #selector(deleteFirst))
+
+    let deleteLastSource = ActionCellSource(title: "Delete last cell")
+    mainSection.add(deleteLastSource, target: self, #selector(deleteLast))
+
+    let deleteAllSource = ActionCellSource(title: "Delete all cells")
+    mainSection.add(deleteAllSource, target: self, #selector(deleteAll))
+
+    secondSection.headerTitle = "Cells"
+
+    addMultipleCells()
+
+    table.add(section: mainSection)
+    table.add(section: secondSection)
+}
+
+func addMultipleCells() {
+
+    var sources:[TextCellSource] = []
+
+    for _ in 0...5 {
+        let text = faker.lorem.sentence()
+        sources.append(TextCellSource(text: text))
+    }
+
+    secondSection.add(sources: sources)
+}
+
+func deleteFirst()  {
+
+    if let source = secondSection.firstSource() {
+        table.delete(source: source, in: secondSection, animated: true, animation: .left)
+    }
+}
+
+func deleteLast()  {
+
+    if let source = secondSection.lastSource() {
+        table.delete(source: source, in: secondSection, animated: true, animation: .right)
+    }
+}
+
+func deleteAll()  {
+
+    let allSources = secondSection.allSources()
+    table.delete(sources: allSources, in: secondSection, animated: true, animation: .top)
+}
+```
+![alt text](Content/AnimateDeleteCellsExample.gif "ImoTableView Logo")
