@@ -261,23 +261,23 @@ override func viewDidLoad() {
         section.add(appVersionCell)
         
         table.add(section: section)
-    }
+}
     
-    func didSelectAppVersion(sender: AnyObject) {
-        
-        let version = sender as! String
-        show(message: "Did select version \(version)")
-    }
-    
-    func didSelectAppAuthor() {
+func didSelectAppVersion(sender: AnyObject) {
 
-        self.show(message: "Did select app author")
-    }
-    
-    func didSelectAppName() {
-        
-        show(message: "Did select app name")
-    }
+    let version = sender as! String
+    show(message: "Did select version \(version)")
+}
+
+func didSelectAppAuthor() {
+
+    self.show(message: "Did select app author")
+}
+
+func didSelectAppName() {
+
+    show(message: "Did select app name")
+}
 ```
 ![alt text](Content/BasicActionsExample.gif "ImoTableView Logo")
 
