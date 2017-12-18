@@ -1,10 +1,5 @@
 ![alt text](Content/Logo.png "ImoTableView Logo")
 
-![Swift](http://img.shields.io/badge/swift-3.2-brightgreen.svg)
-![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
-![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)
-[![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
-
 An wrapper around **UITableView** which aims to facilitate working with tables.
 
 
@@ -15,12 +10,12 @@ An wrapper around **UITableView** which aims to facilitate working with tables.
 - [Requirements](#requirements)
 - [Installation](#installation)
 
-## Onboarding 
+## Onboarding
 To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
 
 1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
 2. **ImoTableViewSection** is an class which work with **ImoTableViewSource**'s, add new source, delete, update.
-3. **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example. 
+3. **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example.
 4. **ImoTableViewCell** is view representation of properties you have stored in your source.
 
 ![alt text](Content/ImoTableView.png "ImoTableView")
@@ -64,7 +59,7 @@ open class ActionCell: ImoTableViewCell {
 
 ```swift
 open class ActionCellSource: ImoTableViewSource {
-    
+
     public var title: String
 
     init(title: String) {
@@ -77,7 +72,7 @@ open class ActionCellSource: ImoTableViewSource {
 }
 ```
 
-## Templates 
+## Templates
 The quick onboarding for use **ImoTableView** is to add **ImoTableViewCell.xctemplate** in your xcode templates, this template will create all you need to fast create an new **Cell** and **CellSource** for you
 
 ![alt text](Content/CreateCellFromTemplate.gif "ImoTableView Logo")
@@ -89,7 +84,7 @@ After create an folder **ImoTableView** and copy in this folder **ImoTableViewCe
 ## Snippets
 ### ImoTableViewSection
 
-```swift 
+```swift
 //Create new section
 let section = ImoTableViewSection()
 
@@ -102,7 +97,7 @@ section.delete(atIndex: yourCellIndex)
 //Delete CellSource
 section.delete(yourCellSource)
 
-//Delete All 
+//Delete All
 section.deleteAll()
 
 //Set section header View
@@ -115,7 +110,7 @@ section.footerView = YourView
 
 ### ImoTableView
 
-```swift 
+```swift
 //Create new table
 let table = ImoTableView()
 
@@ -230,28 +225,28 @@ table.add(section: section)
 
 ```swift
 override func viewDidLoad() {
-        
+
         super.viewDidLoad()
-        
+
         //TABLE
         let table = ImoTableView(on: self.view)
-        
+
         //SECTION
         let section = ImoTableViewSection()
-        
+
         //FAKER
         let faker = Faker.init()
-        
+
         //1. First way
         let appNameCell = ActionCellSource(title: "App name: \(faker.app.name())")
         section.add(appNameCell, target: self, #selector(didSelectAppName))
-        
+
         //2. Second way
         let appAuthorCell = ActionCellSource(title: "Author: \(faker.app.author())")
         appAuthorCell.target = self
         appAuthorCell.selector = #selector(didSelectAppAuthor)
         section.add(appAuthorCell)
-        
+
         //3. Third way
         let appVersion = faker.app.version()
         let appVersionCell = ActionCellSource(title: "App version: \(appVersion)")
@@ -259,10 +254,10 @@ override func viewDidLoad() {
         appVersionCell.object = appVersion as AnyObject
         appVersionCell.selector = #selector(didSelectAppVersion)
         section.add(appVersionCell)
-        
+
         table.add(section: section)
 }
-    
+
 func didSelectAppVersion(sender: AnyObject) {
 
     let version = sender as! String
