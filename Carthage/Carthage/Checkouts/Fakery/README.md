@@ -27,6 +27,7 @@ It's useful in all the cases when you need to use some dummy data for testing, p
   * [Number](#number)
   * [Phone number](#phone-number)
   * [Team](#team)
+  * [Bank](#bank)
 * [Installation](#installation)
 * [Contributing](#contributing)
 * [Author](#author)
@@ -48,6 +49,10 @@ let city = faker.address.city()         //=> "Oslo"
 **Fakery** is quite powerful when it comes to generation of locale-specific data.
 In `Resources/Locales` you can find JSON files for more than 20 locales, and, of course, it's not a limit.
 Feel free to contribute and add more!  
+
+The default locale is English. When you use one of the available generators and
+the corresponding key is not found in a JSON file for the currently selected
+locale **Fakery** will also check if it exists in "en.json" file.
 
 ## Generators
 
@@ -72,6 +77,7 @@ faker.address.country() //=> "United States of America"
 faker.address.countryCode() //=> "US"
 faker.address.latitude() //=> -58.17256227443719
 faker.address.longitude() //=> -156.65548382095133
+faker.address.coordinate() //=> CLLocationCoordinate2D(latitude: 40.97868, longitude: 29.09306)
 ```
 
 ### App
@@ -130,6 +136,7 @@ faker.internet.ipV6Address() //=> "ac5f:d696:3807:1d72:2eb5:4e81:7d2b:e1df"
 faker.internet.url() //=> "http://example.com/ida4"
 faker.internet.image() //=> "http://lorempixel.com/320/200"
 faker.internet.templateImage() //=> "http://dummyimage.com/320x200/000000/ffffff"
+faker.internet.hashtag() //=> "#art"
 
 ```
 
@@ -194,6 +201,15 @@ faker.phoneNumber.numberExtension(length: Int) // "123"
 faker.team.name() //=> "bats"         
 faker.team.creature() //=> "Alabama bats"
 faker.team.state() // => "Alabama"
+```
+
+### Bank
+
+```swift
+faker.bank.name() //=> "ABN AMRO CORPORATE FINANCE LIMITED"         
+faker.bank.swiftBic() //=> "AAFMGB21"
+faker.bank.iban() // => "NL45BUNQ2209931378"
+faker.bank.bban() //=> ABNA0136468471
 ```
 
 ## Installation

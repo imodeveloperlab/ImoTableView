@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		09F65D6F1CA30351006C87C5 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F65D6E1CA30351006C87C5 /* Number.swift */; };
 		09F65D701CA30351006C87C5 /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F65D6E1CA30351006C87C5 /* Number.swift */; };
+		1057479A1F6FBAA500154ECB /* BankSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105747991F6FBAA500154ECB /* BankSpec.swift */; };
+		1057479B1F6FBAAA00154ECB /* BankSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105747991F6FBAA500154ECB /* BankSpec.swift */; };
+		1057479D1F6FBF6C00154ECB /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057479C1F6FBF6C00154ECB /* Bank.swift */; };
+		1057479E1F6FBF7100154ECB /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057479C1F6FBF6C00154ECB /* Bank.swift */; };
+		1057479F1F6FBF7100154ECB /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1057479C1F6FBF6C00154ECB /* Bank.swift */; };
+		105747A11F6FFB9F00154ECB /* nl.json in Resources */ = {isa = PBXBuildFile; fileRef = 105747A01F6FFB9F00154ECB /* nl.json */; };
+		105747A21F6FFB9F00154ECB /* nl.json in Resources */ = {isa = PBXBuildFile; fileRef = 105747A01F6FFB9F00154ECB /* nl.json */; };
+		105747A31F6FFB9F00154ECB /* nl.json in Resources */ = {isa = PBXBuildFile; fileRef = 105747A01F6FFB9F00154ECB /* nl.json */; };
+		2A17AB0A1E4E45A600011BC6 /* tr-TR.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A17AB091E4E45A600011BC6 /* tr-TR.json */; };
 		BC4477911BFA450D00E8FB15 /* Faker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFA1681BF9F912005A3BC1 /* Faker.swift */; };
 		BC4477921BFA451400E8FB15 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFA16A1BF9F912005A3BC1 /* Address.swift */; };
 		BC4477931BFA451600E8FB15 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFFA16B1BF9F912005A3BC1 /* App.swift */; };
@@ -185,8 +194,12 @@
 
 /* Begin PBXFileReference section */
 		09F65D6E1CA30351006C87C5 /* Number.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		105747991F6FBAA500154ECB /* BankSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankSpec.swift; sourceTree = "<group>"; };
+		1057479C1F6FBF6C00154ECB /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		105747A01F6FFB9F00154ECB /* nl.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nl.json; sourceTree = "<group>"; };
+		2A17AB091E4E45A600011BC6 /* tr-TR.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "tr-TR.json"; sourceTree = "<group>"; };
 		BC827FA81BFA3CE1005F09A4 /* Fakery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fakery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC827FB11BFA3CE1005F09A4 /* Fakery-Mac-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fakery-Mac-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC827FB11BFA3CE1005F09A4 /* Fakery-macOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fakery-macOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF0DF3A1BF9F77E00427DB4 /* Fakery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Fakery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF0DF441BF9F77E00427DB4 /* Fakery-iOS-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fakery-iOS-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFFA1491BF9F912005A3BC1 /* de-AT.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "de-AT.json"; sourceTree = "<group>"; };
@@ -300,11 +313,13 @@
 			children = (
 				D59B6D0F1D99C6C7007CB072 /* Project */,
 				BCFFA1471BF9F912005A3BC1 /* Resources */,
-				BCFFA1611BF9F912005A3BC1 /* Source */,
+				BCFFA1611BF9F912005A3BC1 /* Sources */,
 				BCFFA1761BF9F912005A3BC1 /* Tests */,
 				BCF0DF3B1BF9F77E00427DB4 /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		BCF0DF3B1BF9F77E00427DB4 /* Products */ = {
 			isa = PBXGroup;
@@ -312,7 +327,7 @@
 				BCF0DF3A1BF9F77E00427DB4 /* Fakery.framework */,
 				BCF0DF441BF9F77E00427DB4 /* Fakery-iOS-Tests.xctest */,
 				BC827FA81BFA3CE1005F09A4 /* Fakery.framework */,
-				BC827FB11BFA3CE1005F09A4 /* Fakery-Mac-Tests.xctest */,
+				BC827FB11BFA3CE1005F09A4 /* Fakery-macOS-Tests.xctest */,
 				BDC291281D9441F2007DA2FC /* Fakery.framework */,
 			);
 			name = Products;
@@ -353,20 +368,18 @@
 				BCFFA15E1BF9F912005A3BC1 /* uk.json */,
 				BCFFA15F1BF9F912005A3BC1 /* zh-CN.json */,
 				BCFFA1601BF9F912005A3BC1 /* zh-TW.json */,
+				2A17AB091E4E45A600011BC6 /* tr-TR.json */,
+				105747A01F6FFB9F00154ECB /* nl.json */,
 			);
 			path = Locales;
 			sourceTree = "<group>";
 		};
-		BCFFA1611BF9F912005A3BC1 /* Source */ = {
+		BCFFA1611BF9F912005A3BC1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				BCFFA1621BF9F912005A3BC1 /* Config.swift */,
-				BCFFA1681BF9F912005A3BC1 /* Faker.swift */,
-				BCFFA1631BF9F912005A3BC1 /* Data */,
-				BCFFA1661BF9F912005A3BC1 /* Extensions */,
-				BCFFA1691BF9F912005A3BC1 /* Generators */,
+				D535B6521F954FC20023F851 /* Fakery */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		BCFFA1631BF9F912005A3BC1 /* Data */ = {
@@ -401,6 +414,7 @@
 				09F65D6E1CA30351006C87C5 /* Number.swift */,
 				BCFFA1731BF9F912005A3BC1 /* PhoneNumber.swift */,
 				BCFFA1741BF9F912005A3BC1 /* Team.swift */,
+				1057479C1F6FBF6C00154ECB /* Bank.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -411,6 +425,18 @@
 				D59B6CEC1D99C5FD007CB072 /* Fakery */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		D535B6521F954FC20023F851 /* Fakery */ = {
+			isa = PBXGroup;
+			children = (
+				BCFFA1621BF9F912005A3BC1 /* Config.swift */,
+				BCFFA1681BF9F912005A3BC1 /* Faker.swift */,
+				BCFFA1631BF9F912005A3BC1 /* Data */,
+				BCFFA1661BF9F912005A3BC1 /* Extensions */,
+				BCFFA1691BF9F912005A3BC1 /* Generators */,
+			);
+			path = Fakery;
 			sourceTree = "<group>";
 		};
 		D59B6CEC1D99C5FD007CB072 /* Fakery */ = {
@@ -448,6 +474,7 @@
 				D59B6CFC1D99C5FD007CB072 /* NumberSpec.swift */,
 				D59B6CFD1D99C5FD007CB072 /* PhoneNumberSpec.swift */,
 				D59B6CFE1D99C5FD007CB072 /* TeamSpec.swift */,
+				105747991F6FBAA500154ECB /* BankSpec.swift */,
 			);
 			path = Generators;
 			sourceTree = "<group>";
@@ -492,9 +519,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		BC827FA71BFA3CE1005F09A4 /* Fakery-Mac */ = {
+		BC827FA71BFA3CE1005F09A4 /* Fakery-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC827FBD1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-Mac" */;
+			buildConfigurationList = BC827FBD1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-macOS" */;
 			buildPhases = (
 				BC827FA31BFA3CE1005F09A4 /* Sources */,
 				BC827FA41BFA3CE1005F09A4 /* Frameworks */,
@@ -506,14 +533,14 @@
 			);
 			dependencies = (
 			);
-			name = "Fakery-Mac";
+			name = "Fakery-macOS";
 			productName = "Fakery OSX";
 			productReference = BC827FA81BFA3CE1005F09A4 /* Fakery.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		BC827FB01BFA3CE1005F09A4 /* Fakery-Mac-Tests */ = {
+		BC827FB01BFA3CE1005F09A4 /* Fakery-macOS-Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC827FBE1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-Mac-Tests" */;
+			buildConfigurationList = BC827FBE1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-macOS-Tests" */;
 			buildPhases = (
 				BC827FAD1BFA3CE1005F09A4 /* Sources */,
 				BC827FAE1BFA3CE1005F09A4 /* Frameworks */,
@@ -525,9 +552,9 @@
 			dependencies = (
 				BC827FB41BFA3CE1005F09A4 /* PBXTargetDependency */,
 			);
-			name = "Fakery-Mac-Tests";
+			name = "Fakery-macOS-Tests";
 			productName = "Fakery OSXTests";
-			productReference = BC827FB11BFA3CE1005F09A4 /* Fakery-Mac-Tests.xctest */;
+			productReference = BC827FB11BFA3CE1005F09A4 /* Fakery-macOS-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		BCF0DF391BF9F77E00427DB4 /* Fakery-iOS */ = {
@@ -594,25 +621,28 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Vadym Markov";
 				TargetAttributes = {
 					BC827FA71BFA3CE1005F09A4 = {
 						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					BC827FB01BFA3CE1005F09A4 = {
 						CreatedOnToolsVersion = 7.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					BCF0DF391BF9F77E00427DB4 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0900;
 					};
 					BCF0DF431BF9F77E00427DB4 = {
 						CreatedOnToolsVersion = 7.1.1;
+						LastSwiftMigration = 0900;
 					};
 					BDC291271D9441F2007DA2FC = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -629,10 +659,10 @@
 			projectRoot = "";
 			targets = (
 				BCF0DF391BF9F77E00427DB4 /* Fakery-iOS */,
-				BC827FA71BFA3CE1005F09A4 /* Fakery-Mac */,
+				BC827FA71BFA3CE1005F09A4 /* Fakery-macOS */,
 				BDC291271D9441F2007DA2FC /* Fakery-tvOS */,
 				BCF0DF431BF9F77E00427DB4 /* Fakery-iOS-Tests */,
-				BC827FB01BFA3CE1005F09A4 /* Fakery-Mac-Tests */,
+				BC827FB01BFA3CE1005F09A4 /* Fakery-macOS-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -650,6 +680,7 @@
 				BC4477B51BFA458E00E8FB15 /* sk.json in Resources */,
 				BC4477A31BFA455F00E8FB15 /* de.json in Resources */,
 				BC4477B71BFA459400E8FB15 /* uk.json in Resources */,
+				105747A21F6FFB9F00154ECB /* nl.json in Resources */,
 				BC4477B31BFA458B00E8FB15 /* ru.json in Resources */,
 				BC4477A11BFA455900E8FB15 /* de-AT.json in Resources */,
 				BC4477B81BFA459700E8FB15 /* zh-CN.json in Resources */,
@@ -682,6 +713,7 @@
 			files = (
 				BCFFA1891BF9F912005A3BC1 /* nb-NO.json in Resources */,
 				BCFFA1821BF9F912005A3BC1 /* en.json in Resources */,
+				2A17AB0A1E4E45A600011BC6 /* tr-TR.json in Resources */,
 				BCFFA17C1BF9F912005A3BC1 /* en-AU.json in Resources */,
 				BCFFA18A1BF9F912005A3BC1 /* pl.json in Resources */,
 				BCFFA1861BF9F912005A3BC1 /* it.json in Resources */,
@@ -694,6 +726,7 @@
 				BCFFA17E1BF9F912005A3BC1 /* en-GB.json in Resources */,
 				BCFFA1901BF9F912005A3BC1 /* zh-TW.json in Resources */,
 				BCFFA1871BF9F912005A3BC1 /* ja.json in Resources */,
+				105747A11F6FFB9F00154ECB /* nl.json in Resources */,
 				BCFFA1801BF9F912005A3BC1 /* en-TEST.json in Resources */,
 				BCFFA1841BF9F912005A3BC1 /* fa.json in Resources */,
 				BCFFA1881BF9F912005A3BC1 /* ko.json in Resources */,
@@ -726,6 +759,7 @@
 				D59B6CC41D99C485007CB072 /* sk.json in Resources */,
 				D59B6CB31D99C485007CB072 /* de.json in Resources */,
 				D59B6CC61D99C485007CB072 /* uk.json in Resources */,
+				105747A31F6FFB9F00154ECB /* nl.json in Resources */,
 				D59B6CC31D99C485007CB072 /* ru.json in Resources */,
 				D59B6CB11D99C485007CB072 /* de-AT.json in Resources */,
 				D59B6CC71D99C485007CB072 /* zh-CN.json in Resources */,
@@ -844,6 +878,7 @@
 				BC4477991BFA452700E8FB15 /* Lorem.swift in Sources */,
 				BC4477961BFA451F00E8FB15 /* Company.swift in Sources */,
 				BC4477A01BFA454400E8FB15 /* Config.swift in Sources */,
+				1057479E1F6FBF7100154ECB /* Bank.swift in Sources */,
 				BC44779F1BFA453F00E8FB15 /* Provider.swift in Sources */,
 				BC44779D1BFA453800E8FB15 /* ArrayExtension.swift in Sources */,
 			);
@@ -860,6 +895,7 @@
 				D59B6D371D99C82E007CB072 /* LoremSpec.swift in Sources */,
 				D59B6D391D99C82E007CB072 /* NumberSpec.swift in Sources */,
 				D59B6D341D99C82E007CB072 /* CompanySpec.swift in Sources */,
+				1057479B1F6FBAAA00154ECB /* BankSpec.swift in Sources */,
 				D59B6D311D99C82E007CB072 /* AppSpec.swift in Sources */,
 				D59B6D331D99C82E007CB072 /* CommerceSpec.swift in Sources */,
 				D59B6D2E1D99C82E007CB072 /* ParserSpec.swift in Sources */,
@@ -891,6 +927,7 @@
 				BCFFA1971BF9F912005A3BC1 /* App.swift in Sources */,
 				BCFFA1A01BF9F912005A3BC1 /* Team.swift in Sources */,
 				BCFFA1941BF9F912005A3BC1 /* ArrayExtension.swift in Sources */,
+				1057479D1F6FBF6C00154ECB /* Bank.swift in Sources */,
 				BCFFA19E1BF9F912005A3BC1 /* Name.swift in Sources */,
 				BCFFA1991BF9F912005A3BC1 /* Commerce.swift in Sources */,
 			);
@@ -907,6 +944,7 @@
 				D59B6D271D99C82D007CB072 /* LoremSpec.swift in Sources */,
 				D59B6D291D99C82D007CB072 /* NumberSpec.swift in Sources */,
 				D59B6D241D99C82D007CB072 /* CompanySpec.swift in Sources */,
+				1057479A1F6FBAA500154ECB /* BankSpec.swift in Sources */,
 				D59B6D211D99C82D007CB072 /* AppSpec.swift in Sources */,
 				D59B6D231D99C82D007CB072 /* CommerceSpec.swift in Sources */,
 				D59B6D1E1D99C82D007CB072 /* ParserSpec.swift in Sources */,
@@ -938,6 +976,7 @@
 				D59B6CA61D99C46C007CB072 /* App.swift in Sources */,
 				D59B6CA31D99C464007CB072 /* ArrayExtension.swift in Sources */,
 				D59B6CAD1D99C46C007CB072 /* Name.swift in Sources */,
+				1057479F1F6FBF7100154ECB /* Bank.swift in Sources */,
 				D59B6CA81D99C46C007CB072 /* Commerce.swift in Sources */,
 				D59B6CAF1D99C46C007CB072 /* PhoneNumber.swift in Sources */,
 			);
@@ -948,7 +987,7 @@
 /* Begin PBXTargetDependency section */
 		BC827FB41BFA3CE1005F09A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BC827FA71BFA3CE1005F09A4 /* Fakery-Mac */;
+			target = BC827FA71BFA3CE1005F09A4 /* Fakery-macOS */;
 			targetProxy = BC827FB31BFA3CE1005F09A4 /* PBXContainerItemProxy */;
 		};
 		BCF0DF471BF9F77E00427DB4 /* PBXTargetDependency */ = {
@@ -973,12 +1012,13 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-macOS";
 				PRODUCT_NAME = Fakery;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -996,12 +1036,13 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Project/Info-Mac.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-OSX";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-macOS";
 				PRODUCT_NAME = Fakery;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1017,7 +1058,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1033,7 +1075,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery-OSXTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1045,14 +1088,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1077,7 +1126,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1096,14 +1145,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1122,7 +1177,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1148,7 +1203,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery";
 				PRODUCT_NAME = Fakery;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1167,7 +1223,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.Fakery";
 				PRODUCT_NAME = Fakery;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1179,7 +1236,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.FakeryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1191,7 +1249,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.vadym-markov.FakeryTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1212,9 +1271,10 @@
 				PRODUCT_NAME = Fakery;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
@@ -1235,16 +1295,17 @@
 				PRODUCT_NAME = Fakery;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 9.2;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC827FBD1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-Mac" */ = {
+		BC827FBD1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC827FB91BFA3CE1005F09A4 /* Debug */,
@@ -1253,7 +1314,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC827FBE1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-Mac-Tests" */ = {
+		BC827FBE1BFA3CE1005F09A4 /* Build configuration list for PBXNativeTarget "Fakery-macOS-Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BC827FBB1BFA3CE1005F09A4 /* Debug */,

@@ -2,8 +2,7 @@ import Quick
 import Nimble
 @testable import Fakery
 
-class CompanySpec: QuickSpec {
-
+final class CompanySpec: QuickSpec {
   override func spec() {
     describe("Company") {
       var company: Company!
@@ -44,7 +43,7 @@ class CompanySpec: QuickSpec {
       describe("#logo") {
         it("generates random logo") {
           let logo = company.logo()
-          expect(logo).to(match("^http://pigment.github.io/fake-logos/logos/medium/color/\\d+.png$"))
+          expect(logo).to(match("^https://pigment.github.io/fake-logos/logos/medium/color/\\d+.png$"))
         }
       }
     }

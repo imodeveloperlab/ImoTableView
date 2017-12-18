@@ -2,8 +2,7 @@ import Quick
 import Nimble
 @testable import Fakery
 
-class NumberSpec: QuickSpec {
-
+final class NumberSpec: QuickSpec {
   override func spec() {
     describe("Number") {
       var number: Number!
@@ -27,6 +26,16 @@ class NumberSpec: QuickSpec {
 
         expect(number.randomInt(min:5, max:7)) <= 7
         expect(number.randomInt(min:5, max:7)) >= 5
+
+        expect(number.randomInt(min: 1000000000000, max: 9999999999999)) >= 1000000000000
+        expect(number.randomInt(min: 1000000000000, max: 9999999999999)) <= 9999999999999
+
+        expect(number.randomInt(min: Int.min, max: Int.max)) >= Int.min
+        expect(number.randomInt(min: Int.min, max: Int.max)) <= Int.max
+
+        expect(number.randomInt(min: Int.min, max: 0)) >= Int.min
+        expect(number.randomInt(min: Int.min, max: 0)) <= 0
+
       }
 
       it("creates random Floats") {

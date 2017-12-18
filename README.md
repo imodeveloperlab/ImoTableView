@@ -199,3 +199,85 @@ Then, run the following command:
 $ pod install
 ```
 
+## Examples
+
+### Basic Example
+
+```swift
+//TABLE
+let table = ImoTableView(on: self.view)
+
+//SECTION
+let section = ImoTableViewSection()
+
+//FAKER
+let faker = Faker.init()
+
+let firstName = TextCellSource(text: "First Name: \(faker.name.firstName())")
+section.add(firstName)
+
+let lastName = TextCellSource(text: "Last Name: \(faker.name.lastName())")
+section.add(lastName)
+
+let company = TextCellSource(text: "Company: \(faker.company.name())")
+section.add(company)
+
+table.add(section: section)
+```
+![alt text](Content/BasicExample.gif "ImoTableView Logo")
+
+### Basic Actions Example
+
+```swift
+override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        //TABLE
+        let table = ImoTableView(on: self.view)
+        
+        //SECTION
+        let section = ImoTableViewSection()
+        
+        //FAKER
+        let faker = Faker.init()
+        
+        //1. First way
+        let appNameCell = ActionCellSource(title: "App name: \(faker.app.name())")
+        section.add(appNameCell, target: self, #selector(didSelectAppName))
+        
+        //2. Second way
+        let appAuthorCell = ActionCellSource(title: "Author: \(faker.app.author())")
+        appAuthorCell.target = self
+        appAuthorCell.selector = #selector(didSelectAppAuthor)
+        section.add(appAuthorCell)
+        
+        //3. Third way
+        let appVersion = faker.app.version()
+        let appVersionCell = ActionCellSource(title: "App version: \(appVersion)")
+        appVersionCell.target = self
+        appVersionCell.object = appVersion as AnyObject
+        appVersionCell.selector = #selector(didSelectAppVersion)
+        section.add(appVersionCell)
+        
+        table.add(section: section)
+    }
+    
+    func didSelectAppVersion(sender: AnyObject) {
+        
+        let version = sender as! String
+        show(message: "Did select version \(version)")
+    }
+    
+    func didSelectAppAuthor() {
+
+        self.show(message: "Did select app author")
+    }
+    
+    func didSelectAppName() {
+        
+        show(message: "Did select app name")
+    }
+```
+![alt text](Content/BasicActionsExample.gif "ImoTableView Logo")
+
