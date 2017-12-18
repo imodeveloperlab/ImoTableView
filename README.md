@@ -1,7 +1,6 @@
 ![alt text](Content/Logo.png "ImoTableView Logo")
 
-![Swift](http://img.shields.io/badge/swift-3.0-brightgreen.svg)
-[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=590f6ccf598da90001a1d9b7&branch=development&build=latest)](https://dashboard.buddybuild.com/apps/590f6ccf598da90001a1d9b7/build/latest?branch=development)
+![Swift](http://img.shields.io/badge/swift-3.2-brightgreen.svg)
 ![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)
 ![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)
 [![Twitter](https://img.shields.io/badge/twitter-@imodeveloper-blue.svg?style=flat)](https://twitter.com/imodeveloper)
@@ -32,7 +31,7 @@ Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
 ```swift
 //Create an table andd ad on SomeUIView
-let tableView = ImoTableView(on: SomeUIView, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+let tableView = ImoTableView(on: someUIView, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
 //Create new section
 let section = ImoTableViewSection()
 //Create new cellSource
@@ -48,11 +47,11 @@ tableView.reloadData()
 `ActionCell.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
-open class ActionCell : ImoTableViewCell {
+open class ActionCell: ImoTableViewCell {
     //UILabel from ActionCell.xib
     @IBOutlet weak var actionTitle: UILabel!
     //This method is called every time your cell will be displayed on screen
-    open override func setUpWithSource(source:AnyObject) {
+    open override func setUpWithSource(source: AnyObject) {
         //Cast source to ActionCellSource
         if let source = source as? ActionCellSource {
             //Set the label title
@@ -64,11 +63,11 @@ open class ActionCell : ImoTableViewCell {
 `ActionCellSource.swift` Contain an method ```swift open override func setUpWithSource(source:AnyObject)``` and this method is called every time  **ActionCell** will be shown on screen and ```swift source:AnyObject``` is cell source with all properties you need to set up you cell.
 
 ```swift
-open class ActionCellSource : ImoTableViewSource {
+open class ActionCellSource: ImoTableViewSource {
     
-    public var title : String
+    public var title: String
 
-    init(title:String) {
+    init(title: String) {
         self.title = title
         //Init source an specify cell class you will represent by this source
         super.init(cellClass: "ActionCell")
@@ -95,13 +94,13 @@ After create an folder **ImoTableView** and copy in this folder **ImoTableViewCe
 let section = ImoTableViewSection()
 
 //Add CellSource
-section.add(YourCellSource)
+section.add(yourCellSource)
 
 //Delete CellSource
-section.delete(atIndex:YourCellIndex)
+section.delete(atIndex: yourCellIndex)
 
 //Delete CellSource
-section.delete(YourCellSource)
+section.delete(yourCellSource)
 
 //Delete All 
 section.deleteAll()
@@ -121,13 +120,13 @@ section.footerView = YourView
 let table = ImoTableView()
 
 //Add section
-table.add(YourSection)
+table.add(yourSection)
 
 //Add sections
-table.add(YourSections)
+table.add(yourSections)
 
 //Delete section at index
-table.deleteSection(at: YourSectionIndex)
+table.deleteSection(at: yourSectionIndex)
 
 //Delete all sections
 table.deleteAllSections()

@@ -17,14 +17,12 @@ default_platform :ios
 
 platform :ios do
   before_all do
-
-    
      ENV["SLACK_URL"] = "https://imotableview.slack.com"
   end
 
   desc "Deploy new release"
   lane :release do
-    
+
     #ensure_git_branch
     version = version_bump_podspec(path: "ImoTableView.podspec")
     git_commit(path: ["ImoTableView.podspec"], message: "Bumped to version #{version}")
@@ -44,7 +42,7 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    
+
     scan
     slack(
        message: "Successfull tests"
