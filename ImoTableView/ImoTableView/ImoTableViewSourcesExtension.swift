@@ -128,7 +128,8 @@ public extension ImoTableView {
         }
     }
     
-    func update(section: ImoTableViewSection, animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
+    func update(section: ImoTableViewSection, animated: Bool = false,
+                animation: UITableViewRowAnimation = .fade) {
         
         if let index = indexSetFor(section: section) {
             if animated {
@@ -139,7 +140,8 @@ public extension ImoTableView {
         }
     }
     
-    func update(sections: [ImoTableViewSection], animated: Bool = false, animation: UITableViewRowAnimation = .fade) {
+    func update(sections: [ImoTableViewSection], animated: Bool = false,
+                animation: UITableViewRowAnimation = .fade) {
         
         if let indexArray = indexSetFor(sections: sections) {
             if animated {
@@ -174,10 +176,6 @@ public extension ImoTableView {
                     indexes.append(IndexPath(row: sourceIndex, section: sectionIndex))
                 } catch { print(error) }
             }
-        }
-        
-        for ip in indexes {
-            print("\(ip.row) \(ip.section)")
         }
         
         return indexes
