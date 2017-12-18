@@ -121,15 +121,10 @@ class UpdateChangedSectionsExample: BaseViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
-            
             self.addSourceInThirdSection()
             self.addSourceInThirdSection()
             self.addSourceInThirdSection()
             self.table.updateChangedSections()
-            
         }
-    
     }
-    
-    
 }

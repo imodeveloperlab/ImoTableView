@@ -434,3 +434,29 @@ func deleteAll()  {
 }
 ```
 ![alt text](Content/AnimateDeleteCellsExample.gif "ImoTableView Logo")
+
+### Animate Delete Cells Example
+
+```swift
+self.hideKeyboardWhenTappedAround()
+let table = ImoTableView(on: self.view, insets: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+
+table.tableView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 60, right: 0)
+table.tableView.scrollIndicatorInsets = UIEdgeInsets(top: 100, left: 0, bottom: 60, right: 0)
+
+table.adjustContentInsetsForKeyboard(true)
+let section = ImoTableViewSection()
+
+for _ in 0...5 {
+    let textField = TextFieldCellSource(staticCellWithTableView: table)
+    section.add(textField)
+}
+
+for _ in 0...20 {
+    let text = faker.lorem.sentence()
+    section.add(TextCellSource(text:text))
+}
+
+table.add(section: section)
+```
+![alt text](Content/AdjustScrollForKeyboardExample.gif "ImoTableView Logo")
