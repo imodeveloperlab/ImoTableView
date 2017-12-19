@@ -60,7 +60,6 @@ public extension ImoTableView {
         
         storedContentInset = self.tableView.contentInset
         storedScrollIndicatorInsets = self.tableView.scrollIndicatorInsets
-        
         isKeyboardOnScreen = true
         adjustScroll(for: notification)
     }
@@ -133,18 +132,28 @@ public extension ImoTableView {
             let topMargin = view.frame.size.height - (self.frame.size.height + self.frame.origin.y)
             let difference = mainWindowView.frame.size.height - self.frame.size.height - topMargin
             
+            var bottomSafeArea: CGFloat = 0
+            
+            if #available(iOS 11.0, *) {
+                if let bottom = superview?.safeAreaInsets.bottom {
+                    bottomSafeArea = bottom
+                }
+            }
+            
             let insetts = UIEdgeInsets(top: currentTableInsets.top,
                                        left: currentTableInsets.left,
-                                       bottom: inset + difference,
+                                       bottom: inset + difference - bottomSafeArea,
                                        right: currentTableInsets.right)
             return insetts
+            
+        } else {
+            
+            if let storedContentInset = self.storedContentInset {
+                return storedContentInset
+            }
+            
+            return self.tableView.contentInset
         }
-        
-        if let storedContentInset = self.storedContentInset {
-            return storedContentInset
-        }
-        
-        return self.tableView.contentInset
     }
     
     /// Get top view from window
