@@ -145,7 +145,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if self.sections.indices.contains(section) {
-            let section : ImoTableViewSection = self.sections[section]
+            let section: ImoTableViewSection = self.sections[section]
             return section.count()
         }
         

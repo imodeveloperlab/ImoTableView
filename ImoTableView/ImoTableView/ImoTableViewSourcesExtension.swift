@@ -159,6 +159,29 @@ public extension ImoTableView {
         }
     }
     
+    public func getSectionFor(source: ImoTableViewSource) -> ImoTableViewSection? {
+        
+        for section in sections {
+            for checkSource in section.sources where checkSource == source {
+                return section
+            }
+        }
+        
+        return nil
+    }
+    
+    func indexPathsFor(source: ImoTableViewSource) -> IndexPath? {
+        
+        if let section = getSectionFor(source: source) {
+            let indexPaths = indexPathsForSources(sources: [source], in: section)
+            if let indexPath = indexPaths.first {
+                return indexPath
+            }
+        }
+        
+        return nil
+    }
+    
     /// Array of indexPaths for sources in section
     ///
     /// - Parameters:

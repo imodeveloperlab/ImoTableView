@@ -27,6 +27,8 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         var explore: [Explorable] = []
         
+        
+        
         explore.append(BasicsExampleVC())
         explore.append(BasicsActionsExampleVC())
         explore.append(MultipleSectionsExampleVC())
@@ -38,6 +40,7 @@ class ViewController: UIViewController {
         explore.append(UpdateChangedSectionsExample())
         explore.append(AddDeleteIfExistExample())
         explore.append(AnimatedInsertMultipleSections())
+        explore.append(ScrollToCellExampleVC())
         
         self.show(examples: explore)
     }

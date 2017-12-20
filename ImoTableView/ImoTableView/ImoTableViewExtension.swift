@@ -183,5 +183,19 @@ public extension ImoTableView {
             return 0
         }
     }
+}
+
+public extension ImoTableView {
     
+    public func scrollToCell(source: ImoTableViewSource,
+                             at scrollPosition: UITableViewScrollPosition,
+                             animated: Bool) {
+        
+        if let indexPath = indexPathsFor(source: source) {
+            
+            tableView.scrollToRow(at: indexPath,
+                                  at: scrollPosition,
+                                  animated: animated)
+        }
+    }
 }

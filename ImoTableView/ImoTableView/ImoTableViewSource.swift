@@ -12,19 +12,19 @@ import UIKit
 open class ImoTableViewSource: NSObject {
 
     /// Static cell
-    public var staticCell : ImoTableViewCell?
+    public var staticCell: ImoTableViewCell?
     ///Manual cell height
-    public var height : CGFloat?
+    public var height: CGFloat?
     ///Cell class / ideintifier
-    var cellClass : String
+    var cellClass: String
     ///Target to send messages to Selector from cell
-    weak public var target : AnyObject?
+    weak public var target: AnyObject?
     //Selector for add action to an button inside cell
-    public var selector : Selector?
+    public var selector: Selector?
     //Custom sender object
-    public var object : AnyObject?
+    public var object: AnyObject?
     //Cell xib
-    open var nib : UINib?
+    open var nib: UINib?
     
     //Accessibility Identifier
     open var accessibilityIdentifier: String?
@@ -32,7 +32,7 @@ open class ImoTableViewSource: NSObject {
     /// Init source
     ///
     /// - Parameter cellClass: Cell class / identifier
-    public init(cellClass:String) {
+    public init(cellClass: String) {
         self.cellClass = cellClass
         self.nib = UINib(nibName: self.cellClass, bundle: nil)
         super.init()
