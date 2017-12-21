@@ -11,7 +11,12 @@ import UIKit
 public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     //TableView
-    public var tableView : UITableView
+    var tableView: UITableView
+    
+    //TableView
+    public var view: UITableView {
+        return self.tableView
+    }
     
     //For storing original table UIEdgeInsets when an keyboard apears on screen
     //table will change its content inssets and after when keyboard dissapears
@@ -20,15 +25,27 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     open var storedScrollIndicatorInsets: UIEdgeInsets?
     
     /// Set the separator collor of table view
-    public var separatorColor : UIColor? {
+    public var separatorColor: UIColor? {
         get { return self.tableView.separatorColor }
         set { self.tableView.separatorColor = newValue }
     }
     
     /// Separator insset
-    public var separatorInset : UIEdgeInsets {
+    public var separatorInset: UIEdgeInsets {
         get { return self.tableView.separatorInset }
         set { self.tableView.separatorInset = newValue }
+    }
+    
+    /// ContentInset insset
+    public var contentInset: UIEdgeInsets {
+        get { return self.tableView.contentInset }
+        set { self.tableView.contentInset = newValue }
+    }
+    
+    /// ScrollIndicatorInsets insset
+    public var scrollIndicatorInsets: UIEdgeInsets {
+        get { return self.tableView.scrollIndicatorInsets }
+        set { self.tableView.scrollIndicatorInsets = newValue }
     }
     
     // Tableview background Color
