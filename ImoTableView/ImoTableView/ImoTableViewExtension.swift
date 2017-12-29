@@ -58,10 +58,12 @@ public extension ImoTableView {
     /// - Parameter notification: Notification
     func keyboardWillShow(_ notification: Notification) {
         
-        storedContentInset = self.tableView.contentInset
-        storedScrollIndicatorInsets = self.tableView.scrollIndicatorInsets
-        isKeyboardOnScreen = true
-        adjustScroll(for: notification)
+        if isKeyboardOnScreen == false {
+            storedContentInset = self.tableView.contentInset
+            storedScrollIndicatorInsets = self.tableView.scrollIndicatorInsets
+            isKeyboardOnScreen = true
+            adjustScroll(for: notification)
+        }
     }
     
     /// Keyboard will hide notification

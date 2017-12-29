@@ -23,7 +23,7 @@ open class TextFieldCellSource : ImoTableViewSource {
         self.setUp()
         
         tableView.registerCellClass(cellClass: "TextFieldCell", nib: self.nib)
-        self.staticCell = tableView.tableView.dequeueReusableCell(withIdentifier:"TextFieldCell") as! ImoTableViewCell?
+        self.staticCell = tableView.view.dequeueReusableCell(withIdentifier:"TextFieldCell") as! ImoTableViewCell?
     }
     
     func setUp() {
