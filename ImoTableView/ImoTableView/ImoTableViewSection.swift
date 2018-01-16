@@ -51,8 +51,8 @@ open class ImoTableViewSection: NSObject {
     public override init() {
     }
     
-    //MARK: -
-    //MARK: Get
+    // MARK: -
+    // MARK: Get
     
     /// Get source from section specific index
     ///
@@ -66,8 +66,8 @@ open class ImoTableViewSection: NSObject {
         return nil
     }
     
-    //MARK: -
-    //MARK: Delete
+    // MARK: -
+    // MARK: Delete
     
     /// Delete source from section
     ///
@@ -95,7 +95,6 @@ open class ImoTableViewSection: NSObject {
             }
         }
     }
-    
     
     /// Delete source from section specific index
     ///
@@ -132,8 +131,8 @@ open class ImoTableViewSection: NSObject {
         sources.removeAll()
     }
     
-    //MARK: -
-    //MARK: ADD
+    // MARK: -
+    // MARK: ADD
     
     /// Add new source in section
     ///
@@ -177,18 +176,16 @@ open class ImoTableViewSection: NSObject {
     /// - Parameter source: CellSource
     public func addIfNotExist(source: ImoTableViewSource) {
         
-        for compareSource in sources {
-            if compareSource == source {
-                return
-            }
+        for compareSource in sources where compareSource == source {
+            return
         }
         
         wasChanged = true
         sources.append(source)
     }
     
-    //MARK: -
-    //MARK: HELPERS
+    // MARK: -
+    // MARK: HELPERS
     
     /// Last source if exist
     ///
@@ -242,19 +239,5 @@ open class ImoTableViewSection: NSObject {
             return true
         }
         return false
-    }
-    
-    
-//    public func containSource<T: ImoTableViewSource>(_ source: T) -> Bool where T: Equatable  {
-//        
-//        for tmpSource in self.sources {
-//            
-//            if tmpSource == source {
-//                return true
-//            }
-//        }
-//        
-//        return false
-//    }
-    
+    }    
 }

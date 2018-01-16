@@ -67,54 +67,54 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     var registeredCells = [String]()
     
     //Did select source closure
-    public var didSelectSource: ((ImoTableViewSource?) -> (Void))?
+    public var didSelectSource: ((ImoTableViewSource?) -> Void)?
     
     //Did select cell at index path
-    public var didSelectCellAtIndexPath: ((IndexPath) -> (Void))?
+    public var didSelectCellAtIndexPath: ((IndexPath) -> Void)?
     
     // MARK: - Scroll view closures
     //Scroll view did scroll
-    public var scrollViewDidScroll: ((UIScrollView) -> (Void))?
+    public var scrollViewDidScroll: ((UIScrollView) -> Void)?
     
     //Scroll view did zoom
-    public var scrollViewDidZoom: ((UIScrollView) -> (Void))?
+    public var scrollViewDidZoom: ((UIScrollView) -> Void)?
     
     //Scroll view will begin dragging
-    public var scrollViewWillBeginDragging: ((UIScrollView) -> (Void))?
+    public var scrollViewWillBeginDragging: ((UIScrollView) -> Void)?
     
     //Scroll view will end dragging
     public typealias ScrollVelocity = CGPoint
     public typealias TargetContentOffset = UnsafeMutablePointer<CGPoint>
-    public var scrollViewWillEndDragging: ((UIScrollView, ScrollVelocity, TargetContentOffset) -> (Void))?
+    public var scrollViewWillEndDragging: ((UIScrollView, ScrollVelocity, TargetContentOffset) -> Void)?
     
     //Scroll view did end dragging
     public typealias WillDecelerate = Bool
-    public var scrollViewDidEndDragging: ((UIScrollView, WillDecelerate) -> (Void))?
+    public var scrollViewDidEndDragging: ((UIScrollView, WillDecelerate) -> Void)?
     
     //Scroll view will begin decelerating
-    public var scrollViewWillBeginDecelerating: ((UIScrollView) -> (Void))?
+    public var scrollViewWillBeginDecelerating: ((UIScrollView) -> Void)?
     
     //Scroll view did end decelerating
-    public var scrollViewDidEndDecelerating: ((UIScrollView) -> (Void))?
+    public var scrollViewDidEndDecelerating: ((UIScrollView) -> Void)?
     
     //Scroll did end scrolling animation
-    public var scrollViewDidEndScrollingAnimation: ((UIScrollView) -> (Void))?
+    public var scrollViewDidEndScrollingAnimation: ((UIScrollView) -> Void)?
     
     //View for zooming
     public var viewForZooming: ((UIScrollView) -> (UIView?))?
     
     //Scroll view will begin zooming
-    public var scrollViewWillBeginZooming: ((UIScrollView, UIView?) -> (Void))?
+    public var scrollViewWillBeginZooming: ((UIScrollView, UIView?) -> Void)?
     
     //Scroll view did end zooming
     public typealias AtScale = CGFloat
-    public var scrollViewDidEndZooming: ((UIScrollView, UIView?, AtScale) -> (Void))?
+    public var scrollViewDidEndZooming: ((UIScrollView, UIView?, AtScale) -> Void)?
     
     //Scroll view should scroll to top
     public var scrollViewShouldScrollToTop: ((UIScrollView) -> (Bool))?
     
     //Scroll view did scroll to top
-    public var scrollViewDidScrollToTop: ((UIScrollView) -> (Void))?
+    public var scrollViewDidScrollToTop: ((UIScrollView) -> Void)?
     
     // MARK: - Initialization
     
@@ -180,8 +180,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     public func cellForSource(_ tableView: UITableView,
-                       _ source: ImoTableViewSource,
-                       cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                              _ source: ImoTableViewSource,
+                              cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = source.staticCell else {
             return reusableCell(tableView, source, cellForRowAt: indexPath)
@@ -193,8 +193,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     
     //
     public func reusableCell(_ tableView: UITableView,
-                      _ source: ImoTableViewSource,
-                      cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                             _ source: ImoTableViewSource,
+                             cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: source.cellClass, for: indexPath) as? ImoTableViewCell {
             cell.setUpWithSource(source: source)
@@ -346,7 +346,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func registerCellClass(cellClass: String, nib: UINib?) {
         
         if !registeredCells.contains(cellClass) {
-            if let _ = nib {
+            if nib != nil {
                 self.tableView.register(nib, forCellReuseIdentifier:cellClass)
                 registeredCells.append(cellClass)
             } else {

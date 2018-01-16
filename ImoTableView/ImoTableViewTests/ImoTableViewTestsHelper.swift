@@ -15,6 +15,6 @@ func tableView() -> ImoTableView {
     
     let controller = TestViewController()
     UIApplication.shared.keyWindow?.rootViewController = controller
-    let _ = controller.view
+    _ = controller.view
     return controller.table    
 }

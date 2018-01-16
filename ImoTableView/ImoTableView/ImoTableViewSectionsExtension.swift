@@ -237,21 +237,16 @@ public extension ImoTableView {
         
         var sectionsIndexes: [Int] = []
         
-        for section in sections {
+        for section in sections where section.wasChanged {
             
-            if section.wasChanged {
-                
-                //SET WAS CHANGED TO FALSE
-                section.wasChanged = false
-                
-                if let index = self.indexSetFor(section: section) {
-                    sectionsIndexes.append(index)
-                }
+            //SET WAS CHANGED TO FALSE
+            section.wasChanged = false
+            if let index = self.indexSetFor(section: section) {
+                sectionsIndexes.append(index)
             }
         }
         
         if sectionsIndexes.count > 0 {
-            
             return IndexSet(sectionsIndexes.sorted { $0 < $1 })
         }
         

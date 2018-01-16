@@ -131,8 +131,7 @@ class ImoTableViewTests: XCTestCase {
         table.add(section: section)
         table.update()
         
-        let _ = table.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
-        
+        _ = table.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
         XCTAssertEqual(table.registeredCells.count, 2)
     }
     
@@ -147,7 +146,7 @@ class ImoTableViewTests: XCTestCase {
         table.add(section: section)
         table.update()
         
-        let _ = table.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        _ = table.tableView.cellForRow(at: IndexPath(row: 0, section: 0))
         
         XCTAssertEqual(table.registeredCells.count, 1)
     }
