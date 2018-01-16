@@ -16,10 +16,10 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.table = ImoTableView(on: self.view)
-        self.view.layoutSubviews()
-        self.table.tableView.frame = self.view.frame
-        self.table.tableView.layoutSubviews()
+        table = ImoTableView(on: view)
+        view.layoutSubviews()
+        table.view.frame = view.frame
+        table.view.layoutSubviews()
     }
 }
 
@@ -32,14 +32,13 @@ class TestViewControllerKeyboardIntersection: UIViewController {
         
         super.viewDidLoad()
         
-        self.textField = UITextField()
-        self.view.addSubview(textField)
+        textField = UITextField()
+        view.addSubview(textField)
 
-        self.table = ImoTableView(on: self.view)
-        self.view.layoutSubviews()
-        self.table.tableView.frame = self.view.frame
-        self.table.tableView.layoutSubviews()
-        
-        print(self.table.tableView.frame)
+        table = ImoTableView(on: self.view)
+        view.layoutSubviews()
+        table.view.frame = view.frame
+        table.view.layoutSubviews()
+        print(table.view.frame)
     }
 }
