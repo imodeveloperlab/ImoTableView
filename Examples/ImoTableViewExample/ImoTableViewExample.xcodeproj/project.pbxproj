@@ -72,6 +72,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		41061E62200F92510048B1B8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		411410FB1DF55F1300E737BA /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -150,6 +159,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41061E65200F92610048B1B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		411410DA1DF55ECD00E737BA = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +175,7 @@
 				411410E41DF55ECD00E737BA /* Products */,
 				411410FC1DF55F1800E737BA /* Embedded */,
 				41DB85BB1EE0630C0099CFC4 /* ImoTableView.xcodeproj */,
+				41061E65200F92610048B1B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -298,6 +315,7 @@
 				4187E36E1EC3507C0030218F /* Sources */,
 				4187E36F1EC3507C0030218F /* Frameworks */,
 				4187E3701EC3507C0030218F /* Resources */,
+				41061E62200F92510048B1B8 /* CopyFiles */,
 			);
 			buildRules = (
 			);

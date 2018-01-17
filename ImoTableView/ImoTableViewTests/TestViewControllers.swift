@@ -31,14 +31,13 @@ class TestViewControllerKeyboardIntersection: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+
         textField = UITextField()
         view.addSubview(textField)
 
-        table = ImoTableView(on: self.view)
+        table = ImoTableView(on: view)
         view.layoutSubviews()
         table.view.frame = view.frame
         table.view.layoutSubviews()
-        print(table.view.frame)
     }
 }

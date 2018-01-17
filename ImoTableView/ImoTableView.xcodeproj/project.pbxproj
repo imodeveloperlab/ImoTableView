@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41061E6E200F92FB0048B1B8 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41061E6C200F92FB0048B1B8 /* Nimble.framework */; };
+		41061E6F200F92FB0048B1B8 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41061E6D200F92FB0048B1B8 /* Quick.framework */; };
+		41061E70200F93020048B1B8 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41061E6C200F92FB0048B1B8 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		41061E71200F93020048B1B8 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 41061E6D200F92FB0048B1B8 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4114111C1DF55FBF00E737BA /* ImoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114111B1DF55FBF00E737BA /* ImoTableView.swift */; };
 		4114111E1DF5604B00E737BA /* ImoTableViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114111D1DF5604B00E737BA /* ImoTableViewSection.swift */; };
 		411411201DF5607100E737BA /* ImoTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4114111F1DF5607100E737BA /* ImoTableViewSource.swift */; };
@@ -40,7 +44,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		41A865BA200F59AB00B9C228 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				41061E70200F93020048B1B8 /* Nimble.framework in CopyFiles */,
+				41061E71200F93020048B1B8 /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		41061E6C200F92FB0048B1B8 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		41061E6D200F92FB0048B1B8 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = ../Carthage/Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		411410CF1DF55EB000E737BA /* ImoTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImoTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		411410D31DF55EB000E737BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4114111B1DF55FBF00E737BA /* ImoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImoTableView.swift; sourceTree = "<group>"; };
@@ -80,6 +100,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4114112D1DF564DC00E737BA /* ImoTableView.framework in Frameworks */,
+				41061E6E200F92FB0048B1B8 /* Nimble.framework in Frameworks */,
+				41061E6F200F92FB0048B1B8 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +114,7 @@
 				411410D11DF55EB000E737BA /* ImoTableView */,
 				411411291DF564DB00E737BA /* ImoTableViewTests */,
 				411410D01DF55EB000E737BA /* Products */,
+				41A865CB200F5E4100B9C228 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +179,15 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		41A865CB200F5E4100B9C228 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				41061E6C200F92FB0048B1B8 /* Nimble.framework */,
+				41061E6D200F92FB0048B1B8 /* Quick.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -195,6 +227,7 @@
 				411411241DF564DB00E737BA /* Sources */,
 				411411251DF564DB00E737BA /* Frameworks */,
 				411411261DF564DB00E737BA /* Resources */,
+				41A865BA200F59AB00B9C228 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -478,6 +511,7 @@
 		411411311DF564DC00E737BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Carthage/Build/iOS/\"";
 				INFOPLIST_FILE = ImoTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewTests;
@@ -489,6 +523,7 @@
 		411411321DF564DC00E737BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../Carthage/Carthage/Build/iOS/\"";
 				INFOPLIST_FILE = ImoTableViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Imodeveloperlab.ImoTableViewTests;

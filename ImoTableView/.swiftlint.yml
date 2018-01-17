@@ -50,3 +50,5 @@ cyclomatic_complexity:
   warning: 6
   error: 7
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle)
+
+function_body_length: 1000
