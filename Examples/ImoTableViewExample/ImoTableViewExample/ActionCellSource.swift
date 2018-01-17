@@ -9,7 +9,7 @@
 import ImoTableView
 import UIKit
 
-open class ActionCellSource : ImoTableViewSource {
+open class ActionCellSource: ImoTableViewSource {
     
     public var title : String
 

@@ -32,9 +32,6 @@ open class ComparableCellSource: ImoTableViewSource {
         self.height = 100
     }
     
-    
-    
-    
     static func == (lhs: ComparableCellSource, rhs: ComparableCellSource) -> Bool {
         return lhs.message == rhs.message
     }

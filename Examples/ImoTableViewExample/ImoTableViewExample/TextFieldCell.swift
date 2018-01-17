@@ -9,7 +9,7 @@
 import ImoTableView
 import UIKit
 
-open class TextFieldCellSource : ImoTableViewSource {
+open class TextFieldCellSource: ImoTableViewSource {
     
     public init() {
 
@@ -17,7 +17,7 @@ open class TextFieldCellSource : ImoTableViewSource {
         self.setUp()
     }
     
-    public init(staticCellWithTableView tableView:ImoTableView) {
+    public init(staticCellWithTableView tableView: ImoTableView) {
         
         super.init(cellClass: "TextFieldCell")
         self.setUp()
@@ -31,9 +31,9 @@ open class TextFieldCellSource : ImoTableViewSource {
     }
 }
 
-open class TextFieldCell : ImoTableViewCell {
+open class TextFieldCell: ImoTableViewCell {
     
-    open override func setUpWithSource(source:AnyObject) {
+    open override func setUpWithSource(source: AnyObject) {
         
         if source is TextFieldCellSource {
             

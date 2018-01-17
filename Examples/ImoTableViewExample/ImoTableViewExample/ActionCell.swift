@@ -9,7 +9,7 @@
 import ImoTableView
 import UIKit
 
-open class ActionCell : ImoTableViewCell {
+open class ActionCell: ImoTableViewCell {
 
     //UILabel from ActionCell.xib
     @IBOutlet weak var actionTitle: UILabel!
