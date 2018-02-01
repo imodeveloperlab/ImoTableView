@@ -169,6 +169,13 @@ public extension ImoTableView {
         return self.sections.last
     }
     
+    /// Get all sections
+    ///
+    /// - Returns: All sections
+    public func getAllSections() -> [ImoTableViewSection] {
+        return self.sections
+    }
+    
     /// Get section for given Index
     ///
     /// - Parameter index: Section index
