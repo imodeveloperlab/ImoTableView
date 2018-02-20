@@ -10,6 +10,25 @@ import UIKit
 
 public extension ImoTableView {
     
+    /// Add source on top in section
+    ///
+    /// - Parameters:
+    ///   - source: CellSource
+    ///   - section: Section
+    ///   - animated: Animated update
+    ///   - animation: Animation type
+    func addOnTop(source: ImoTableViewSource,
+                  in section: ImoTableViewSection,
+                  animated: Bool = false,
+                  animation: UITableViewRowAnimation = .fade) {
+        
+        addOnTop(sources: [source],
+                 in: section,
+                 animated: animated,
+                 animation: animation)
+    }
+    
+    
     /// Add source in section
     ///
     /// - Parameters:
@@ -47,6 +66,28 @@ public extension ImoTableView {
                                  with: animation)
         }
     }
+    
+    
+    /// Add array of sources on top in section
+    ///
+    /// - Parameters:
+    ///   - sources: CellSource
+    ///   - section: Section
+    ///   - animated: Animated update
+    ///   - animation: Animation type
+    func addOnTop(sources: [ImoTableViewSource],
+                  in section: ImoTableViewSection,
+                  animated: Bool = false,
+                  animation: UITableViewRowAnimation = .fade) {
+        
+        section.addOnTop(sources: sources)
+        
+        if animated {
+            tableView.insertRows(at: indexPathsForSources(sources: sources, in: section),
+                                 with: animation)
+        }
+    }
+    
     
     /// Delete source from section
     ///

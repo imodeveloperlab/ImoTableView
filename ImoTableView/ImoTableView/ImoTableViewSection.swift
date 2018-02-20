@@ -174,6 +174,23 @@ open class ImoTableViewSection: NSObject {
         sources.insert(source, at: 0)
     }
     
+    /// Add array of sources on top
+    ///
+    /// - Parameters:
+    ///   - sources: Cell Source
+    ///   - target: Add source action to an target
+    ///   - selector: Sellector for target
+    public func addOnTop(sources: [ImoTableViewSource],
+                         target: AnyObject? = nil,
+                         _ selector: Selector? = nil) {
+        
+        wasChanged = true
+        
+        for source in sources {
+            self.addOnTop(source, target: target, selector)
+        }
+    }
+    
     /// Add array of sources
     ///
     /// - Parameters:
