@@ -154,6 +154,26 @@ open class ImoTableViewSection: NSObject {
         sources.append(source)
     }
     
+    /// Add new source at begin of section
+    ///
+    /// - Parameter source: CellSource
+    public func addOnTop(_ source: ImoTableViewSource,
+                         target: AnyObject? = nil,
+                         _ selector: Selector? = nil) {
+        
+        wasChanged = true
+        
+        if let target = target {
+            source.target = target
+        }
+        
+        if let selector = selector {
+            source.selector = selector
+        }
+        
+        sources.insert(source, at: 0)
+    }
+    
     /// Add array of sources
     ///
     /// - Parameters:
@@ -170,6 +190,8 @@ open class ImoTableViewSection: NSObject {
             self.add(source, target: target, selector)
         }
     }
+    
+    
     
     /// Add new source in section if source not exist using Equtable protocol
     ///
