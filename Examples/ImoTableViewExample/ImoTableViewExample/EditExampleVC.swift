@@ -19,6 +19,7 @@ class EditExampleVC: BaseViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         //TABLE
