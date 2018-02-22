@@ -13,18 +13,30 @@ open class ImoTableViewSource: NSObject {
 
     /// Static cell
     public var staticCell: ImoTableViewCell?
+    
     ///Manual cell height
     public var height: CGFloat?
+    
     ///Cell class / ideintifier
     var cellClass: String
+    
     ///Target to send messages to Selector from cell
     weak public var target: AnyObject?
+    
     //Selector for add action to an button inside cell
     public var selector: Selector?
+    
     //Custom sender object
     public var object: AnyObject?
+    
     //Cell xib
     open var nib: UINib?
+    
+    //Can cell be edited
+    public var canBeEdited: Bool = false
+    
+    //Title for delete button
+    public var deleteButtonTitle: String? = nil
     
     //Accessibility Identifier
     open var accessibilityIdentifier: String?

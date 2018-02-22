@@ -17,8 +17,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         self.title = "Examples"
-        
-        
         tableView = ImoTableView(on: self.view)
     }
     
@@ -27,11 +25,10 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         var explore: [Explorable] = []
         
-        
-        
         explore.append(BasicsExampleVC())
         explore.append(BasicsActionsExampleVC())
         explore.append(MultipleSectionsExampleVC())
+        explore.append(EditExampleVC())
         explore.append(AnimatedAddCellsExample())
         explore.append(AnimatedDeleteCellsExample())
         explore.append(AutomaticScrollAdjustExampleVC())

@@ -66,6 +66,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //Array off Registered Cells Identifiers
     var registeredCells = [String]()
     
+    //Delete source
+    public var deleteSource: ((ImoTableViewSource) -> Void)?
+    
     //Did select source closure
     public var didSelectSource: ((ImoTableViewSource?) -> Void)?
     
@@ -237,6 +240,37 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         }
         
         return ImoTableViewCell()
+    }
+    
+    // MARK: - Edit / Delete sources
+    
+    public func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
+            return source.canBeEdited
+        }
+        
+        return false
+    }
+    
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == .delete) {
+            if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
+                if let closure = deleteSource {
+                    closure(source)
+                }
+            }
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        
+        if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
+            return source.deleteButtonTitle
+        }
+        
+        return nil
     }
     
     // MARK: - UITableView HeaderView
