@@ -45,6 +45,9 @@ open class ImoTableViewSection: NSObject {
     /// updated on screen
     public var wasChanged = false
     
+    /// Section was changed
+    public var didChange: ((ImoTableViewSection) -> (Void))?
+    
     /// Sourcess array
     var sources = [ImoTableViewSource]()
     
@@ -76,6 +79,7 @@ open class ImoTableViewSection: NSObject {
     public func delete(_ source: ImoTableViewSource) throws {
         
         wasChanged = true
+        sectionWasChanged()
         sources.remove(at: try indexOfSource(source: source))
     }
     
@@ -87,6 +91,7 @@ open class ImoTableViewSection: NSObject {
         if sources.contains(source) {
             
             wasChanged = true
+            sectionWasChanged()
             
             do {
                 sources.remove(at: try indexOfSource(source: source))
@@ -103,6 +108,7 @@ open class ImoTableViewSection: NSObject {
     public func delete(atIndex index: Int) throws {
         
         wasChanged = true
+        sectionWasChanged()
         
         if containIndex(index: index) {
             sources.remove(at: index)
@@ -118,6 +124,7 @@ open class ImoTableViewSection: NSObject {
     public func delete(sources: [ImoTableViewSource]) throws {
         
         wasChanged = true
+        sectionWasChanged()
         
         for source in sources {
             self.sources.remove(at: try indexOfSource(source: source))
@@ -128,6 +135,7 @@ open class ImoTableViewSection: NSObject {
     public func deleteAll() {
         
         wasChanged = true
+        sectionWasChanged()
         sources.removeAll()
     }
     
@@ -142,6 +150,7 @@ open class ImoTableViewSection: NSObject {
                     _ selector: Selector? = nil) {
         
         wasChanged = true
+        sectionWasChanged()
         
         if let target = target {
             source.target = target
@@ -162,6 +171,7 @@ open class ImoTableViewSection: NSObject {
                          _ selector: Selector? = nil) {
         
         wasChanged = true
+        sectionWasChanged()
         
         if let target = target {
             source.target = target
@@ -185,6 +195,7 @@ open class ImoTableViewSection: NSObject {
                          _ selector: Selector? = nil) {
         
         wasChanged = true
+        sectionWasChanged()
         
         for source in sources {
             self.addOnTop(source, target: target, selector)
@@ -202,13 +213,12 @@ open class ImoTableViewSection: NSObject {
                     _ selector: Selector? = nil) {
         
         wasChanged = true
+        sectionWasChanged()
         
         for source in sources {
             self.add(source, target: target, selector)
         }
     }
-    
-    
     
     /// Add new source in section if source not exist using Equtable protocol
     ///
@@ -221,6 +231,7 @@ open class ImoTableViewSection: NSObject {
         
         wasChanged = true
         sources.append(source)
+        sectionWasChanged()
     }
     
     // MARK: -
@@ -278,5 +289,15 @@ open class ImoTableViewSection: NSObject {
             return true
         }
         return false
-    }    
+    }
+    
+    /// This func is called when in section was made a change
+    func sectionWasChanged() {
+        weak var weakSelf = self
+        if let ws = weakSelf {
+            if let closure = didChange {
+                closure(ws)
+            }
+        }
+    }
 }
