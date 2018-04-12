@@ -1,0 +1,18 @@
+[
+  {
+    "id": "787f4a29-32fd-4efb-8af5-5d73449437dc",
+    "email": "imodeveloperlabbot@gmail.com",
+    "password_hash": "$2a$10$HVlOmNjnMkxcEnJDcSTpv.lukTmuyAKQPamtCq9lDJugvxKYXvWAO",
+    "provider_credentials": [
+      {
+        "id": "10dd66ef-b42b-4a74-a6dd-64385cd31953",
+        "email": "imodeveloperlab@gmail.com",
+        "full_name": "Clone User credentials",
+        "provider_name": "GitHub",
+        "type": "github",
+        "remote_host": "github.com",
+        "encrypted_api_token": "61TCNi3J8JDoZCido4xuyounrrN5PEQbw+RFGy5MB6YKCTpfLcWaw6lUKCU7\nRszxrj0p9tLBpya+NRvbhmsA9Q==\n"
+      }
+    ]
+  }
+]
