@@ -30,6 +30,6 @@ trap : 0
 
 echo >&2 '
 ************
-*** DONE *** 
+*** SUCCESSFULL INSTALLED IMOTABLEVIEW TEMPLATES ***
 ************
 '
