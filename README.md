@@ -184,7 +184,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'ImoTableView', '~> 1.0.8'
+    pod 'ImoTableView', '~> 1.0.25'
 end
 ```
 
