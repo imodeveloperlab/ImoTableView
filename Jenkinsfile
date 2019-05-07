@@ -6,5 +6,10 @@ pipeline {
         sh 'echo "Hello world"'
       }
     }
+    stage('Run fastlane') {
+      steps {
+        sh 'fastlane'
+      }
+    }
   }
 }
