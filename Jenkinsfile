@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Run fastlane') {
       steps {
-        sh 'fastlane test'
+        sh 'fastlane test'
       }
     }
   }
