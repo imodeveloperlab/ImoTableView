@@ -39,12 +39,13 @@ platform :ios do
   )
 
   end
+  
 
   desc "Runs all the tests"
   lane :test do
 
     scan(project: "ImoTableView/ImoTableView.xcodeproj")
-    
+
     slack(
        message: "Successfull tests"
     )
