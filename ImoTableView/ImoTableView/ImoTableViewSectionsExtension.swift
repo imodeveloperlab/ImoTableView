@@ -2,7 +2,7 @@
 //  ImoTableViewSourcesExtension.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/7/17.
+//  Created by Winify AG on 5/7/17.
 //  Copyright © 2017 Imodeveloperlab. All rights reserved.
 //
 
@@ -16,9 +16,9 @@ public extension ImoTableView {
     ///   - section: Section
     ///   - animated: Animated or not
     ///   - animation: Animation type
-    public func add(section: ImoTableViewSection,
-                    animated: Bool = false,
-                    animation: UITableViewRowAnimation = .fade) {
+    func add(section: ImoTableViewSection,
+             animated: Bool = false,
+             animation: UITableView.RowAnimation = .fade) {
         
         sections.append(section)
         
@@ -33,9 +33,9 @@ public extension ImoTableView {
     ///   - sections: Array of sections
     ///   - animated: Animated or not
     ///   - animation: Animation type
-    public func add(sections: [ImoTableViewSection],
-                    animated: Bool = false,
-                    animation: UITableViewRowAnimation = .fade) {
+    func add(sections: [ImoTableViewSection],
+             animated: Bool = false,
+             animation: UITableView.RowAnimation = .fade) {
         
         self.sections.append(contentsOf: sections)
         
@@ -50,9 +50,9 @@ public extension ImoTableView {
     ///   - index: Section index
     ///   - animated: Animated or not
     ///   - animation: Animation type
-    public func deleteSection(at index: Int,
-                              animated: Bool = false,
-                              animation: UITableViewRowAnimation = .fade) {
+    func deleteSection(at index: Int,
+                       animated: Bool = false,
+                       animation: UITableView.RowAnimation = .fade) {
         
         if self.sections.indices.contains(index) {
             self.sections.remove(at: index)
@@ -69,9 +69,9 @@ public extension ImoTableView {
     ///   - section: Section
     ///   - animated: Animate or not
     ///   - animation: Animation type
-    public func delete(section: ImoTableViewSection,
-                       animated: Bool = false,
-                       animation: UITableViewRowAnimation = .fade) {
+    func delete(section: ImoTableViewSection,
+                animated: Bool = false,
+                animation: UITableView.RowAnimation = .fade) {
         
         self.delete(sections: [section], animated: animated, animation: animation)
     }
@@ -82,9 +82,9 @@ public extension ImoTableView {
     ///   - sections: Array of Sections
     ///   - animated: Animate or not
     ///   - animation: Animation type
-    public func delete(sections: [ImoTableViewSection],
-                       animated: Bool = false,
-                       animation: UITableViewRowAnimation = .fade) {
+    func delete(sections: [ImoTableViewSection],
+                animated: Bool = false,
+                animation: UITableView.RowAnimation = .fade) {
         
         let indexSet = indexSetForSections(sections: sections)
         
@@ -102,8 +102,8 @@ public extension ImoTableView {
     /// - Parameters:
     ///   - animated: Animate or not
     ///   - animation: Animation type
-    public func deleteAllSections(animated: Bool = false,
-                                  animation: UITableViewRowAnimation = .fade) {
+    func deleteAllSections(animated: Bool = false,
+                           animation: UITableView.RowAnimation = .fade) {
         
         let indexSet = indexSetForSections(sections: self.sections)
         sections.removeAll()
@@ -118,8 +118,8 @@ public extension ImoTableView {
     /// - Parameters:
     ///   - animated: Animated or not
     ///   - animation: Animation type
-    public func deleteFirstSection(animated: Bool = false,
-                                   animation: UITableViewRowAnimation = .fade) {
+    func deleteFirstSection(animated: Bool = false,
+                            animation: UITableView.RowAnimation = .fade) {
         
         var indexSet: IndexSet = []
         
@@ -139,8 +139,8 @@ public extension ImoTableView {
     /// - Parameters:
     ///   - animated: Animated or not
     ///   - animation: Animation type
-    public func deleteLastSection(animated: Bool = false,
-                                  animation: UITableViewRowAnimation = .fade) {
+    func deleteLastSection(animated: Bool = false,
+                           animation: UITableView.RowAnimation = .fade) {
         
         var indexSet: IndexSet = []
         
@@ -158,21 +158,21 @@ public extension ImoTableView {
     /// Get fist section
     ///
     /// - Returns: Section if exist
-    public func firstSection() -> ImoTableViewSection? {
+    func firstSection() -> ImoTableViewSection? {
         return self.sections.first
     }
     
     /// Last section
     ///
     /// - Returns: Section if exist
-    public func lastSection() -> ImoTableViewSection? {
+    func lastSection() -> ImoTableViewSection? {
         return self.sections.last
     }
     
     /// Get all sections
     ///
     /// - Returns: All sections
-    public func getAllSections() -> [ImoTableViewSection] {
+    func getAllSections() -> [ImoTableViewSection] {
         return self.sections
     }
     
@@ -180,7 +180,7 @@ public extension ImoTableView {
     ///
     /// - Parameter index: Section index
     /// - Returns: ImoTableViewSection?
-    public func sectionForIndex(index: Int) -> ImoTableViewSection? {
+    func sectionForIndex(index: Int) -> ImoTableViewSection? {
         
         if self.sections.indices.contains(index) {
             return self.sections[index]
@@ -192,13 +192,13 @@ public extension ImoTableView {
     ///
     /// - Parameter indexPath: IndexPath
     /// - Returns: ImoTableViewSource?
-    public func cellSourceForIndexPath(indexPath: IndexPath) -> ImoTableViewSource? {
+    func cellSourceForIndexPath(indexPath: IndexPath) -> ImoTableViewSource? {
         
         if self.sections.indices.contains(indexPath.section) {
             
             let section: ImoTableViewSection = self.sections[indexPath.section]
             
-            //WAS CHANGED TO FALSE 
+            //WAS CHANGED TO FALSE
             section.wasChanged = false
             
             return section.get(sourceAtIndex: indexPath.row)
@@ -210,15 +210,15 @@ public extension ImoTableView {
     ///
     /// - Parameter section: Section object
     /// - Returns: Section Index
-    public func indexSetFor(section: ImoTableViewSection) -> Int? {
-        return self.sections.index(of: section)
+    func indexSetFor(section: ImoTableViewSection) -> Int? {
+        return self.sections.firstIndex(of: section)
     }
     
     /// Index array of sections
     ///
     /// - Parameter sections: Sections Array
     /// - Returns: Section Index Array
-    public func indexSetFor(sections: [ImoTableViewSection]) -> IndexSet? {
+    func indexSetFor(sections: [ImoTableViewSection]) -> IndexSet? {
         
         var sectionsIndexes: [Int] = []
         
@@ -228,8 +228,7 @@ public extension ImoTableView {
             }
         }
         
-        if sectionsIndexes.count > 0 {
-            
+        if !sectionsIndexes.isEmpty {
             return IndexSet(sectionsIndexes.sorted { $0 < $1 })
         }
         
@@ -240,7 +239,7 @@ public extension ImoTableView {
     ///
     /// - Parameter sections: Sections Array
     /// - Returns: Section Index Array
-    public func indexSetForChanged(sections: [ImoTableViewSection]) -> IndexSet? {
+    func indexSetForChanged(sections: [ImoTableViewSection]) -> IndexSet? {
         
         var sectionsIndexes: [Int] = []
         
@@ -253,7 +252,7 @@ public extension ImoTableView {
             }
         }
         
-        if sectionsIndexes.count > 0 {
+        if !sectionsIndexes.isEmpty {
             return IndexSet(sectionsIndexes.sorted { $0 < $1 })
         }
         
@@ -268,7 +267,7 @@ public extension ImoTableView {
     ///   - section: Section to insert
     ///   - animation: Animation type
     func animateInsertSection(_ section: ImoTableViewSection,
-                              _ animation: UITableViewRowAnimation = .fade) {
+                              _ animation: UITableView.RowAnimation = .fade) {
         
         animateInsertSections([section], animation)
     }
@@ -279,7 +278,7 @@ public extension ImoTableView {
     ///   - sections: Array of sections
     ///   - animation: Animation type
     func animateInsertSections(_ sections: [ImoTableViewSection],
-                               _ animation: UITableViewRowAnimation = .fade) {
+                               _ animation: UITableView.RowAnimation = .fade) {
         
         let sectionsIndexSet = indexSetForSections(sections: sections)
         let indicesSet = IndexSet(sectionsIndexSet)
@@ -292,7 +291,7 @@ public extension ImoTableView {
     ///   - sections: IndexSet of sections
     ///   - animation: Animation type
     func animateDeleteSections(_ sections: IndexSet,
-                               _ animation: UITableViewRowAnimation = .fade) {
+                               _ animation: UITableView.RowAnimation = .fade) {
         
         if sections.count > 0 {
             self.tableView.deleteSections(sections, with: animation)
@@ -303,11 +302,11 @@ public extension ImoTableView {
     ///
     /// - Parameter sections: Array of sections
     /// - Returns: IndexSet
-    public func indexSetForSections(sections: [ImoTableViewSection]) -> IndexSet {
+    func indexSetForSections(sections: [ImoTableViewSection]) -> IndexSet {
         
         var indexes: [Int] = []
         for section in sections {
-            if let sectionIndex = self.sections.index(of: section) {
+            if let sectionIndex = self.sections.firstIndex(of: section) {
                 indexes.append(sectionIndex)
             }
         }

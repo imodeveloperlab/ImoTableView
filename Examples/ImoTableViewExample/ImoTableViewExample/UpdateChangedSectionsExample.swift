@@ -69,7 +69,7 @@ class UpdateChangedSectionsExample: BaseViewController {
         table.add(section: thirdSection)
     }
     
-    func addSourceInFirstSection() {
+    @objc func addSourceInFirstSection() {
         
         let text = faker.lorem.sentence()
         let source = TextCellSource(text: text)
@@ -77,7 +77,7 @@ class UpdateChangedSectionsExample: BaseViewController {
     }
     
     
-    func deleteSourceInFirstSection() {
+    @objc func deleteSourceInFirstSection() {
 
         if let source = firstSection.firstSource() {
             do {
@@ -88,27 +88,27 @@ class UpdateChangedSectionsExample: BaseViewController {
         }
     }
     
-    func addSourceInSecondSection() {
+    @objc func addSourceInSecondSection() {
         
         let text = faker.lorem.sentence()
         let source = TextCellSource(text: text)
         secondSection.add(source)
     }
     
-    func addSourceInThirdSection() {
+    @objc func addSourceInThirdSection() {
         
         let text = faker.lorem.sentence()
         let source = TextCellSource(text: text)
         thirdSection.add(source)
     }
     
-    func updateChangedSections() {
+    @objc func updateChangedSections() {
         
         table.updateChangedSections()
         
     }
     
-    func sequenceChangeAndUpdateSections()  {
+    @objc func sequenceChangeAndUpdateSections()  {
         
         table.updateChangedSections()
 

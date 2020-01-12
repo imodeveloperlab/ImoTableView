@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         tableView.update()
     }
     
-    func showController(sender: AnyObject) {
+    @objc func showController(sender: AnyObject) {
         
         let sender = sender as! Explorable
         if let controller = self.navigationController {

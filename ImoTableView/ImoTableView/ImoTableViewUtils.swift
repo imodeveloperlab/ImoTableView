@@ -2,7 +2,7 @@
 //  ImoTableViewUtis.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 2/14/17.
+//  Created by Winify AG on 2/14/17.
 //  Copyright © 2017 Imodeveloperlab. All rights reserved.
 //
 
@@ -34,7 +34,7 @@ public extension UIView {
         
         return NSLayoutConstraint(item: proprietes.view,
                                   attribute: proprietes.attribute,
-                                  relatedBy: NSLayoutRelation.equal,
+                                  relatedBy: NSLayoutConstraint.Relation.equal,
                                   toItem: proprietes.alignTo, attribute: proprietes.attribute,
                                   multiplier: 1,
                                   constant: proprietes.inset)
@@ -45,6 +45,6 @@ public struct ImoTableViewConstraintProprietes {
     
     var view: UIView
     var alignTo: UIView
-    var attribute: NSLayoutAttribute
+    var attribute: NSLayoutConstraint.Attribute
     var inset: CGFloat
 }

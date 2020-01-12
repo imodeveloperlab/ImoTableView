@@ -51,7 +51,7 @@ class AnimatedInsertMultipleSections: BaseViewController {
         }
     }
     
-    func insertNewSections() {
+    @objc func insertNewSections() {
         
         var sections = [ImoTableViewSection]()
 

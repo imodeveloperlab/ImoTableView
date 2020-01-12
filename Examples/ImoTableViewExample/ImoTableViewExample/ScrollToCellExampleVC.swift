@@ -77,13 +77,13 @@ class ScrollToCellExampleVC: BaseViewController {
         table.add(section: actionsSection)
     }
     
-    func scrollToFirstCellInFisrstSectionAction()  {        
+    @objc func scrollToFirstCellInFisrstSectionAction()  {        
         if let source = userInfoSection.firstSource() {
             table.scrollToCell(source: source, at: .top, animated: true)
         }
     }
     
-    func scrollToLastCellInSecondSectionAction() {
+    @objc func scrollToLastCellInSecondSectionAction() {
         if let source = bussinesInfoSection.lastSource() {
             table.scrollToCell(source: source, at: .bottom, animated: true)
         }

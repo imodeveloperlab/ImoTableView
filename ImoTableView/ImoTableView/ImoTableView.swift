@@ -21,8 +21,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //For storing original table UIEdgeInsets when an keyboard apears on screen
     //table will change its content inssets and after when keyboard dissapears
     //we need to set previous table ContentInset asnd ScrollIndicatorInsets
-    open var storedContentInset: UIEdgeInsets?
-    open var storedScrollIndicatorInsets: UIEdgeInsets?
+    public var storedContentInset: UIEdgeInsets?
+    public var storedScrollIndicatorInsets: UIEdgeInsets?
     
     /// Set the separator collor of table view
     public var separatorColor: UIColor? {
@@ -211,7 +211,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
             let height = source.height else {
-                return UITableViewAutomaticDimension
+                return UITableView.automaticDimension
         }
         
         return height
@@ -253,7 +253,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return false
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if (editingStyle == .delete) {
             if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
@@ -289,7 +289,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         if let section = sectionForIndex(index: section) {
             return self.heightForHeaderViewInSection(section)
         }
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func heightForHeaderViewInSection(_ section: ImoTableViewSection) -> CGFloat {
@@ -300,16 +300,16 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
-//    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        
-//        if let section = sectionForIndex(index: section) {
-//            return section.estimatedHeaderHeight
-//        }
-//        return 0
-//    }
+    //    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+    //
+    //        if let section = sectionForIndex(index: section) {
+    //            return section.estimatedHeaderHeight
+    //        }
+    //        return 0
+    //    }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -326,7 +326,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         if let section = sectionForIndex(index: section) {
             return self.heightForFooterInSection(section)
         }
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func heightForFooterInSection(_ section: ImoTableViewSection) -> CGFloat {
@@ -337,16 +337,16 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
-//    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-//        
-//        if let section = sectionForIndex(index: section) {
-//            return section.estimatedFooterHeight
-//        }
-//        return 0
-//    }
+    //    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
+    //
+    //        if let section = sectionForIndex(index: section) {
+    //            return section.estimatedFooterHeight
+    //        }
+    //        return 0
+    //    }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -389,5 +389,4 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             }
         }
     }
-    
 }

@@ -241,7 +241,7 @@ open class ImoTableViewSection: NSObject {
     ///
     /// - Returns: CellSource
     public func lastSource() -> ImoTableViewSource? {
-       return sources.last
+        return sources.last
     }
     
     /// FirstSource if exist
@@ -264,7 +264,7 @@ open class ImoTableViewSection: NSObject {
     /// - Returns: Index
     /// - Throws: ImoTableViewSectionError
     public func indexOfSource(source: ImoTableViewSource) throws -> Int {
-
+        
         if let index = sources.index(of: source) {
             return index
         } else {
