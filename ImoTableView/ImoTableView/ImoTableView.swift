@@ -213,28 +213,28 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
-            let height = source.height else {
-                return UITableView.automaticDimension
+              let height = source.height else {
+            return UITableView.automaticDimension
         }
         
         return height
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-
-        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {
-                return UITableView.automaticDimension
+        
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {            
+            return UITableView.automaticDimension
         }
-
+        
         return source.estimatedHeightForRow
     }
-
+    
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
+        
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {
-                return
+            return
         }
-
+        
         source.estimatedHeightForRow = cell.frame.size.height
     }
     

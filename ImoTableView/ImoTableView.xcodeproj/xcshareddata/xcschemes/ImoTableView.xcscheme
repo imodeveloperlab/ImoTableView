@@ -20,6 +20,20 @@
                ReferencedContainer = "container:ImoTableView.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "411411271DF564DB00E737BA"
+               BuildableName = "ImoTableViewTests.xctest"
+               BlueprintName = "ImoTableViewTests"
+               ReferencedContainer = "container:ImoTableView.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

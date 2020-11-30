@@ -225,7 +225,16 @@ class ImoTableViewTests: QuickSpec {
             it("has correct estimated height") {
                 
                 let table = tableView()
+                let section = ImoTableViewSection()
                 table.estimatedHeightForRow = 15
+                
+                let cellSource = TestCellSource()
+                cellSource.estimatedHeightForRow = 15
+                section.add(cellSource)
+                
+                table.add(section: section)
+                table.update()
+                
                 let estimated = table.tableView(table.tableView, estimatedHeightForRowAt: IndexPath(row: 0, section: 0))
                 expect(estimated).to(equal(15))
             }
