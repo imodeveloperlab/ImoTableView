@@ -22,11 +22,11 @@ enum ImoTableViewSectionError: Error {
 open class ImoTableViewSection: NSObject {
     
     /// default is 40
-    public var estimatedHeaderHeight: CGFloat = 40
+    public var estimatedHeaderHeight: CGFloat = 25
     /// default is 40
-    public var estimatedFooterHeight: CGFloat = 40
+    public var estimatedFooterHeight: CGFloat = 25
     /// Manual header height, if is nill table will use estimatedHeaderHeight
-    public var headerHeight: CGFloat?
+    public var headerHeight: CGFloat? 
     /// Manual footer height, if is nill table will use estimatedFooterHeight
     public var footerHeight: CGFloat?
     /// Header UIView
@@ -45,8 +45,11 @@ open class ImoTableViewSection: NSObject {
     /// updated on screen
     public var wasChanged = false
     
+    /// Object
+    public var object: Any?
+    
     /// Section was changed
-    public var didChange: ((ImoTableViewSection) -> (Void))?
+    public var didUpdate: ((ImoTableViewSection) -> Void)?
     
     /// Sourcess array
     var sources = [ImoTableViewSource]()
@@ -79,8 +82,9 @@ open class ImoTableViewSection: NSObject {
     public func delete(_ source: ImoTableViewSource) throws {
         
         wasChanged = true
-        sectionWasChanged()
         sources.remove(at: try indexOfSource(source: source))
+        sectionWasChanged()
+        
     }
     
     /// Delete if source exist using Equtable protocol
@@ -89,12 +93,10 @@ open class ImoTableViewSection: NSObject {
     public func deleteIfExist(source: ImoTableViewSource) {
         
         if sources.contains(source) {
-            
             wasChanged = true
-            sectionWasChanged()
-            
             do {
                 sources.remove(at: try indexOfSource(source: source))
+                sectionWasChanged()
             } catch {
                 print(error)
             }
@@ -108,10 +110,10 @@ open class ImoTableViewSection: NSObject {
     public func delete(atIndex index: Int) throws {
         
         wasChanged = true
-        sectionWasChanged()
         
         if containIndex(index: index) {
             sources.remove(at: index)
+            sectionWasChanged()
         } else {
             throw ImoTableViewSectionError.unknown
         }
@@ -124,10 +126,10 @@ open class ImoTableViewSection: NSObject {
     public func delete(sources: [ImoTableViewSource]) throws {
         
         wasChanged = true
-        sectionWasChanged()
         
         for source in sources {
             self.sources.remove(at: try indexOfSource(source: source))
+            sectionWasChanged()
         }
     }
     
@@ -135,12 +137,65 @@ open class ImoTableViewSection: NSObject {
     public func deleteAll() {
         
         wasChanged = true
-        sectionWasChanged()
         sources.removeAll()
+        sectionWasChanged()
     }
     
     // MARK: -
     // MARK: ADD
+    
+    /// Add source in serction after source
+    ///
+    /// - Parameters:
+    ///   - source: ImoTableViewSource
+    ///   - after: ImoTableViewSource
+    ///   - target: target
+    ///   - selector: selector
+    public func addIfNotExists(_ source: ImoTableViewSource,
+                               after: ImoTableViewSource,
+                               target: AnyObject? = nil,
+                               _ selector: Selector? = nil) {
+        
+        for compareSource in sources where compareSource == source {
+            return
+        }
+        
+        self.add(source, after: after, target: target, selector)
+    }    
+    
+    /// Add source in serction after source
+    ///
+    /// - Parameters:
+    ///   - source: ImoTableViewSource
+    ///   - after: ImoTableViewSource
+    ///   - target: target
+    ///   - selector: selector
+    public func add(_ source: ImoTableViewSource,
+                    after: ImoTableViewSource,
+                    target: AnyObject? = nil,
+                    _ selector: Selector? = nil) {
+        
+        wasChanged = true
+        
+        do {
+            
+            let index = try self.indexOfSource(source: after)
+            
+            if let target = target {
+                source.target = target
+            }
+            
+            if let selector = selector {
+                source.selector = selector
+            }
+            
+            sources.insert(source, at: index + 1)
+            sectionWasChanged()
+            
+        } catch {
+            print(error)
+        }
+    }
     
     /// Add new source in section
     ///
@@ -150,7 +205,6 @@ open class ImoTableViewSection: NSObject {
                     _ selector: Selector? = nil) {
         
         wasChanged = true
-        sectionWasChanged()
         
         if let target = target {
             source.target = target
@@ -161,6 +215,7 @@ open class ImoTableViewSection: NSObject {
         }
         
         sources.append(source)
+        sectionWasChanged()
     }
     
     /// Add new source at begin of section
@@ -171,7 +226,6 @@ open class ImoTableViewSection: NSObject {
                          _ selector: Selector? = nil) {
         
         wasChanged = true
-        sectionWasChanged()
         
         if let target = target {
             source.target = target
@@ -182,6 +236,7 @@ open class ImoTableViewSection: NSObject {
         }
         
         sources.insert(source, at: 0)
+        sectionWasChanged()
     }
     
     /// Add array of sources on top
@@ -195,7 +250,6 @@ open class ImoTableViewSection: NSObject {
                          _ selector: Selector? = nil) {
         
         wasChanged = true
-        sectionWasChanged()
         
         for source in sources {
             self.addOnTop(source, target: target, selector)
@@ -213,7 +267,6 @@ open class ImoTableViewSection: NSObject {
                     _ selector: Selector? = nil) {
         
         wasChanged = true
-        sectionWasChanged()
         
         for source in sources {
             self.add(source, target: target, selector)
@@ -265,7 +318,7 @@ open class ImoTableViewSection: NSObject {
     /// - Throws: ImoTableViewSectionError
     public func indexOfSource(source: ImoTableViewSource) throws -> Int {
         
-        if let index = sources.index(of: source) {
+        if let index = sources.firstIndex(of: source) {
             return index
         } else {
             throw ImoTableViewSectionError.dontExistSourceAtIndex
@@ -277,6 +330,14 @@ open class ImoTableViewSection: NSObject {
     /// - Returns: Sources count
     public func count() -> Int {
         return sources.count
+    }
+    
+    public func isEmpty() -> Bool {
+        return sources.isEmpty
+    }
+    
+    public func isNotEmpty() -> Bool {
+        return !sources.isEmpty
     }
     
     /// Check if section contain given index
@@ -293,11 +354,13 @@ open class ImoTableViewSection: NSObject {
     
     /// This func is called when in section was made a change
     func sectionWasChanged() {
-        weak var weakSelf = self
-        if let ws = weakSelf {
-            if let closure = didChange {
-                closure(ws)
-            }
+        
+        weak var `self` = self
+    
+        guard let weakSelf = `self` else {
+            return
         }
+        
+        didUpdate?(weakSelf)
     }
 }

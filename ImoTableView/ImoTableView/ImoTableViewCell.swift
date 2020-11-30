@@ -17,4 +17,23 @@ open class ImoTableViewCell : UITableViewCell {
     open func setUpWithSource(source: AnyObject) {
 
     }
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        #if targetEnvironment(simulator)
+        if let info = Bundle(identifier: "Winify-AG.Modules")?.infoDictionary {
+            if let value = info["DEBUG_CELL_NAMES"] as? Bool {
+                if value == true {
+                    let label = UILabel()
+                    label.text = String(describing: self)
+                    label.backgroundColor = .blue
+                    label.textColor = .white
+                    label.font = UIFont.systemFont(ofSize: 8)
+                    label.sizeToFit()
+                    self.addSubview(label)
+                }
+            }
+        }
+        #endif
+    }
 }

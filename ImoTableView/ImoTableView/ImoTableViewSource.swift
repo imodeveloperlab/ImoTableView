@@ -41,6 +41,10 @@ open class ImoTableViewSource: NSObject {
     //Accessibility Identifier
     open var accessibilityIdentifier: String?
     
+    open var isSeparatorEnabled: Bool = true
+    
+    open var estimatedHeightForRow: CGFloat = 40
+    
     /// Init source
     ///
     /// - Parameter cellClass: Cell class / identifier

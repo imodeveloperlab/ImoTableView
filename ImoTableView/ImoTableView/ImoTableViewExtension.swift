@@ -2,8 +2,8 @@
 //  ImoTableViewExtension.swift
 //  ImoTableView
 //
-//  Created by Winify AG on 5/9/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -107,8 +107,8 @@ public extension ImoTableView {
     func framAndDuration(for notification: Notification) -> (frame: CGRect, duration: Double)? {
         
         guard let keyboargFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
-            let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
-                return nil
+              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
+            return nil
         }
         
         return (frame: keyboargFrame, duration: duration)
@@ -123,8 +123,8 @@ public extension ImoTableView {
         if isKeyboardOnScreen {
             
             guard let view = self.superview,
-                let mainWindowView = mainWindowView() else {
-                    return self.tableView.contentInset
+                  let mainWindowView = mainWindowView() else {
+                return self.tableView.contentInset
             }
             
             let tableFrame = self.tableView.frame

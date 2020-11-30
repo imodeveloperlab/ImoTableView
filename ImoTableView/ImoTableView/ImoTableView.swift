@@ -150,6 +150,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         self.backgroundColor = UIColor.clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.estimatedRowHeight = 0
+        self.tableView.estimatedSectionHeaderHeight = 0
+        self.tableView.estimatedSectionFooterHeight = 0
         self.addSubview(self.tableView)
         self.edgesConstraints(to: self.tableView)
     }
@@ -218,7 +221,21 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.estimatedHeightForRow
+
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {
+                return UITableView.automaticDimension
+        }
+
+        return source.estimatedHeightForRow
+    }
+
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {
+                return
+        }
+
+        source.estimatedHeightForRow = cell.frame.size.height
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -226,7 +243,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     public func update() {
-        
         tableView.reloadData()
     }
     
@@ -273,6 +289,19 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return nil
     }
     
+    public func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        if view.isEditing {
+            return .none
+        } else {
+            return .delete
+        }        
+    }
+    
     // MARK: - UITableView HeaderView
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -300,16 +329,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableView.automaticDimension
+        return section.estimatedHeaderHeight
     }
-    
-    //    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-    //
-    //        if let section = sectionForIndex(index: section) {
-    //            return section.estimatedHeaderHeight
-    //        }
-    //        return 0
-    //    }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -337,16 +358,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableView.automaticDimension
+        return section.estimatedFooterHeight
     }
-    
-    //    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-    //
-    //        if let section = sectionForIndex(index: section) {
-    //            return section.estimatedFooterHeight
-    //        }
-    //        return 0
-    //    }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -388,5 +401,48 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
                 registeredCells.append(cellClass)
             }
         }
+    }
+    
+    /// Set alpha to zero
+    /// - Parameter animated: Bool
+    public func setAlphaToZero(animated: Bool = false) {
+        
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.alpha = 0
+            }
+        } else {
+            alpha = 0
+        }
+    }
+    
+    /// Show if alpha is zero
+    /// - Parameter animated: Bool
+    public func showIfAlphaIsZero(animated: Bool = false) {
+        
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.alpha = 1
+            }
+        } else {
+            alpha = 11
+        }
+    }
+    
+}
+
+public extension ImoTableView {
+    
+    func getAllSources<T>() -> [T] {
+        var sources: [T] = []
+        for section in self.getAllSections() {
+            for source in section.allSources() {
+                if let source = source as? T {
+                    sources.append(source)
+                }
+            }
+        }
+        
+        return sources
     }
 }

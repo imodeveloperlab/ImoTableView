@@ -2,8 +2,8 @@
 //  ImoTableViewSourcesExtension.swift
 //  ImoTableView
 //
-//  Created by Winify AG on 5/7/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -176,6 +176,20 @@ public extension ImoTableView {
         return self.sections
     }
     
+    /// Check if table contains section
+    /// - Parameter sectionToCompare: ImoTableViewSection
+    /// - Returns: Bool
+    func contains(section sectionToCompare: ImoTableViewSection) -> Bool {
+        
+        for section in getAllSections() {
+            if section.isEqual(sectionToCompare) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     /// Get section for given Index
     ///
     /// - Parameter index: Section index
@@ -198,7 +212,7 @@ public extension ImoTableView {
             
             let section: ImoTableViewSection = self.sections[indexPath.section]
             
-            //WAS CHANGED TO FALSE
+            //WAS CHANGED TO FALSE 
             section.wasChanged = false
             
             return section.get(sourceAtIndex: indexPath.row)

@@ -2,8 +2,8 @@
 //  ImoTableViewActions.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/7/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -32,7 +32,6 @@ public extension ImoTableView {
     func didSelect(source: ImoTableViewSource) {
         
         if let didSelect = self.didSelectSource {
-            
             DispatchQueue.main.async {
                 didSelect(source)
             }

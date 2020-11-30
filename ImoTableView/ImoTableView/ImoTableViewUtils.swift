@@ -2,8 +2,8 @@
 //  ImoTableViewUtis.swift
 //  ImoTableView
 //
-//  Created by Winify AG on 2/14/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
