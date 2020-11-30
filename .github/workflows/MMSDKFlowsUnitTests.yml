@@ -1,0 +1,28 @@
+name: Run MMSDKFlows unit tests
+on:
+  push:
+    paths:
+      - 'Frameworks/MMSDKFlows/**'
+jobs:
+  test:
+    runs-on: self-hosted
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Test
+        run: fastlane runMMSDKFlowsUnitTests
+      - name: Upload report result
+        continue-on-error: true
+        uses: actions/upload-artifact@v2
+        with:
+          name: MMSDKFlows test report
+          path: Frameworks/MMSDKFlows/fastlane/test_output/*
+      - name: Generate XCov report
+        continue-on-error: true
+        run: fastlane runXcovReportMMSDKFlows
+      - name: Upload report result
+        continue-on-error: true
+        uses: actions/upload-artifact@v2
+        with:
+          name: MMSDKFlows xcov report
+          path: Frameworks/MMSDKFlows/xcov_output/*

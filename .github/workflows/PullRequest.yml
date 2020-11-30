@@ -1,0 +1,13 @@
+name: Check PR rules
+on: [pull_request]
+jobs:
+  validate:
+    runs-on: self-hosted
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Validate
+        run: danger-swift pr --failOnErrors https://github.com/muume/MM-iOS-Apps-Builder/pull/$PULL_REQUEST_NUMBER
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PULL_REQUEST_NUMBER: ${{ github.event.number }}
