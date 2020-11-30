@@ -44,12 +44,9 @@ platform :ios do
   lane :test do
 
     sh "ls"
+    sh "cd .."
     sh "cd ../Carthage && carthage.sh build --platform iOS --cache-builds"
     scan(project: "ImoTableView/ImoTableView.xcodeproj")
-
-    slack(
-       message: "Successfull tests"
-    )
 
   end
 
