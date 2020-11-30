@@ -2,8 +2,8 @@
 //  ImoTableViewExtension.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/9/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +11,7 @@ import UIKit
 public extension ImoTableView {
     
     /// Set table view contentInset and scrollIndicatorInsets to UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    public func zeroContentInsets() {
+    func zeroContentInsets() {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         self.tableView.contentInset = insets
         self.tableView.scrollIndicatorInsets = insets
@@ -20,7 +20,7 @@ public extension ImoTableView {
     /// Should or not adjust table content offest when keyboard apears on screen
     ///
     /// - Parameter should: Bool
-    public func adjustContentInsetsForKeyboard(_ should: Bool) {
+    func adjustContentInsetsForKeyboard(_ should: Bool) {
         
         if should {
             addKeyboardObservers()
@@ -34,17 +34,17 @@ public extension ImoTableView {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
-                                               name: NSNotification.Name.UIKeyboardWillShow,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide),
-                                               name: NSNotification.Name.UIKeyboardWillHide,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardDidChangeFrame),
-                                               name: NSNotification.Name.UIKeyboardDidChangeFrame,
+                                               name: UIResponder.keyboardDidChangeFrameNotification,
                                                object: nil)
     }
     
@@ -56,7 +56,7 @@ public extension ImoTableView {
     /// Keyboard will show notification
     ///
     /// - Parameter notification: Notification
-    func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: Notification) {
         
         if isKeyboardOnScreen == false {
             storedContentInset = self.tableView.contentInset
@@ -69,7 +69,7 @@ public extension ImoTableView {
     /// Keyboard will hide notification
     ///
     /// - Parameter notification: Notification
-    func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: Notification) {
         
         isKeyboardOnScreen = false
         adjustScroll(for: notification)
@@ -78,7 +78,7 @@ public extension ImoTableView {
     /// Keyboard will hide notification
     ///
     /// - Parameter notification: Notification
-    func keyboardDidChangeFrame(_ notification: Notification) {
+    @objc func keyboardDidChangeFrame(_ notification: Notification) {
         adjustScroll(for: notification)
     }
     
@@ -106,8 +106,8 @@ public extension ImoTableView {
     /// - Returns: (frame: CGRect, duration: Double)?
     func framAndDuration(for notification: Notification) -> (frame: CGRect, duration: Double)? {
         
-        guard let keyboargFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect,
-              let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else {
+        guard let keyboargFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
             return nil
         }
         
@@ -124,7 +124,7 @@ public extension ImoTableView {
             
             guard let view = self.superview,
                   let mainWindowView = mainWindowView() else {
-                    return self.tableView.contentInset
+                return self.tableView.contentInset
             }
             
             let tableFrame = self.tableView.frame
@@ -174,7 +174,7 @@ public extension ImoTableView {
         return controller.navigationController?.view
     }
     
-    public func spaceBetwenLastCellAndTableBottom() -> CGFloat {
+    func spaceBetwenLastCellAndTableBottom() -> CGFloat {
         
         tableView.layoutIfNeeded()
         let difference = self.tableView.frame.size.height - tableView.contentSize.height
@@ -189,9 +189,9 @@ public extension ImoTableView {
 
 public extension ImoTableView {
     
-    public func scrollToCell(source: ImoTableViewSource,
-                             at scrollPosition: UITableViewScrollPosition,
-                             animated: Bool) {
+    func scrollToCell(source: ImoTableViewSource,
+                      at scrollPosition: UITableView.ScrollPosition,
+                      animated: Bool) {
         
         if let indexPath = indexPathsFor(source: source) {
             

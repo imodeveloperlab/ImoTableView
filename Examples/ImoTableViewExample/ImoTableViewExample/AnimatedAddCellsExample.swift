@@ -49,14 +49,14 @@ class AnimatedAddCellsExample: BaseViewController {
         table.add(section: secondSection)
     }
     
-    func addNewCell() {
+    @objc func addNewCell() {
         
         let text = faker.lorem.sentence()
         let source = TextCellSource(text: text)
         table.add(source: source, in: secondSection, animated: true, animation: .top)
     }
     
-    func addMultipleCells() {
+    @objc func addMultipleCells() {
         
         var sources:[TextCellSource] = []
         

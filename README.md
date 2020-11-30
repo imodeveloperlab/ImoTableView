@@ -20,7 +20,9 @@ To start use **ImoTableView** you need to undesrstand the base concept, **ImoTab
 
 ![alt text](Content/ImoTableView.png "ImoTableView")
 
+
 ## Implementation Example
+
 
 Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
@@ -184,7 +186,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'ImoTableView', '~> 1.0.8'
+    pod 'ImoTableView', '~> 1.0.25'
 end
 ```
 

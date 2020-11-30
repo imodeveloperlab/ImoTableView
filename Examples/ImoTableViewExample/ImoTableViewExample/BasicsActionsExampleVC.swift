@@ -51,18 +51,18 @@ class BasicsActionsExampleVC: BaseViewController {
         table.add(section: section)
     }
     
-    func didSelectAppVersion(sender: AnyObject) {
+    @objc func didSelectAppVersion(sender: AnyObject) {
         
         let version = sender as! String
         show(message: "Did select version \(version)")
     }
     
-    func didSelectAppAuthor() {
+    @objc func didSelectAppAuthor() {
 
         self.show(message: "Did select app author")
     }
     
-    func didSelectAppName() {
+    @objc func didSelectAppName() {
         
         show(message: "Did select app name")
     }

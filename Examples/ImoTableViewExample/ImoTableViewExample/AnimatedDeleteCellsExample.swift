@@ -58,21 +58,21 @@ class AnimatedDeleteCellsExample: BaseViewController {
         secondSection.add(sources: sources)
     }
     
-    func deleteFirst()  {
+    @objc func deleteFirst()  {
         
         if let source = secondSection.firstSource() {
             table.delete(source: source, in: secondSection, animated: true, animation: .left)
         }
     }
     
-    func deleteLast()  {
+    @objc func deleteLast()  {
         
         if let source = secondSection.lastSource() {
             table.delete(source: source, in: secondSection, animated: true, animation: .right)
         }
     }
     
-    func deleteAll()  {
+    @objc func deleteAll()  {
         
         let allSources = secondSection.allSources()
         table.delete(sources: allSources, in: secondSection, animated: true, animation: .top)

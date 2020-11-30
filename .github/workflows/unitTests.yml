@@ -1,0 +1,10 @@
+name: Unit tests
+on: [pull_request]
+jobs:
+  test:
+    runs-on: self-hosted
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Test
+        run: fastlane test

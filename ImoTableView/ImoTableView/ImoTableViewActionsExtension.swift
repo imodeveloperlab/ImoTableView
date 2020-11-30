@@ -2,8 +2,8 @@
 //  ImoTableViewActions.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/7/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -15,8 +15,8 @@ public extension ImoTableView {
     /// - Parameters:
     /// - tableView: UITableView
     /// - indexPath: IndexPath
-    public func tableView(_ tableView: UITableView,
-                          didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
         
         if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
             
@@ -32,7 +32,6 @@ public extension ImoTableView {
     func didSelect(source: ImoTableViewSource) {
         
         if let didSelect = self.didSelectSource {
-        
             DispatchQueue.main.async {
                 didSelect(source)
             }
@@ -53,7 +52,7 @@ public extension ImoTableView {
     ///
     /// - Parameter source: ImoTableViewSource
     func performSelector(for source: ImoTableViewSource) {
-
+        
         if let target = source.target {
             if let selector = source.selector {
                 performSelector(target: target, selector: selector, source: source)

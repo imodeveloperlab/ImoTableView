@@ -21,8 +21,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //For storing original table UIEdgeInsets when an keyboard apears on screen
     //table will change its content inssets and after when keyboard dissapears
     //we need to set previous table ContentInset asnd ScrollIndicatorInsets
-    open var storedContentInset: UIEdgeInsets?
-    open var storedScrollIndicatorInsets: UIEdgeInsets?
+    public var storedContentInset: UIEdgeInsets?
+    public var storedScrollIndicatorInsets: UIEdgeInsets?
     
     /// Set the separator collor of table view
     public var separatorColor: UIColor? {
@@ -150,6 +150,9 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         self.backgroundColor = UIColor.clear
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.estimatedRowHeight = 0
+        self.tableView.estimatedSectionHeaderHeight = 0
+        self.tableView.estimatedSectionFooterHeight = 0
         self.addSubview(self.tableView)
         self.edgesConstraints(to: self.tableView)
     }
@@ -210,15 +213,29 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         guard let source = self.cellSourceForIndexPath(indexPath: indexPath),
-            let height = source.height else {
-                return UITableViewAutomaticDimension
+              let height = source.height else {
+            return UITableView.automaticDimension
         }
         
         return height
     }
     
     public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return self.estimatedHeightForRow
+        
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {            
+            return UITableView.automaticDimension
+        }
+        
+        return source.estimatedHeightForRow
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let source = self.cellSourceForIndexPath(indexPath: indexPath) else {
+            return
+        }
+        
+        source.estimatedHeightForRow = cell.frame.size.height
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
@@ -226,7 +243,6 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     }
     
     public func update() {
-        
         tableView.reloadData()
     }
     
@@ -253,7 +269,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return false
     }
     
-    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if (editingStyle == .delete) {
             if let source = self.cellSourceForIndexPath(indexPath: indexPath) {
@@ -273,6 +289,19 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return nil
     }
     
+    public func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    public func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        if view.isEditing {
+            return .none
+        } else {
+            return .delete
+        }        
+    }
+    
     // MARK: - UITableView HeaderView
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -289,7 +318,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         if let section = sectionForIndex(index: section) {
             return self.heightForHeaderViewInSection(section)
         }
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func heightForHeaderViewInSection(_ section: ImoTableViewSection) -> CGFloat {
@@ -300,16 +329,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableViewAutomaticDimension
+        return section.estimatedHeaderHeight
     }
-    
-//    public func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-//        
-//        if let section = sectionForIndex(index: section) {
-//            return section.estimatedHeaderHeight
-//        }
-//        return 0
-//    }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
@@ -326,7 +347,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         if let section = sectionForIndex(index: section) {
             return self.heightForFooterInSection(section)
         }
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func heightForFooterInSection(_ section: ImoTableViewSection) -> CGFloat {
@@ -337,16 +358,8 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
             return height
         }
         
-        return UITableViewAutomaticDimension
+        return section.estimatedFooterHeight
     }
-    
-//    public func tableView(_ tableView: UITableView, estimatedHeightForFooterInSection section: Int) -> CGFloat {
-//        
-//        if let section = sectionForIndex(index: section) {
-//            return section.estimatedFooterHeight
-//        }
-//        return 0
-//    }
     
     public func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         
@@ -390,4 +403,46 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         }
     }
     
+    /// Set alpha to zero
+    /// - Parameter animated: Bool
+    public func setAlphaToZero(animated: Bool = false) {
+        
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.alpha = 0
+            }
+        } else {
+            alpha = 0
+        }
+    }
+    
+    /// Show if alpha is zero
+    /// - Parameter animated: Bool
+    public func showIfAlphaIsZero(animated: Bool = false) {
+        
+        if animated {
+            UIView.animate(withDuration: 0.4) {
+                self.alpha = 1
+            }
+        } else {
+            alpha = 11
+        }
+    }
+    
+}
+
+public extension ImoTableView {
+    
+    func getAllSources<T>() -> [T] {
+        var sources: [T] = []
+        for section in self.getAllSections() {
+            for source in section.allSources() {
+                if let source = source as? T {
+                    sources.append(source)
+                }
+            }
+        }
+        
+        return sources
+    }
 }

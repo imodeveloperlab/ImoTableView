@@ -36,10 +36,14 @@ open class ImoTableViewSource: NSObject {
     public var canBeEdited: Bool = false
     
     //Title for delete button
-    public var deleteButtonTitle: String? = nil
+    public var deleteButtonTitle: String?
     
     //Accessibility Identifier
     open var accessibilityIdentifier: String?
+    
+    open var isSeparatorEnabled: Bool = true
+    
+    open var estimatedHeightForRow: CGFloat = 40
     
     /// Init source
     ///

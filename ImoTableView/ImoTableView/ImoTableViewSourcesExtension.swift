@@ -2,8 +2,8 @@
 //  ImoTableViewSources.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/7/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -20,14 +20,13 @@ public extension ImoTableView {
     func addOnTop(source: ImoTableViewSource,
                   in section: ImoTableViewSection,
                   animated: Bool = false,
-                  animation: UITableViewRowAnimation = .fade) {
+                  animation: UITableView.RowAnimation = .fade) {
         
         addOnTop(sources: [source],
                  in: section,
                  animated: animated,
                  animation: animation)
     }
-    
     
     /// Add source in section
     ///
@@ -39,7 +38,7 @@ public extension ImoTableView {
     func add(source: ImoTableViewSource,
              in section: ImoTableViewSection,
              animated: Bool = false,
-             animation: UITableViewRowAnimation = .fade) {
+             animation: UITableView.RowAnimation = .fade) {
         
         add(sources: [source],
             in: section,
@@ -57,7 +56,7 @@ public extension ImoTableView {
     func add(sources: [ImoTableViewSource],
              in section: ImoTableViewSection,
              animated: Bool = false,
-             animation: UITableViewRowAnimation = .fade) {
+             animation: UITableView.RowAnimation = .fade) {
         
         section.add(sources: sources)
         
@@ -66,7 +65,6 @@ public extension ImoTableView {
                                  with: animation)
         }
     }
-    
     
     /// Add array of sources on top in section
     ///
@@ -78,7 +76,7 @@ public extension ImoTableView {
     func addOnTop(sources: [ImoTableViewSource],
                   in section: ImoTableViewSection,
                   animated: Bool = false,
-                  animation: UITableViewRowAnimation = .fade) {
+                  animation: UITableView.RowAnimation = .fade) {
         
         section.addOnTop(sources: sources)
         
@@ -87,7 +85,6 @@ public extension ImoTableView {
                                  with: animation)
         }
     }
-    
     
     /// Delete source from section
     ///
@@ -99,7 +96,7 @@ public extension ImoTableView {
     func delete(source: ImoTableViewSource,
                 in section: ImoTableViewSection,
                 animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         delete(sources: [source],
                in: section,
@@ -117,7 +114,7 @@ public extension ImoTableView {
     func delete(sources: [ImoTableViewSource],
                 in section: ImoTableViewSection,
                 animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         let indexPathArray = indexPathsForSources(sources: sources, in: section)
         
@@ -141,7 +138,7 @@ public extension ImoTableView {
     func update(source: ImoTableViewSource,
                 in section: ImoTableViewSection,
                 animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         update(sources: [source], in: section,
                animated: animated,
@@ -158,7 +155,7 @@ public extension ImoTableView {
     func update(sources: [ImoTableViewSource],
                 in section: ImoTableViewSection,
                 animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         let indexPaths = indexPathsForSources(sources: sources, in: section)
         
@@ -170,7 +167,7 @@ public extension ImoTableView {
     }
     
     func update(section: ImoTableViewSection, animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         if let index = indexSetFor(section: section) {
             if animated {
@@ -182,7 +179,7 @@ public extension ImoTableView {
     }
     
     func update(sections: [ImoTableViewSection], animated: Bool = false,
-                animation: UITableViewRowAnimation = .fade) {
+                animation: UITableView.RowAnimation = .fade) {
         
         if let indexArray = indexSetFor(sections: sections) {
             if animated {
@@ -193,14 +190,14 @@ public extension ImoTableView {
         }
     }
     
-    func updateChangedSections(animation: UITableViewRowAnimation = .fade) {
+    func updateChangedSections(animation: UITableView.RowAnimation = .fade) {
         
         if let indexArray = indexSetForChanged(sections: sections) {
             tableView.reloadSections(indexArray, with: animation)
         }
     }
     
-    public func getSectionFor(source: ImoTableViewSource) -> ImoTableViewSection? {
+    func getSectionFor(source: ImoTableViewSource) -> ImoTableViewSection? {
         
         for section in sections {
             for checkSource in section.sources where checkSource == source {

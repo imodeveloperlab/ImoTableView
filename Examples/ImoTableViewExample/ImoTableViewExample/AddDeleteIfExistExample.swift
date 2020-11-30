@@ -64,28 +64,28 @@ class AddDeleteIfExistExample: BaseViewController {
         
     }
     
-    func addFirstSource() {
+    @objc func addFirstSource() {
         
         let source = ComparableCellSource(message: "First Comparable")
         firstSection.addIfNotExist(source: source)
         table.updateChangedSections()
     }
     
-    func deleteFirstSource() {
+    @objc func deleteFirstSource() {
 
         let source = ComparableCellSource(message: "First Comparable")
         firstSection.deleteIfExist(source: source)
         table.updateChangedSections()
     }
     
-    func addSecondSource() {
+    @objc func addSecondSource() {
         
         let source = ComparableCellSource(message: "Second Comparable")
         secondSection.addIfNotExist(source: source)
         table.updateChangedSections()
     }
     
-    func deleteSecondSource() {
+    @objc func deleteSecondSource() {
         
         let source = ComparableCellSource(message: "Second Comparable")
         secondSection.deleteIfExist(source: source)

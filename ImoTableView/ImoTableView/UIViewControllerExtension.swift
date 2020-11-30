@@ -2,8 +2,8 @@
 //  UIViewControllerExtension.swift
 //  ImoTableView
 //
-//  Created by Borinschi Ivan on 5/10/17.
-//  Copyright © 2017 Imodeveloperlab. All rights reserved.
+//  Created by Borinschi Ivan on 12/5/16.
+//  Copyright © 2016 Imodeveloperlab. All rights reserved.
 //
 
 import UIKit
@@ -11,14 +11,15 @@ import UIKit
 public extension UIViewController {
     
     /// Hide keyboard when tapped around
-    func hideKeyboardWhenTappedAround() {
+    func hideKeyboardWhenTappedAround(cancelsTouchesInView: Bool = false) {
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
+        tap.cancelsTouchesInView = cancelsTouchesInView
         view.addGestureRecognizer(tap)
     }
     
     ///Dismiss Keyboard
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 }
