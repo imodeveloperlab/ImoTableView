@@ -39,11 +39,11 @@ platform :ios do
   )
 
   end
-  
 
   desc "Runs all the tests"
   lane :test do
 
+    sh "cd ../Carthage && carthage.sh build --platform iOS --cache-builds"
     scan(project: "ImoTableView/ImoTableView.xcodeproj")
 
     slack(
