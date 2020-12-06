@@ -246,7 +246,7 @@ public final class ImoTableView: UIView, UITableViewDelegate, UITableViewDataSou
         tableView.reloadData()
     }
     
-    public func statiCell(cellClass: String, nib: UINib?) -> ImoTableViewCell? {
+    public func staticCell(cellClass: String, nib: UINib?) -> ImoTableViewCell? {
         self.registerCellClass(cellClass: cellClass, nib: nib)
         
         if let cell = tableView.dequeueReusableCell(withIdentifier:cellClass) {
