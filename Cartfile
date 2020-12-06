@@ -1,1 +1,3 @@
-github "imodeveloperlab/ImoTableView"
+#github "Quick/Quick"
+#github "Quick/Nimble"
+#github "vadymmarkov/Fakery"
