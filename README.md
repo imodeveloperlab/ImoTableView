@@ -1,7 +1,6 @@
 ![alt text](Content/Logo.png "ImoTableView Logo")
 
-An wrapper around **UITableView** which aims to facilitate working with tables.
-
+A wrapper around **UITableView** which aims to facilitate working with tables.
 
 - [Onboarding](#onboarding)
 - [Implementation Example](#implementation-example)
@@ -11,25 +10,28 @@ An wrapper around **UITableView** which aims to facilitate working with tables.
 - [Installation](#installation)
 
 ## Onboarding
-To start use **ImoTableView** you need to undesrstand the base concept, **ImoTableView** is composed from four classes.
+To start to use **ImoTableView** you need to understand the base concept, **ImoTableView** is composed of four classes.
 
-1. **ImoTableView** is an subclass from **UITableView** and have the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
-2. **ImoTableViewSection** is an class which work with **ImoTableViewSource**'s, add new source, delete, update.
-3. **ImoTableViewSource** is base object for your new **CellSource**'s this source contain base info about cell class, cell height, and other aditional proprietes which you want to show in your cell, user name for example.
-4. **ImoTableViewCell** is view representation of properties you have stored in your source.
+1. **ImoTableView** is a subclass from **UITableView** and owns the role to manage with **ImoTableViewSection**'s, add new sections, delete and update them.
+2. **ImoTableViewSection** is a class that works with **ImoTableViewSource**'s, add a new source, delete, update.
+3. **ImoTableViewSource** is the base object for your new **CellSource**'s this source contains base info about cell class, cell height, and other additional proprieties which you want to show in your cell, user name for example.
+
+4. **ImoTableViewCell** is a view representation of properties you have stored in your source.
 
 ![alt text](Content/ImoTableView.png "ImoTableView")
 
 
 ## Implementation Example
 
+Example of how quick and simple you can add a populate a tableView
+This is how ```swift ViewController.swift ``` looks like
 
 Example of how quick and simple you can add an populate an tableView
 This is how ```swift ViewController.swift ``` looks like
 ```swift
-//Create an table andd ad on SomeUIView
+//Create a table and ad on some UIView
 let tableView = ImoTableView(on: someUIView, insets: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
-//Create new section
+//Create a new section
 let section = ImoTableViewSection()
 //Create new cellSource
 let actionCellSource = ActionCellSource(title: "Action")
