@@ -20,13 +20,9 @@ To start to use **ImoTableView** you need to understand the base concept, **ImoT
 
 ![alt text](Content/ImoTableView.png "ImoTableView")
 
-
 ## Implementation Example
 
-Example of how quick and simple you can add a populate a tableView
-This is how ```swift ViewController.swift ``` looks like
-
-Example of how quick and simple you can add an populate an tableView
+Example of how quick and simple you can add and populate a tableView
 This is how ```swift ViewController.swift ``` looks like
 ```swift
 //Create a table and ad on some UIView
