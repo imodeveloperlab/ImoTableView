@@ -17,7 +17,7 @@ public extension ImoTableView {
         self.tableView.scrollIndicatorInsets = insets
     }
     
-    /// Should or not adjust table content offest when keyboard apears on screen
+    /// Should or not adjust table content offset when keyboard appears on screen
     ///
     /// - Parameter should: Bool
     func adjustContentInsetsForKeyboard(_ should: Bool) {
@@ -87,7 +87,7 @@ public extension ImoTableView {
     /// - Parameter notification: Notification
     func adjustScroll(for notification: Notification) {
         
-        if let frameAndDuration = self.framAndDuration(for: notification) {
+        if let frameAndDuration = self.frameAndDuration(for: notification) {
             
             let frame = frameAndDuration.frame
             let duration = frameAndDuration.duration
@@ -104,14 +104,14 @@ public extension ImoTableView {
     ///
     /// - Parameter notification: Notification
     /// - Returns: (frame: CGRect, duration: Double)?
-    func framAndDuration(for notification: Notification) -> (frame: CGRect, duration: Double)? {
+    func frameAndDuration(for notification: Notification) -> (frame: CGRect, duration: Double)? {
         
-        guard let keyboargFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
               let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else {
             return nil
         }
         
-        return (frame: keyboargFrame, duration: duration)
+        return (frame: keyboardFrame, duration: duration)
     }
     
     /// Get UIEdgeInsets for keyboardFrame
@@ -142,11 +142,11 @@ public extension ImoTableView {
                 }
             }
             
-            let insetts = UIEdgeInsets(top: currentTableInsets.top,
-                                       left: currentTableInsets.left,
-                                       bottom: inset + difference - bottomSafeArea,
-                                       right: currentTableInsets.right)
-            return insetts
+            let insets = UIEdgeInsets(top: currentTableInsets.top,
+                                      left: currentTableInsets.left,
+                                      bottom: inset + difference - bottomSafeArea,
+                                      right: currentTableInsets.right)
+            return insets
             
         } else {
             
@@ -174,7 +174,7 @@ public extension ImoTableView {
         return controller.navigationController?.view
     }
     
-    func spaceBetwenLastCellAndTableBottom() -> CGFloat {
+    func spaceBetweenLastCellAndTableBottom() -> CGFloat {
         
         tableView.layoutIfNeeded()
         let difference = self.tableView.frame.size.height - tableView.contentSize.height

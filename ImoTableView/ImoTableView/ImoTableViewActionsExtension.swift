@@ -26,7 +26,7 @@ public extension ImoTableView {
         }
     }
     
-    /// Will call didSelectSource clossure if didSelectSource is not nill
+    /// Will call didSelectSource closure if didSelectSource is not nil
     ///
     /// - Parameter source: CellSource
     func didSelect(source: ImoTableViewSource) {
@@ -38,7 +38,7 @@ public extension ImoTableView {
         }
     }
     
-    /// Will call didSelectCellAtIndexPath clossure if didSelectCellAtIndexPath is not nill
+    /// Will call didSelectCellAtIndexPath closure if didSelectCellAtIndexPath is not nil
     ///
     /// - Parameter indexPath: IndexPath
     func didSelectCellAtIndexPath(indexPath: IndexPath) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+public final class ImoTableView: UIView, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     //TableView
     var tableView: UITableView
@@ -18,31 +18,31 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
         return self.tableView
     }
     
-    //For storing original table UIEdgeInsets when an keyboard apears on screen
-    //table will change its content inssets and after when keyboard dissapears
-    //we need to set previous table ContentInset asnd ScrollIndicatorInsets
+    //For storing original table UIEdgeInsets when an keyboard appears on screen
+    //table will change its content insets and after when keyboard disappears
+    //we need to set previous table ContentInset and ScrollIndicatorInsets
     public var storedContentInset: UIEdgeInsets?
     public var storedScrollIndicatorInsets: UIEdgeInsets?
     
-    /// Set the separator collor of table view
+    /// Set the separator color of table view
     public var separatorColor: UIColor? {
         get { return self.tableView.separatorColor }
         set { self.tableView.separatorColor = newValue }
     }
     
-    /// Separator insset
+    /// Separator inset
     public var separatorInset: UIEdgeInsets {
         get { return self.tableView.separatorInset }
         set { self.tableView.separatorInset = newValue }
     }
     
-    /// ContentInset insset
+    /// ContentInset inset
     public var contentInset: UIEdgeInsets {
         get { return self.tableView.contentInset }
         set { self.tableView.contentInset = newValue }
     }
     
-    /// ScrollIndicatorInsets insset
+    /// ScrollIndicatorInsets inset
     public var scrollIndicatorInsets: UIEdgeInsets {
         get { return self.tableView.scrollIndicatorInsets }
         set { self.tableView.scrollIndicatorInsets = newValue }
@@ -57,7 +57,7 @@ public final class ImoTableView : UIView, UITableViewDelegate, UITableViewDataSo
     //Estimated height for row
     var estimatedHeightForRow: CGFloat = 40
     
-    //Is keyboard on screeen
+    //Is keyboard on screen
     var isKeyboardOnScreen: Bool = false
     
     //This array hold all table sections

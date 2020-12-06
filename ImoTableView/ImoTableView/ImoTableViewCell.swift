@@ -13,7 +13,7 @@ open class ImoTableViewCell: UITableViewCell {
     
     /// This function is called every time cell will be displayed on screen
     ///
-    /// - Parameter source: source:AnyObject
+    /// - Parameter source: source: AnyObject
     open func setUpWithSource(source: AnyObject) {
         
     }

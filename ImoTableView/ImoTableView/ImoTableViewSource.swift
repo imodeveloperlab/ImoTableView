@@ -17,7 +17,7 @@ open class ImoTableViewSource: NSObject {
     ///Manual cell height
     public var height: CGFloat?
     
-    ///Cell class / ideintifier
+    ///Cell class / identifier
     var cellClass: String
     
     ///Target to send messages to Selector from cell

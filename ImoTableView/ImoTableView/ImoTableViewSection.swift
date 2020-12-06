@@ -10,7 +10,7 @@ import UIKit
 
 /// ImoTableViewSection Errors
 ///
-/// - unknown: Uknown Error
+/// - unknown: Unknown Error
 /// - dontExistSourceAtIndex: Missing source for given index
 enum ImoTableViewSectionError: Error {
     case unknown
@@ -244,7 +244,7 @@ open class ImoTableViewSection: NSObject {
     /// - Parameters:
     ///   - sources: Cell Source
     ///   - target: Add source action to an target
-    ///   - selector: Sellector for target
+    ///   - selector: Selector for target
     public func addOnTop(sources: [ImoTableViewSource],
                          target: AnyObject? = nil,
                          _ selector: Selector? = nil) {
@@ -261,7 +261,7 @@ open class ImoTableViewSection: NSObject {
     /// - Parameters:
     ///   - sources: Cell Source
     ///   - target: Add source action to an target
-    ///   - selector: Sellector for target
+    ///   - selector: Selector for target
     public func add(sources: [ImoTableViewSource],
                     target: AnyObject? = nil,
                     _ selector: Selector? = nil) {

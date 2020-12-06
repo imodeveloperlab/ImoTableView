@@ -1,5 +1,5 @@
 //
-//  ImoTableViewUtis.swift
+//  ImoTableViewUtils.swift
 //  ImoTableView
 //
 //  Created by Borinschi Ivan on 12/5/16.
@@ -15,33 +15,33 @@ public extension UIView {
         
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        let topProperties = ImoTableViewConstraintProprietes(view: view, alignTo: self, attribute: .top, inset: insets.top)
+        let topProperties = ImoTableViewConstraintProperties(view: view, alignTo: self, attribute: .top, inset: insets.top)
         let top = alignConstraint(topProperties)
-
-        let bottomProperties = ImoTableViewConstraintProprietes(view: view, alignTo: self, attribute: .bottom, inset: insets.bottom)
+        
+        let bottomProperties = ImoTableViewConstraintProperties(view: view, alignTo: self, attribute: .bottom, inset: insets.bottom)
         let bottom = alignConstraint(bottomProperties)
         
-        let leftProperties = ImoTableViewConstraintProprietes(view: view, alignTo: self, attribute: .left, inset: insets.left)
+        let leftProperties = ImoTableViewConstraintProperties(view: view, alignTo: self, attribute: .left, inset: insets.left)
         let left = alignConstraint(leftProperties)
         
-        let rightProperties = ImoTableViewConstraintProprietes(view: view, alignTo: self, attribute: .right, inset: insets.right)
+        let rightProperties = ImoTableViewConstraintProperties(view: view, alignTo: self, attribute: .right, inset: insets.right)
         let right = alignConstraint(rightProperties)
         
         self.addConstraints([top, bottom, left, right])
     }
     
-    func alignConstraint(_ proprietes: ImoTableViewConstraintProprietes) -> NSLayoutConstraint {
+    func alignConstraint(_ properties: ImoTableViewConstraintProperties) -> NSLayoutConstraint {
         
-        return NSLayoutConstraint(item: proprietes.view,
-                                  attribute: proprietes.attribute,
+        return NSLayoutConstraint(item: properties.view,
+                                  attribute: properties.attribute,
                                   relatedBy: NSLayoutConstraint.Relation.equal,
-                                  toItem: proprietes.alignTo, attribute: proprietes.attribute,
+                                  toItem: properties.alignTo, attribute: properties.attribute,
                                   multiplier: 1,
-                                  constant: proprietes.inset)
+                                  constant: properties.inset)
     }
 }
 
-public struct ImoTableViewConstraintProprietes {
+public struct ImoTableViewConstraintProperties {
     
     var view: UIView
     var alignTo: UIView
