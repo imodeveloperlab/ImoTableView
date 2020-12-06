@@ -44,7 +44,7 @@ class SpaceExampleVC: BaseViewController {
         
         table.add(section: section)
         
-        space.height = table.spaceBetwenLastCellAndTableBottom()
+        space.height = table.spaceBetweenLastCellAndTableBottom()
         table.update()
     }
     
