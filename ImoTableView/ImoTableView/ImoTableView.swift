@@ -382,7 +382,8 @@ public final class ImoTableView: UIView, UITableViewDelegate, UITableViewDataSou
     ///
     /// - Parameter source: ImoTableViewSource
     public func registerCellClassForSource(source: ImoTableViewSource) {
-        registerCellClass(cellClass: source.cellClass, nib: source.nib)
+        
+        registerCellClass(cellClass: source.cellClass, nib: source.nib, cellAnyClass: source.cellAnyClass)
     }
     
     /// Register cell class
@@ -390,10 +391,13 @@ public final class ImoTableView: UIView, UITableViewDelegate, UITableViewDataSou
     /// - Parameters:
     /// - cellClass: Cell class name, also this name is uniq identifier of the cell
     /// - nib: Cell nib
-    public func registerCellClass(cellClass: String, nib: UINib?) {
+    public func registerCellClass(cellClass: String, nib: UINib?, cellAnyClass: AnyClass? = nil) {
         
         if !registeredCells.contains(cellClass) {
-            if nib != nil {
+            
+            if let cellAnyClass = cellAnyClass {
+                self.tableView.register(cellAnyClass, forCellReuseIdentifier: cellClass)
+            } else if nib != nil {
                 self.tableView.register(nib, forCellReuseIdentifier:cellClass)
                 registeredCells.append(cellClass)
             } else {

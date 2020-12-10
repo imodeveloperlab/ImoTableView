@@ -20,6 +20,9 @@ open class ImoTableViewSource: NSObject {
     ///Cell class / identifier
     var cellClass: String
     
+    ///Cell any class
+    var cellAnyClass: AnyClass?
+    
     ///Target to send messages to Selector from cell
     weak public var target: AnyObject?
     
@@ -48,8 +51,9 @@ open class ImoTableViewSource: NSObject {
     /// Init source
     ///
     /// - Parameter cellClass: Cell class / identifier
-    public init(cellClass: String) {
+    public init(cellClass: String, cellAnyClass: AnyClass? = nil) {
         self.cellClass = cellClass
+        self.cellAnyClass = cellAnyClass
         self.nib = UINib(nibName: self.cellClass, bundle: nil)
         super.init()
     }
